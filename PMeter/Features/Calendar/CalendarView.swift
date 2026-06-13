@@ -55,16 +55,14 @@ struct CalendarView: View {
             }
             .background(Color.pmBackground.ignoresSafeArea())
             .navigationTitle(L10n.Calendar.title)
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        entryFormTarget = EntryFormTarget(date: Date())
-                    } label: {
-                        Image(systemName: "plus")
-                    }
-                    .accessibilityLabel("calendar.addEntry")
+            .inlineNavigationTitle()
+            .toolbarTrailingItem {
+                Button {
+                    entryFormTarget = EntryFormTarget(date: Date())
+                } label: {
+                    Image(systemName: "plus")
                 }
+                .accessibilityLabel("calendar.addEntry")
             }
             .sheet(item: $selectedDate) { day in
                 DayDetailSheetView(date: day.date, entries: entries)

@@ -156,28 +156,18 @@ struct EntryFormView: View {
                 }
             }
             .navigationTitle(existingEntry == nil ? L10n.CycleForm.newEntryTitle : L10n.CycleForm.editEntryTitle)
-            .navigationBarTitleDisplayMode(.inline)
+            .inlineNavigationTitle()
             .scrollDismissesKeyboard(.interactively)
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button(L10n.Common.cancel) {
-                        dismiss()
-                    }
+            .platformEditorToolbar {
+                Button(L10n.Common.cancel) { dismiss() }
+            } trailing: {
+                Button(L10n.Common.save) {
+                    focusedField = nil
+                    saveEntry()
                 }
-
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button(L10n.Common.save) {
-                        focusedField = nil
-                        saveEntry()
-                    }
-                }
-
-                ToolbarItemGroup(placement: .keyboard) {
-                    Spacer()
-                    Button(L10n.Common.done) {
-                        focusedField = nil
-                    }
-                }
+            }
+            .iosKeyboardDoneToolbar {
+                focusedField = nil
             }
             .onAppear {
                 loadExistingDataIfNeeded()
@@ -269,7 +259,7 @@ struct EntryFormView: View {
                     Text("\(value)").tag(value)
                 }
             }
-            .pickerStyle(.wheel)
+            .platformWheelPickerStyle()
             .frame(maxWidth: .infinity)
 
             Text(",")
@@ -281,7 +271,7 @@ struct EntryFormView: View {
                     Text(String(format: "%02d", value)).tag(value)
                 }
             }
-            .pickerStyle(.wheel)
+            .platformWheelPickerStyle()
             .frame(maxWidth: .infinity)
         }
         .frame(height: 160)

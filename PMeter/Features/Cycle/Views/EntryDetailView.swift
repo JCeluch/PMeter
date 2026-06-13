@@ -97,7 +97,7 @@ struct EntryDetailView: View {
             }
         }
         .navigationTitle(L10n.CycleDetail.title)
-        .navigationBarTitleDisplayMode(.inline)
+        .inlineNavigationTitle()
         .sheet(isPresented: $showingEditSheet) {
             EntryFormView(existingEntry: entry)
         }

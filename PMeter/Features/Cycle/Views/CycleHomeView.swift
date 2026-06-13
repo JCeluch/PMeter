@@ -25,16 +25,14 @@ struct CycleHomeView: View {
             }
             .background(Color.pmBackground.ignoresSafeArea())
             .navigationTitle(L10n.CycleList.title)
-            .navigationBarTitleDisplayMode(.large)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        showingAddEntry = true
-                    } label: {
-                        Image(systemName: "plus")
-                    }
-                    .accessibilityLabel(Text(L10n.CycleList.add))
+            .inlineNavigationTitle()
+            .toolbarTrailingItem {
+                Button {
+                    showingAddEntry = true
+                } label: {
+                    Image(systemName: "plus")
                 }
+                .accessibilityLabel(Text(L10n.CycleList.add))
             }
             .sheet(isPresented: $showingAddEntry) {
                 AddEntryView()
@@ -73,7 +71,7 @@ struct CycleHomeView: View {
                 ForEach(entries) { entry in
                     NavigationLink {
                         EntryDetailView(entry: entry)
-                            .navigationBarTitleDisplayMode(.inline)
+                            .inlineNavigationTitle()
                     } label: {
                         entryRow(entry)
                     }
@@ -93,7 +91,7 @@ struct CycleHomeView: View {
                 }
             }
         }
-        .listStyle(.insetGrouped)
+        .platformFormListStyle()
         .scrollContentBackground(.hidden)
         .background(Color.pmBackground)
     }

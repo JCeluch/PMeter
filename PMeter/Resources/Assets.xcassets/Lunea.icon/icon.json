@@ -1,12 +1,12 @@
 {
-  "fill" : "system-dark",
+  "fill" : {
+    "automatic-gradient" : "extended-srgb:0.00000,0.53333,1.00000,1.00000"
+  },
   "groups" : [
     {
+      "hidden" : false,
       "layers" : [
-        {
-          "image-name" : "generated-image.png",
-          "name" : "generated-image"
-        }
+
       ],
       "shadow" : {
         "kind" : "neutral",
