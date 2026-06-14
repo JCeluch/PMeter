@@ -38,10 +38,36 @@
       }
     },
     "· PEAK" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "· PEAK"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "· PEAK"
+          }
+        }
+      }
     },
     "· plamienie" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "· spotting"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "· plamienie"
+          }
+        }
+      }
     },
     "%@ – %@" : {
       "localizations" : {
@@ -66,6 +92,12 @@
             "state" : "new",
             "value" : "%1$@ · %2$@"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ · %2$@"
+          }
         }
       }
     },
@@ -74,6 +106,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
+            "value" : "%1$@ · %2$@ · %3$@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "%1$@ · %2$@ · %3$@"
           }
         }
@@ -132,6 +170,12 @@
             "state" : "new",
             "value" : "%1$lld/5 (%2$@)"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld/5 (%2$@)"
+          }
         }
       }
     },
@@ -153,10 +197,24 @@
       }
     },
     "✓" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✓"
+          }
+        }
+      }
     },
     "✗" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✗"
+          }
+        }
+      }
     },
     "bleeding.symbols.heavy" : {
       "localizations" : {
@@ -239,10 +297,36 @@
       }
     },
     "Ból menstruacyjny" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menstrual pain"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ból menstruacyjny"
+          }
+        }
+      }
     },
     "Ból owulacyjny" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ovulation pain"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ból owulacyjny"
+          }
+        }
+      }
     },
     "Brak danych do analizy" : {
       "localizations" : {
@@ -727,7 +811,14 @@
       }
     },
     "CD%lld" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CD%lld"
+          }
+        }
+      }
     },
     "common.cancel" : {
       "localizations" : {
@@ -3092,10 +3183,36 @@
       }
     },
     "Dzień szczytowy" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peak day"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dzień szczytowy"
+          }
+        }
+      }
     },
     "Kolor krwawienia" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bleeding color"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kolor krwawienia"
+          }
+        }
+      }
     },
     "lh.symbols.negative" : {
       "localizations" : {
@@ -3258,10 +3375,36 @@
       }
     },
     "Negatywny" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Negative"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Negatywny"
+          }
+        }
+      }
     },
     "Objętość śluzu" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mucus volume"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Objętość śluzu"
+          }
+        }
+      }
     },
     "Obserwacje" : {
       "localizations" : {
@@ -3280,19 +3423,78 @@
       }
     },
     "Odczucie śluzu" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mucus sensation"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odczucie śluzu"
+          }
+        }
+      }
     },
     "PdG" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PdG"
+          }
+        }
+      }
     },
     "Plamienie śródcykliczne" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intermenstrual spotting"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plamienie śródcykliczne"
+          }
+        }
+      }
     },
     "Pozycja szyjki" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cervix position"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pozycja szyjki"
+          }
+        }
+      }
     },
     "Pozytywny" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Positive"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pozytywny"
+          }
+        }
+      }
     },
     "Przewidywania" : {
       "localizations" : {
@@ -3311,7 +3513,20 @@
       }
     },
     "Rozciągliwość" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Strechness"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozciągliwość"
+          }
+        }
+      }
     },
     "Setne" : {
       "localizations" : {
@@ -3554,7 +3769,20 @@
       }
     },
     "Śluz" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mucus"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Śluz"
+          }
+        }
+      }
     },
     "Statystyki" : {
       "localizations" : {
@@ -3589,7 +3817,20 @@
       }
     },
     "Szyjka" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cervix"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szyjka"
+          }
+        }
+      }
     },
     "tabs.calendar" : {
       "localizations" : {
@@ -3656,28 +3897,126 @@
       }
     },
     "Tak" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yes"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tak"
+          }
+        }
+      }
     },
     "Temperatura wykluczona" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temperature Excluded"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temperatura wykluczona"
+          }
+        }
+      }
     },
     "Test PdG" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Test PdG"
+          }
+        }
+      }
     },
     "Twardość szyjki" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cervix firmness"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twardość szyjki"
+          }
+        }
+      }
     },
     "Ujście szyjki" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cervix opening"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ujście szyjki"
+          }
+        }
+      }
     },
     "Współżycie" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intercourse"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Współżycie"
+          }
+        }
+      }
     },
     "Wygląd śluzu" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mucus appearance"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wygląd śluzu"
+          }
+        }
+      }
     },
     "Zakłócenia BBT" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BTT Disturbances"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zakłócenia BTT"
+          }
+        }
+      }
     }
   },
   "version" : "1.1"

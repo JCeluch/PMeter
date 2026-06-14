@@ -14,23 +14,48 @@ struct CycleChartView: View {
     @Binding var selectedDate: Date?
     @State private var anchorDate: Date = .now
     
+    @State private var chartPlotOriginX: CGFloat = 0
+    @State private var chartPlotWidth: CGFloat = 0
+    
     private let cellWidth: CGFloat = 32
     private let rowSpacing: CGFloat = 8
 
     private var gridWidth: CGFloat {
         let count = CGFloat(days.count)
         guard count > 0 else { return 0 }
-        
-        print("GridWidth = \(count) * \(cellWidth) + \(count) * \(rowSpacing)")
-        return count * cellWidth + count * rowSpacing
+        return count * cellWidth + max(0, count - 1) * rowSpacing
     }
-
+    
+    private var chartOnlyWidth: CGFloat {
+        let count = CGFloat(days.count)
+        guard count > 0 else { return 0 }
+        return count * cellWidth + max(0, count - 1) * rowSpacing
+    }
+    
     private var days: [CycleChartDay] {
         CalendarHelper.cycleDays(containing: anchorDate, entries: entries)
     }
 
     private var temperatureDays: [CycleChartDay] {
         days.filter { $0.temperature != nil }
+    }
+    
+    // Obliczony slot na podstawie rzeczywistego plot area
+    private var slotWidth: CGFloat {
+        guard days.count > 0, chartPlotWidth > 0 else {
+            return cellWidth
+        }
+        return chartPlotWidth / CGFloat(days.count)
+    }
+
+    // Lewy padding rzędów = tyle co oś Y chartu
+    private var rowLeadingPadding: CGFloat {
+        chartPlotOriginX > 0 ? chartPlotOriginX : cellWidth
+    }
+    
+    private var xScalePadding: CGFloat {
+        guard chartPlotWidth > 0, days.count > 0 else { return cellWidth / 2 }
+        return (chartPlotWidth / CGFloat(days.count)) / 2
     }
 
     var body: some View {
@@ -102,8 +127,9 @@ struct CycleChartView: View {
     }
 
     private var cycleDayRow: some View {
-        HStack(spacing: rowSpacing) {
+        HStack(spacing: 0) {
             rowTitle(String(localized: "calendar.cycleDay.label"))
+                .frame(width: rowLeadingPadding, alignment: .leading)
 
             ForEach(days) { day in
                 Button {
@@ -111,7 +137,7 @@ struct CycleChartView: View {
                 } label: {
                     Text("\(day.cycleDay)")
                         .font(.caption.weight(.semibold))
-                        .frame(width: cellWidth, height: 28)
+                        .frame(width: slotWidth, height: 28)
                         .background(
                             RoundedRectangle(cornerRadius: 8)
                                 .fill(
@@ -125,22 +151,23 @@ struct CycleChartView: View {
             }
         }
     }
-
+    
     private var dateRow: some View {
-        HStack(spacing: rowSpacing) {
+        HStack(spacing: 0) {
             rowTitle(String(localized: "calendar.chart.dateShort"))
+                .frame(width: rowLeadingPadding, alignment: .leading)
 
             ForEach(days) { day in
                 Text(day.date.formatted(.dateTime.day()))
                     .font(.caption2)
+                    .frame(width: slotWidth, height: 28)
                     .foregroundStyle(Color.pmTextSecondary)
-                    .frame(width: cellWidth)
             }
         }
     }
 
     private var temperatureChart: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 4) {
             HStack(spacing: rowSpacing) {
                 rowTitle(String(localized: "calendar.chart.temperatureShort"))
                 Text(L10n.ChartEnums.tempUnit)
@@ -150,22 +177,30 @@ struct CycleChartView: View {
 
             Chart(temperatureDays) { day in
                 if let temperature = day.temperature {
+                    let xLabel = String(localized: "calendar.cycleDay.label")
+                    let yLabel = String(localized: "calendar.chart.temperature")
+                    let pointColor = temperaturePointColor(for: day)
+                    
                     LineMark(
-                        x: .value(String(localized: "calendar.cycleDay.label"), day.cycleDay),
-                        y: .value(String(localized: "calendar.chart.temperature"), temperature)
+                        x: .value(xLabel, day.cycleDay),
+                        y: .value(yLabel, temperature)
                     )
                     .foregroundStyle(Color.pmPrimary)
                     .interpolationMethod(.linear)
 
                     PointMark(
-                        x: .value(String(localized: "calendar.cycleDay.label"), day.cycleDay),
-                        y: .value(String(localized: "calendar.chart.temperature"), temperature)
+                        x: .value(xLabel, day.cycleDay),
+                        y: .value(yLabel, temperature)
                     )
-                    .foregroundStyle(temperaturePointColor(for: day))
+                    .foregroundStyle(pointColor)
                     .symbolSize(40)
                 }
             }
-            .frame(width: gridWidth, height: 320)
+            .frame(height: 320)
+            .chartXScale(
+                domain: (days.first?.cycleDay ?? 1)...(days.last?.cycleDay ?? 1),
+                range: .plotDimension(padding: xScalePadding)
+            )
             .chartYScale(domain: yDomain, range: .plotDimension(padding: 12))
             .chartXAxis {
                 AxisMarks(values: days.map(\.cycleDay)) { value in
@@ -174,8 +209,7 @@ struct CycleChartView: View {
                     AxisTick()
                     AxisValueLabel {
                         if let day = value.as(Int.self) {
-                            Text("\(day)")
-                                .font(.caption2)
+                            Text("\(day)").font(.caption2)
                         }
                     }
                 }
@@ -187,25 +221,46 @@ struct CycleChartView: View {
                     AxisTick()
                     AxisValueLabel {
                         if let temp = value.as(Double.self) {
-                            Text(String(format: "%.2f", temp))
+                            let label = String(format: "%.2f", temp)
+                            Text(label)
                                 .font(.caption2)
                                 .foregroundStyle(Color.pmTextSecondary)
                         }
                     }
                 }
             }
+            // ← Tu mierzymy rzeczywistą pozycję i szerokość plot area
+            .chartOverlay { proxy in
+                GeometryReader { geo in
+                    Color.clear
+                        .onAppear {
+                            updatePlotMetrics(proxy: proxy, geo: geo)
+                        }
+                        .onChange(of: days.count) {
+                            updatePlotMetrics(proxy: proxy, geo: geo)
+                        }
+                }
+            }
         }
+    }
+    
+    private func updatePlotMetrics(proxy: ChartProxy, geo: GeometryProxy) {
+        guard let anchor = proxy.plotFrame else { return }
+        let frame = geo[anchor]
+        chartPlotOriginX = frame.minX
+        chartPlotWidth   = frame.width
     }
 
     private func observationRow(title: String, values: [String]) -> some View {
-        HStack(spacing: rowSpacing) {
+        HStack(spacing: 0) {
             rowTitle(title)
+                .frame(width: rowLeadingPadding, alignment: .leading)
 
             ForEach(Array(values.enumerated()), id: \.offset) { _, value in
                 Text(value.isEmpty ? "–" : value)
                     .font(.caption)
                     .foregroundStyle(Color.pmTextPrimary)
-                    .frame(width: cellWidth, height: 24)
+                    .frame(width: slotWidth, height: 28)
                     .background(
                         RoundedRectangle(cornerRadius: 6)
                             .fill(Color.pmSurface)
@@ -334,14 +389,15 @@ struct CycleChartView: View {
     }
     
     private var bleedingRow: some View {
-        HStack(spacing: rowSpacing) {
+        HStack(spacing: 0) {
             rowTitle(String(localized: "calendar.chart.bleedingShort"))
+                .frame(width: rowLeadingPadding, alignment: .leading)
 
             ForEach(days) { day in
                 Text(bleedingSymbol(for: day.bleeding))
                     .font(.caption)
                     .foregroundStyle(isBleedingDay(day.bleeding) ? Color.red : Color.pmTextPrimary)
-                    .frame(width: cellWidth, height: 24)
+                    .frame(width: slotWidth, height: 28)
                     .background(
                         RoundedRectangle(cornerRadius: 6)
                             .fill(bleedingCellBackground(for: day.bleeding))
@@ -352,13 +408,15 @@ struct CycleChartView: View {
     
     // MARK: - Mucus row
     private var mucusRow: some View {
-        HStack(spacing: rowSpacing) {
+        HStack(spacing: 0) {
             rowTitle("Śluz")
+                .frame(width: rowLeadingPadding, alignment: .leading)
+            
             ForEach(days) { day in
                 Text(mucusSymbol(for: day.mucusSensation))
                     .font(.caption)
                     .foregroundStyle(mucusColor(for: day.mucusSensation))
-                    .frame(width: cellWidth, height: 24)
+                    .frame(width: slotWidth, height: 28)
                     .background(
                         RoundedRectangle(cornerRadius: 6)
                             .fill(mucusCellBackground(for: day.mucusSensation))
@@ -369,13 +427,14 @@ struct CycleChartView: View {
 
     // MARK: - Cervix row
     private var cervixRow: some View {
-        HStack(spacing: rowSpacing) {
+        HStack(spacing: 0) {
             rowTitle("SHOW")
+                .frame(width: rowLeadingPadding, alignment: .leading)
             ForEach(days) { day in
                 Text(cervixSymbol(fertilityScore: day.cervixFertilityScore))
                     .font(.caption)
                     .foregroundStyle(Color.pmTextPrimary)
-                    .frame(width: cellWidth, height: 24)
+                    .frame(width: slotWidth, height: 28)
                     .background(
                         RoundedRectangle(cornerRadius: 6)
                             .fill(Color.pmSurface)
@@ -386,13 +445,14 @@ struct CycleChartView: View {
 
     // MARK: - Intercourse row
     private var intercourseRow: some View {
-        HStack(spacing: rowSpacing) {
+        HStack(spacing: 0) {
             rowTitle("Int.")
+                .frame(width: rowLeadingPadding, alignment: .leading)
             ForEach(days) { day in
                 Text(intercourseSymbol(for: day.intercourse))
                     .font(.caption)
                     .foregroundStyle(day.intercourse != .none ? Color.pmPrimary : Color.pmTextSecondary.opacity(0.4))
-                    .frame(width: cellWidth, height: 24)
+                    .frame(width: slotWidth, height: 28)
             }
         }
     }
