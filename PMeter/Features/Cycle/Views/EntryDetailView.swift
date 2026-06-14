@@ -27,51 +27,63 @@ struct EntryDetailView: View {
             }
 
             Section(L10n.CycleDetail.observationsSection) {
-                detailRow(
-                    title: L10n.CycleDetail.bleeding,
-                    value: Text(entry.bleeding.localizationKey)
-                )
+                // Krwawienie
+                detailRow(title: L10n.CycleDetail.bleeding, value: Text(entry.bleeding.localizationKey))
+                if entry.bleeding != .none {
+                    detailRow(title: "Kolor krwawienia", value: Text(entry.bleedingColor.localizationKey))
+                }
+                if entry.intermenstrualSpotting {
+                    detailRow(title: "Plamienie śródcykliczne", value: Text("Tak"))
+                }
+                if entry.menstrualPainIntensity > 0 {
+                    detailRow(title: "Ból menstruacyjny", value: Text("\(entry.menstrualPainIntensity)/5"))
+                }
 
-//                detailRow(
-//                    title: L10n.CycleDetail.mucus,
-//                    value: Text(entry.mucus.localizationKey)
-//                )
+                // Śluz
+                detailRow(title: "Odczucie śluzu", value: Text(entry.mucusSensation.localizationKey))
+                detailRow(title: "Wygląd śluzu", value: Text(entry.mucusAppearance.localizationKey))
+                detailRow(title: "Rozciągliwość", value: Text(entry.mucusStretch.localizationKey))
+                detailRow(title: "Objętość śluzu", value: Text(entry.mucusVolume.localizationKey))
+                if entry.isPeakDay {
+                    detailRow(title: "Dzień szczytowy", value: Text("✓").foregroundStyle(Color.pmPrimary))
+                }
 
-//                detailRow(
-//                    title: L10n.CycleDetail.mucusAmount,
-//                    value: Text("\(entry.mucusAmount)/5")
-//                )
-                
-//                detailRow(
-//                    title: L10n.CycleDetail.cervix,
-//                    value: Text(entry.cervix.localizationKey)
-//                )
+                // Szyjka macicy (SHOW)
+                detailRow(title: "Pozycja szyjki", value: Text(entry.cervixPosition.localizationKey))
+                detailRow(title: "Twardość szyjki", value: Text(entry.cervixFirmness.localizationKey))
+                detailRow(title: "Ujście szyjki", value: Text(entry.cervixOpening.localizationKey))
 
-                detailRow(
-                    title: L10n.CycleDetail.breastTenderness,
-                    value: Text("\(entry.breastTenderness)/5")
-                )
-                
-                detailRow(
-                    title: L10n.CycleDetail.lhTest,
-                    value: Text(entry.lhTest.localizationKey)
-                )
-
-//                detailRow(
-//                    title: L10n.CycleDetail.intercourse,
-//                    value: Text(entry.intercourse ? L10n.Common.yes : L10n.Common.no)
-//                )
-
+                // Temperatura
                 if let temperature = entry.temperature {
-                    detailRow(
-                        title: L10n.CycleDetail.temperature,
-                        value: Text("\(temperature.formatted(.number.precision(.fractionLength(2))))°C")
-                    )
+                    detailRow(title: L10n.CycleDetail.temperature,
+                              value: Text("\(temperature.formatted(.number.precision(.fractionLength(2))))°C"))
+                    if !entry.bbtDisturbances.isEmpty {
+                        detailRow(title: "Zakłócenia BBT",
+                                  value: Text(entry.bbtDisturbances.map(\.rawValue).joined(separator: ", ")))
+                    }
+                    if entry.temperatureExcluded {
+                        detailRow(title: "Temperatura wykluczona", value: Text("Tak").foregroundStyle(.orange))
+                    }
                 } else {
-                    detailRow(
-                        title: L10n.CycleDetail.temperature,
-                        value: Text(L10n.Common.none)
-                    )
+                    detailRow(title: L10n.CycleDetail.temperature, value: Text(L10n.Common.none))
+                }
+
+                // Testy
+                detailRow(title: L10n.CycleDetail.lhTest, value: Text(entry.lhTest.localizationKey))
+                if let prog = entry.progesteroneTestPositive {
+                    detailRow(title: "Test PdG", value: Text(prog ? "Pozytywny" : "Negatywny"))
+                }
+
+                // Dodatkowe objawy
+                if entry.ovulationPainIntensity > 0 {
+                    detailRow(title: "Ból owulacyjny",
+                              value: Text("\(entry.ovulationPainIntensity)/5 (\(entry.ovulationPainSide.rawValue))"))
+                }
+                detailRow(title: L10n.CycleDetail.breastTenderness, value: Text("\(entry.breastTenderness)/5"))
+
+                // Współżycie
+                if entry.intercourse != .none {
+                    detailRow(title: "Współżycie", value: Text(entry.intercourse.localizationKey))
                 }
             }
 

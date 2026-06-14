@@ -50,9 +50,10 @@ struct CycleChartView: View {
                         dateRow
                         temperatureChart
                         bleedingRow
-//                        observationRow(title: String(localized: "calendar.chart.mucusShort"), values: days.map { mucusSymbol(for: $0.mucus) })
+                        mucusRow
+                        cervixRow
                         observationRow(title: "LH", values: days.map { lhSymbol(for: $0.lhTest) })
-//                        observationRow(title: String(localized: "calendar.chart.intercourseShort"), values: days.map { $0.intercourse ? "•" : "" })
+                        intercourseRow
                     }
                     .padding(.bottom, 8)
                 }
@@ -346,6 +347,96 @@ struct CycleChartView: View {
                             .fill(bleedingCellBackground(for: day.bleeding))
                     )
             }
+        }
+    }
+    
+    // MARK: - Mucus row
+    private var mucusRow: some View {
+        HStack(spacing: rowSpacing) {
+            rowTitle("Śluz")
+            ForEach(days) { day in
+                Text(mucusSymbol(for: day.mucusSensation))
+                    .font(.caption)
+                    .foregroundStyle(mucusColor(for: day.mucusSensation))
+                    .frame(width: cellWidth, height: 24)
+                    .background(
+                        RoundedRectangle(cornerRadius: 6)
+                            .fill(mucusCellBackground(for: day.mucusSensation))
+                    )
+            }
+        }
+    }
+
+    // MARK: - Cervix row
+    private var cervixRow: some View {
+        HStack(spacing: rowSpacing) {
+            rowTitle("SHOW")
+            ForEach(days) { day in
+                Text(cervixSymbol(fertilityScore: day.cervixFertilityScore))
+                    .font(.caption)
+                    .foregroundStyle(Color.pmTextPrimary)
+                    .frame(width: cellWidth, height: 24)
+                    .background(
+                        RoundedRectangle(cornerRadius: 6)
+                            .fill(Color.pmSurface)
+                    )
+            }
+        }
+    }
+
+    // MARK: - Intercourse row
+    private var intercourseRow: some View {
+        HStack(spacing: rowSpacing) {
+            rowTitle("Int.")
+            ForEach(days) { day in
+                Text(intercourseSymbol(for: day.intercourse))
+                    .font(.caption)
+                    .foregroundStyle(day.intercourse != .none ? Color.pmPrimary : Color.pmTextSecondary.opacity(0.4))
+                    .frame(width: cellWidth, height: 24)
+            }
+        }
+    }
+
+    // MARK: - Symbol helpers
+    private func mucusSymbol(for value: MucusSensation) -> String {
+        switch value {
+        case .none:     return "–"
+        case .dry:      return "○"
+        case .damp:     return "◔"
+        case .wet:      return "◑"
+        case .slippery: return "●"
+        }
+    }
+
+    private func mucusColor(for value: MucusSensation) -> Color {
+        switch value {
+        case .slippery: return .pmPrimary
+        case .wet:      return .pmPrimary.opacity(0.75)
+        default:        return .pmTextSecondary
+        }
+    }
+
+    private func mucusCellBackground(for value: MucusSensation) -> Color {
+        switch value {
+        case .slippery: return Color.pmPrimary.opacity(0.14)
+        case .wet:      return Color.pmPrimary.opacity(0.08)
+        default:        return Color.pmSurface
+        }
+    }
+
+    private func cervixSymbol(fertilityScore score: Int) -> String {
+        switch score {
+        case 0:    return "–"
+        case 1...2: return "△"
+        default:   return "▲"
+        }
+    }
+
+    private func intercourseSymbol(for value: IntercourseType) -> String {
+        switch value {
+        case .none:        return ""
+        case .unprotected: return "♥"
+        case .protected:   return "○"
         }
     }
 }

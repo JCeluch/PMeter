@@ -46,40 +46,71 @@ struct DayDetailSheetView: View {
                     } else {
                         ForEach(entriesForDay) { entry in
                             VStack(alignment: .leading, spacing: 8) {
-                                Text(entry.bleeding.localizationKey)
-                                    .font(.headline)
-                                    .foregroundStyle(Color.pmTextPrimary)
+                                // Krwawienie jako nagłówek kafelka
+                                HStack {
+                                    Text(entry.bleeding.localizationKey)
+                                        .font(.headline)
+                                        .foregroundStyle(entry.bleeding != .none ? Color.red : Color.pmTextPrimary)
+                                    if entry.intermenstrualSpotting {
+                                        Text("· plamienie")
+                                            .font(.caption)
+                                            .foregroundStyle(Color.orange)
+                                    }
+                                    if entry.isPeakDay {
+                                        Text("· PEAK")
+                                            .font(.caption.weight(.bold))
+                                            .foregroundStyle(Color.pmPrimary)
+                                    }
+                                }
 
-//                                detailLine(label: L10n.CycleDetail.mucus) {
-//                                    Text(entry.mucus.localizationKey)
-//                                }
-                                
-//                                detailLine(label: L10n.CycleDetail.mucusAmount) {
-//                                    Text("\(entry.mucusAmount)/5")
-//                                }
-                                
-//                                detailLine(label: L10n.CycleDetail.cervix) {
-//                                    Text(entry.cervix.localizationKey)
-//                                }
-                                
+                                // Śluz
+                                if entry.mucusSensation != .none {
+                                    detailLine(label: "Śluz") {
+                                        Text("\(entry.mucusSensation.localizationKey) · \(entry.mucusAppearance.localizationKey)")
+                                    }
+                                }
+
+                                // Szyjka
+                                if entry.cervixPosition != .none {
+                                    detailLine(label: "Szyjka") {
+                                        Text("\(entry.cervixPosition.localizationKey) · \(entry.cervixFirmness.localizationKey) · \(entry.cervixOpening.localizationKey)")
+                                    }
+                                }
+
+                                // Temperatura
+                                if let temperature = entry.temperature {
+                                    detailLine(label: L10n.CycleDetail.temperature) {
+                                        HStack(spacing: 4) {
+                                            Text("\(temperature.formatted(.number.precision(.fractionLength(2))))°C")
+                                            if entry.temperatureExcluded {
+                                                Image(systemName: "exclamationmark.triangle.fill")
+                                                    .foregroundStyle(.orange)
+                                                    .font(.caption2)
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // Testy
                                 if entry.lhTest != .none {
                                     detailLine(label: L10n.CycleDetail.lhTest) {
                                         Text(entry.lhTest.localizationKey)
                                     }
                                 }
-
-                                if let temperature = entry.temperature {
-                                    detailLine(label: L10n.CycleDetail.temperature) {
-                                        Text("\(temperature.formatted(.number.precision(.fractionLength(2))))°C")
+                                if let prog = entry.progesteroneTestPositive {
+                                    detailLine(label: "PdG") {
+                                        Text(prog ? "✓" : "✗")
                                     }
                                 }
 
-//                                if entry.intercourse {
-//                                    detailLine(label: L10n.CycleDetail.intercourse) {
-//                                        Text(L10n.Common.yes)
-//                                    }
-//                                }
+                                // Współżycie
+                                if entry.intercourse != .none {
+                                    detailLine(label: "Współżycie") {
+                                        Text(entry.intercourse.localizationKey)
+                                    }
+                                }
 
+                                // Notatki
                                 if !entry.notes.isEmpty {
                                     Text(entry.notes)
                                         .font(.footnote)

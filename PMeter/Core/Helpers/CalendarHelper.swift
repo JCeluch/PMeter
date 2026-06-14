@@ -19,13 +19,39 @@ struct CycleChartDay: Identifiable, Hashable {
     let entry: CycleEntry?
 
     var id: Date { date }
+    
+    // MARK: - Temperatura
+    var temperature: Double?       { entry?.temperature }
+    var temperatureExcluded: Bool  { entry?.temperatureExcluded ?? false }
 
-    var temperature: Double? { entry?.temperature }
-    var bleeding: BleedingLevel { entry?.bleeding ?? .none }
-//    var mucus: MucusObservation { entry?.mucus ?? .none }
-    var lhTest: LHTestResult { entry?.lhTest ?? .none }
-//    var intercourse: Bool { entry?.intercourse ?? false }
-    var notes: String { entry?.notes ?? "" }
+    // MARK: - Krwawienie
+    var bleeding: BleedingLevel         { entry?.bleeding ?? .none }
+    var bleedingColor: BleedingColor    { entry?.bleedingColor ?? .none }
+    var intermenstrualSpotting: Bool    { entry?.intermenstrualSpotting ?? false }
+
+    // MARK: - Śluz
+    var mucusSensation:  MucusSensation  { entry?.mucusSensation  ?? .none }
+    var mucusAppearance: MucusAppearance { entry?.mucusAppearance ?? .none }
+    var mucusStretch:    MucusStretch    { entry?.mucusStretch    ?? .none }
+    var mucusVolume:     MucusVolume     { entry?.mucusVolume     ?? .none }
+    var isPeakDay: Bool                  { entry?.isPeakDay ?? false }
+
+    // MARK: - Szyjka macicy
+    var cervixPosition: CervixPosition { entry?.cervixPosition ?? .none }
+    var cervixFirmness: CervixFirmness { entry?.cervixFirmness ?? .none }
+    var cervixOpening:  CervixOpening  { entry?.cervixOpening  ?? .none }
+    /// Łączny wynik płodności szyjki (0–6); 0 gdy brak wpisu
+    var cervixFertilityScore: Int      { entry?.fertilityScore ?? 0 }
+
+    // MARK: - Testy
+    var lhTest: LHTestResult              { entry?.lhTest ?? .none }
+    var progesteroneTestPositive: Bool?   { entry?.progesteroneTestPositive ?? nil }
+
+    // MARK: - Inne
+    var intercourse: IntercourseType       { entry?.intercourse ?? .none }
+    var ovulationPainIntensity: Int        { entry?.ovulationPainIntensity ?? 0 }
+    var breastTenderness: Int              { entry?.breastTenderness ?? 0 }
+    var notes: String                      { entry?.notes ?? "" }
 }
 
 enum CalendarHelper {

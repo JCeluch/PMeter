@@ -37,6 +37,12 @@
         }
       }
     },
+    "· PEAK" : {
+
+    },
+    "· plamienie" : {
+
+    },
     "%@ – %@" : {
       "localizations" : {
         "en" : {
@@ -49,6 +55,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%1$@ – %2$@"
+          }
+        }
+      }
+    },
+    "%@ · %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ · %2$@"
+          }
+        }
+      }
+    },
+    "%@ · %@ · %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ · %2$@ · %3$@"
           }
         }
       }
@@ -99,6 +125,16 @@
         }
       }
     },
+    "%lld/5 (%@)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld/5 (%2$@)"
+          }
+        }
+      }
+    },
     "°C" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -115,6 +151,12 @@
           }
         }
       }
+    },
+    "✓" : {
+
+    },
+    "✗" : {
+
     },
     "bleeding.symbols.heavy" : {
       "localizations" : {
@@ -195,6 +237,12 @@
           }
         }
       }
+    },
+    "Ból menstruacyjny" : {
+
+    },
+    "Ból owulacyjny" : {
+
     },
     "Brak danych do analizy" : {
       "localizations" : {
@@ -677,6 +725,9 @@
           }
         }
       }
+    },
+    "CD%lld" : {
+
     },
     "common.cancel" : {
       "localizations" : {
@@ -3040,6 +3091,12 @@
         }
       }
     },
+    "Dzień szczytowy" : {
+
+    },
+    "Kolor krwawienia" : {
+
+    },
     "lh.symbols.negative" : {
       "localizations" : {
         "en" : {
@@ -3200,6 +3257,12 @@
         }
       }
     },
+    "Negatywny" : {
+
+    },
+    "Objętość śluzu" : {
+
+    },
     "Obserwacje" : {
       "localizations" : {
         "en" : {
@@ -3216,6 +3279,21 @@
         }
       }
     },
+    "Odczucie śluzu" : {
+
+    },
+    "PdG" : {
+
+    },
+    "Plamienie śródcykliczne" : {
+
+    },
+    "Pozycja szyjki" : {
+
+    },
+    "Pozytywny" : {
+
+    },
     "Przewidywania" : {
       "localizations" : {
         "en" : {
@@ -3231,6 +3309,9 @@
           }
         }
       }
+    },
+    "Rozciągliwość" : {
+
     },
     "Setne" : {
       "localizations" : {
@@ -3472,6 +3553,9 @@
         }
       }
     },
+    "Śluz" : {
+
+    },
     "Statystyki" : {
       "localizations" : {
         "en" : {
@@ -3503,6 +3587,9 @@
           }
         }
       }
+    },
+    "Szyjka" : {
+
     },
     "tabs.calendar" : {
       "localizations" : {
@@ -3567,6 +3654,30 @@
           }
         }
       }
+    },
+    "Tak" : {
+
+    },
+    "Temperatura wykluczona" : {
+
+    },
+    "Test PdG" : {
+
+    },
+    "Twardość szyjki" : {
+
+    },
+    "Ujście szyjki" : {
+
+    },
+    "Współżycie" : {
+
+    },
+    "Wygląd śluzu" : {
+
+    },
+    "Zakłócenia BBT" : {
+
     }
   },
   "version" : "1.1"

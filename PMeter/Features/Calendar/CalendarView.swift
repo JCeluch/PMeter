@@ -127,7 +127,12 @@ struct CalendarView: View {
     private var monthGrid: some View {
         LazyVGrid(columns: columns, spacing: 8) {
             ForEach(CalendarHelper.visibleDays(for: currentMonth)) { day in
-                dayCell(for: day)
+                CalendarDayCell(
+                    day: day,
+                    entries: entries,
+                    onTap: { selectedDate = day },
+                    onAddEntry: { entryFormTarget = EntryFormTarget(date: day.date) }
+                )
             }
         }
     }
