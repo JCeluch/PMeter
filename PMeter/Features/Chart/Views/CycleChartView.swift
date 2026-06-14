@@ -50,9 +50,9 @@ struct CycleChartView: View {
                         dateRow
                         temperatureChart
                         bleedingRow
-                        observationRow(title: String(localized: "calendar.chart.mucusShort"), values: days.map { mucusSymbol(for: $0.mucus) })
+//                        observationRow(title: String(localized: "calendar.chart.mucusShort"), values: days.map { mucusSymbol(for: $0.mucus) })
                         observationRow(title: "LH", values: days.map { lhSymbol(for: $0.lhTest) })
-                        observationRow(title: String(localized: "calendar.chart.intercourseShort"), values: days.map { $0.intercourse ? "•" : "" })
+//                        observationRow(title: String(localized: "calendar.chart.intercourseShort"), values: days.map { $0.intercourse ? "•" : "" })
                     }
                     .padding(.bottom, 8)
                 }
@@ -250,16 +250,16 @@ struct CycleChartView: View {
         }
     }
 
-    private func mucusSymbol(for value: MucusObservation) -> String {
-        switch value {
-        case .none: return String(localized: "mucus.symbols.none")
-        case .dry: return String(localized: "mucus.symbols.dry")
-        case .sticky: return String(localized: "mucus.symbols.sticky")
-        case .creamy: return String(localized: "mucus.symbols.creamy")
-        case .watery: return String(localized: "mucus.symbols.watery")
-        case .eggWhite: return String(localized: "mucus.symbols.eggWhite")
-        }
-    }
+//    private func mucusSymbol(for value: MucusObservation) -> String {
+//        switch value {
+//        case .none: return String(localized: "mucus.symbols.none")
+//        case .dry: return String(localized: "mucus.symbols.dry")
+//        case .sticky: return String(localized: "mucus.symbols.sticky")
+//        case .creamy: return String(localized: "mucus.symbols.creamy")
+//        case .watery: return String(localized: "mucus.symbols.watery")
+//        case .eggWhite: return String(localized: "mucus.symbols.eggWhite")
+//        }
+//    }
 
     private func lhSymbol(for value: LHTestResult) -> String {
         switch value {

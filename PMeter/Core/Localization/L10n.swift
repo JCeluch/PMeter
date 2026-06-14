@@ -23,22 +23,46 @@ enum L10n {
         static let observationsSection: LocalizedStringKey = "cycleForm.observationsSection"
         static let notesSection: LocalizedStringKey = "cycleForm.notesSection"
         static let observationDate: LocalizedStringKey = "cycleForm.observationDate"
+        
         static let bleeding: LocalizedStringKey = "cycleForm.bleeding"
+        static let bleedingSection: LocalizedStringKey = "cycleForm.bleedingSection"
+        static let bleedingColor: LocalizedStringKey = "cycleForm.bleedingColor"
+        static let intermenstrualSpotting: LocalizedStringKey = "cycleForm.intermenstrualSpotting"
+    
         static let mucus: LocalizedStringKey = "cycleForm.mucus"
+        static let mucusSection: LocalizedStringKey = "cycleForm.mucusSection"
         static let mucusAmount: LocalizedStringKey = "cycleForm.mucusAmount"
         static let mucusSensation: LocalizedStringKey = "cycleForm.mucusSensation"
         static let mucusAppearance: LocalizedStringKey = "cycleForm.mucusAppearance"
         static let mucusStretch: LocalizedStringKey = "cycleForm.mucusStretch"
         static let mucusVolume: LocalizedStringKey = "cycleForm.mucusVolume"
         static let isPeakDay: LocalizedStringKey = "cycleForm.isPeakDay"
+        
         static let cervix: LocalizedStringKey = "cycleForm.cervix"
         static let breastTenderness: LocalizedStringKey = "cycleForm.breastTenderness"
         static let temperature: LocalizedStringKey = "cycleForm.temperature"
+        static let temperatureSection: LocalizedStringKey = "cycleForm.temperatureSection"
+        static let temperatureSite: LocalizedStringKey = "cycleForm.temperatureSite"
+
         static let lhTest: LocalizedStringKey = "cycleForm.lhTest"
         static let addTemperature: LocalizedStringKey = "cycleForm.addTemperature"
         static let temperaturePlaceholder: LocalizedStringKey = "cycleForm.temperaturePlaceholder"
         static let intercourse: LocalizedStringKey = "cycleForm.intercourse"
         static let notesPlaceholder: LocalizedStringKey = "cycleForm.notesPlaceholder"
+
+        static let temperatureExcluded: LocalizedStringKey = "cycleForm.temperatureExcluded"
+        static let bbtDisturbances: LocalizedStringKey = "cycleForm.bbtDisturbances"
+        static let cervixSection: LocalizedStringKey = "cycleForm.cervixSection"
+        static let cervixPosition: LocalizedStringKey = "cycleForm.cervixPosition"
+        static let cervixFirmness: LocalizedStringKey = "cycleForm.cervixFirmness"
+        static let cervixOpening: LocalizedStringKey = "cycleForm.cervixOpening"
+        static let testsSection: LocalizedStringKey = "cycleForm.testsSection"
+        static let symptomsSection: LocalizedStringKey = "cycleForm.symptomsSection"
+        static let ovulationPain: LocalizedStringKey = "cycleForm.ovulationPain"
+        static let ovulationPainSide: LocalizedStringKey = "cycleForm.ovulationPainSide"
+        static let menstrualPain: LocalizedStringKey = "cycleForm.menstrualPain"
+        static let otherSection: LocalizedStringKey = "cycleForm.otherSection"
+        static let isBreastfeeding: LocalizedStringKey = "cycleForm.isBreastfeeding"
     }
 
     enum CycleList {

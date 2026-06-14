@@ -806,6 +806,48 @@
         }
       }
     },
+    "cycle.bbt.disturbance.alcohol" : {
+
+    },
+    "cycle.bbt.disturbance.differentTime" : {
+
+    },
+    "cycle.bbt.disturbance.illness" : {
+
+    },
+    "cycle.bbt.disturbance.shortSleep" : {
+
+    },
+    "cycle.bbt.disturbance.stress" : {
+
+    },
+    "cycle.bbt.disturbance.timeZone" : {
+
+    },
+    "cycle.bbt.site.oral" : {
+
+    },
+    "cycle.bbt.site.rectal" : {
+
+    },
+    "cycle.bbt.site.vaginal" : {
+
+    },
+    "cycle.bleeding.color.black" : {
+
+    },
+    "cycle.bleeding.color.brown" : {
+
+    },
+    "cycle.bleeding.color.none" : {
+
+    },
+    "cycle.bleeding.color.pink" : {
+
+    },
+    "cycle.bleeding.color.red" : {
+
+    },
     "cycle.bleeding.heavy" : {
       "localizations" : {
         "en" : {
@@ -886,7 +928,20 @@
         }
       }
     },
+    "cycle.cervix.firmness.firm" : {
+
+    },
+    "cycle.cervix.firmness.medium" : {
+
+    },
+    "cycle.cervix.firmness.none" : {
+
+    },
+    "cycle.cervix.firmness.soft" : {
+
+    },
     "cycle.cervix.highSoftOpen" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -903,6 +958,7 @@
       }
     },
     "cycle.cervix.lowFirmClosed" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -919,6 +975,7 @@
       }
     },
     "cycle.cervix.medium" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -935,6 +992,7 @@
       }
     },
     "cycle.cervix.none" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -949,6 +1007,39 @@
           }
         }
       }
+    },
+    "cycle.cervix.opening.closed" : {
+
+    },
+    "cycle.cervix.opening.none" : {
+
+    },
+    "cycle.cervix.opening.open" : {
+
+    },
+    "cycle.cervix.opening.slightlyOpen" : {
+
+    },
+    "cycle.cervix.position.high" : {
+
+    },
+    "cycle.cervix.position.low" : {
+
+    },
+    "cycle.cervix.position.medium" : {
+
+    },
+    "cycle.cervix.position.none" : {
+
+    },
+    "cycle.intercourse.none" : {
+
+    },
+    "cycle.intercourse.protected" : {
+
+    },
+    "cycle.intercourse.unprotected" : {
+
     },
     "cycle.lh.negative" : {
       "localizations" : {
@@ -1014,7 +1105,29 @@
         }
       }
     },
+    "cycle.mucus.appearance.absent" : {
+
+    },
+    "cycle.mucus.appearance.clear" : {
+
+    },
+    "cycle.mucus.appearance.cloudy" : {
+
+    },
+    "cycle.mucus.appearance.eggWhite" : {
+
+    },
+    "cycle.mucus.appearance.mixed" : {
+
+    },
+    "cycle.mucus.appearance.none" : {
+
+    },
+    "cycle.mucus.appearance.yellow" : {
+
+    },
     "cycle.mucus.creamy" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1031,6 +1144,7 @@
       }
     },
     "cycle.mucus.dry" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1047,6 +1161,7 @@
       }
     },
     "cycle.mucus.eggWhite" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1063,6 +1178,7 @@
       }
     },
     "cycle.mucus.none" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1078,7 +1194,23 @@
         }
       }
     },
+    "cycle.mucus.sensation.damp" : {
+
+    },
+    "cycle.mucus.sensation.dry" : {
+
+    },
+    "cycle.mucus.sensation.none" : {
+
+    },
+    "cycle.mucus.sensation.slippery" : {
+
+    },
+    "cycle.mucus.sensation.wet" : {
+
+    },
     "cycle.mucus.sticky" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1094,7 +1226,38 @@
         }
       }
     },
+    "cycle.mucus.stretch.absent" : {
+
+    },
+    "cycle.mucus.stretch.moderate" : {
+
+    },
+    "cycle.mucus.stretch.none" : {
+
+    },
+    "cycle.mucus.stretch.slight" : {
+
+    },
+    "cycle.mucus.stretch.stretchy" : {
+
+    },
+    "cycle.mucus.volume.absent" : {
+
+    },
+    "cycle.mucus.volume.abundant" : {
+
+    },
+    "cycle.mucus.volume.moderate" : {
+
+    },
+    "cycle.mucus.volume.none" : {
+
+    },
+    "cycle.mucus.volume.scant" : {
+
+    },
     "cycle.mucus.watery" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1398,6 +1561,9 @@
         }
       }
     },
+    "cycleForm.bbtDisturbances" : {
+
+    },
     "cycleForm.bleeding" : {
       "localizations" : {
         "en" : {
@@ -1413,6 +1579,12 @@
           }
         }
       }
+    },
+    "cycleForm.bleedingColor" : {
+
+    },
+    "cycleForm.bleedingSection" : {
+
     },
     "cycleForm.breastTenderness" : {
       "localizations" : {
@@ -1445,6 +1617,18 @@
           }
         }
       }
+    },
+    "cycleForm.cervixFirmness" : {
+
+    },
+    "cycleForm.cervixOpening" : {
+
+    },
+    "cycleForm.cervixPosition" : {
+
+    },
+    "cycleForm.cervixSection" : {
+
     },
     "cycleForm.dateSection" : {
       "localizations" : {
@@ -1494,6 +1678,15 @@
         }
       }
     },
+    "cycleForm.intermenstrualSpotting" : {
+
+    },
+    "cycleForm.isBreastfeeding" : {
+
+    },
+    "cycleForm.isPeakDay" : {
+
+    },
     "cycleForm.lhTest" : {
       "localizations" : {
         "en" : {
@@ -1509,6 +1702,9 @@
           }
         }
       }
+    },
+    "cycleForm.menstrualPain" : {
+
     },
     "cycleForm.mucus" : {
       "localizations" : {
@@ -1541,6 +1737,21 @@
           }
         }
       }
+    },
+    "cycleForm.mucusAppearance" : {
+
+    },
+    "cycleForm.mucusSection" : {
+
+    },
+    "cycleForm.mucusSensation" : {
+
+    },
+    "cycleForm.mucusStretch" : {
+
+    },
+    "cycleForm.mucusVolume" : {
+
     },
     "cycleForm.newEntryTitle" : {
       "localizations" : {
@@ -1622,6 +1833,18 @@
         }
       }
     },
+    "cycleForm.otherSection" : {
+
+    },
+    "cycleForm.ovulationPain" : {
+
+    },
+    "cycleForm.ovulationPainSide" : {
+
+    },
+    "cycleForm.symptomsSection" : {
+
+    },
     "cycleForm.temperature" : {
       "localizations" : {
         "en" : {
@@ -1638,6 +1861,9 @@
         }
       }
     },
+    "cycleForm.temperatureExcluded" : {
+
+    },
     "cycleForm.temperaturePlaceholder" : {
       "localizations" : {
         "en" : {
@@ -1653,6 +1879,15 @@
           }
         }
       }
+    },
+    "cycleForm.temperatureSection" : {
+
+    },
+    "cycleForm.temperatureSite" : {
+
+    },
+    "cycleForm.testsSection" : {
+
     },
     "cycleList.add" : {
       "localizations" : {

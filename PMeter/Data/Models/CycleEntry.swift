@@ -56,7 +56,8 @@ final class CycleEntry {
     var isBreastfeeding: Bool = false      // dla metody LAM
     var mood: Int = 0                      // 0 = nie zaznaczono, 1–5 (opcjonalne)
     var notes: String = ""
-
+    
+    // MARK: - Init
     init(
         date: Date = .now,
         bleeding: BleedingLevel = .none,
@@ -182,6 +183,10 @@ final class CycleEntry {
         set {
             bbtDisturbancesRaw = newValue.map(\.rawValue).joined(separator: ",")
         }
+    }
+    var temperatureSite: BBTMeasurementSite {
+        get { BBTMeasurementSite(rawValue: temperatureSiteRawValue) ?? .oral }
+        set { temperatureSiteRawValue = newValue.rawValue }
     }
 
     /// Composite fertility score (pomocniczy, nie zastępuje reguł metody)

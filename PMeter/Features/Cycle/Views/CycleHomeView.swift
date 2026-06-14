@@ -110,12 +110,12 @@ struct CycleHomeView: View {
                 }
                 .foregroundStyle(Color.pmPeriod)
 
-                Label {
-                    Text(entry.mucus.localizationKey)
-                } icon: {
-                    Image(systemName: "circle.lefthalf.filled")
-                }
-                .foregroundStyle(Color.pmPrimary)
+//                Label {
+//                    Text(entry.mucus.localizationKey)
+//                } icon: {
+//                    Image(systemName: "circle.lefthalf.filled")
+//                }
+//                .foregroundStyle(Color.pmPrimary)
             }
             .font(.subheadline)
             
@@ -137,11 +137,11 @@ struct CycleHomeView: View {
                 .foregroundStyle(Color.pmTextSecondary)
             }
 
-            if entry.intercourse {
-                Text(L10n.CycleList.intercourseSaved)
-                    .font(.footnote)
-                    .foregroundStyle(Color.pmTextSecondary)
-            }
+//            if entry.intercourse {
+//                Text(L10n.CycleList.intercourseSaved)
+//                    .font(.footnote)
+//                    .foregroundStyle(Color.pmTextSecondary)
+//            }
 
             if !entry.notes.isEmpty {
                 Text(entry.notes)

@@ -51,49 +51,96 @@ enum PreviewSeed {
         cycleDay: Int,
         cycleLength: Int
     ) -> CycleEntry {
+        
+        // Krwawienie
         let bleeding: BleedingLevel = switch cycleDay {
         case 1...2: .heavy
-        case 3: .medium
-        case 4: .light
-        case 5: .spotting
-        default: .none
+        case 3:     .medium
+        case 4:     .light
+        case 5:     .spotting
+        default:    .none
         }
 
-        let mucus: MucusObservation = switch cycleDay {
-        case 1...6: .dry
-        case 7...9: .sticky
-        case 10...12: .creamy
-        case 13...14: .watery
-        case 15...16: .eggWhite
-        default: .dry
+        // Śluz – 4 wymiary
+        let mucusSensation: MucusSensation = switch cycleDay {
+        case 1...6:     .dry
+        case 7...9:     .damp
+        case 10...12:   .wet
+        case 13...14:   .wet
+        case 15...16:   .slippery
+        default:        .dry
         }
 
-        let mucusAmount: Int = switch cycleDay {
-        case 10...12: 1
-        case 13...14: 2
-        case 15...16: 3
-        default: 0
+        let mucusAppearance: MucusAppearance = switch cycleDay {
+        case 1...6:     .absent
+        case 7...9:     .cloudy
+        case 10...12:   .mixed
+        case 13...14:   .clear
+        case 15...16:   .eggWhite
+        default:        .absent
+        }
+        
+        let mucusStretch: MucusStretch = switch cycleDay {
+        case 1...9:   .absent
+        case 10...12: .slight
+        case 13...14: .moderate
+        case 15...16: .stretchy
+        default:      .absent
         }
 
+        let mucusVolume: MucusVolume = switch cycleDay {
+        case 1...6:   .absent
+        case 7...9:   .scant
+        case 10...12: .scant
+        case 13...14: .moderate
+        case 15...16: .abundant
+        default:      .absent
+        }
+
+        let isPeakDay = cycleDay == 16
+        
+        // Szyjka macicy - 3 wymiary SHOW
+        let cervixPosition: CervixPosition = switch cycleDay {
+        case 1...9:   .low
+        case 10...13: .medium
+        case 14...16: .high
+        default:      .low
+        }
+
+        let cervixFirmness: CervixFirmness = switch cycleDay {
+        case 1...9:   .firm
+        case 10...13: .medium
+        case 14...16: .soft
+        default:      .firm
+        }
+
+        let cervixOpening: CervixOpening = switch cycleDay {
+        case 1...9:   .closed
+        case 10...13: .slightlyOpen
+        case 14...16: .open
+        default:      .closed
+        }
+
+        // Testy
         let lhTest: LHTestResult = switch cycleDay {
         case 14: .positive
         case 15: .peak
         default: .none
         }
+        
+        // Temperatura
+        let rawTemp = makeTemperature(cycleDay: cycleDay)
+        let finalTemp: Double? = [6, 19].contains(cycleDay) ? nil : rawTemp
 
-        let cervix: CervixObservation = switch cycleDay {
-        case 1...9: .lowFirmClosed
-        case 10...13: .medium
-        case 14...16: .highSoftOpen
-        default: .lowFirmClosed
-        }
-
-        let temperature = makeTemperature(cycleDay: cycleDay)
-        let finalTemperature = [6, 19].contains(cycleDay) ? nil : temperature
-
-        let intercourse = [11, 14, 16].contains(cycleDay)
+        // Objawy
         let breastTenderness = cycleDay >= max(cycleLength - 5, 22) ? 2 : 0
+        let ovulationPainIntensity = [14, 15].contains(cycleDay) ? 2 : 0
+        let ovulationPainSide: PainSide = cycleDay == 14 ? .right : .none
 
+        // Współżycie
+        let intercourse: IntercourseType = [11, 14, 16].contains(cycleDay) ? .unprotected : .none
+
+        // Notatki
         let notes: String = switch cycleDay {
         case 1: "Początek cyklu"
         case 14: "Wyraźny wzrost objawów płodności"
@@ -104,12 +151,19 @@ enum PreviewSeed {
         return CycleEntry(
             date: date,
             bleeding: bleeding,
-            mucus: mucus,
+            mucusSensation: mucusSensation,
+            mucusAppearance: mucusAppearance,
+            mucusStretch: mucusStretch,
+            mucusVolume: mucusVolume,
+            isPeakDay: isPeakDay,
+            temperature: finalTemp,
+            cervixPosition: cervixPosition,
+            cervixFirmness: cervixFirmness,
+            cervixOpening: cervixOpening,
             lhTest: lhTest,
-            cervix: cervix,
-            mucusAmount: mucusAmount,
+            ovulationPainIntensity: ovulationPainIntensity,
+            ovulationPainSide: ovulationPainSide,
             breastTenderness: breastTenderness,
-            temperature: finalTemperature,
             intercourse: intercourse,
             notes: notes
         )

@@ -50,17 +50,17 @@ struct DayDetailSheetView: View {
                                     .font(.headline)
                                     .foregroundStyle(Color.pmTextPrimary)
 
-                                detailLine(label: L10n.CycleDetail.mucus) {
-                                    Text(entry.mucus.localizationKey)
-                                }
+//                                detailLine(label: L10n.CycleDetail.mucus) {
+//                                    Text(entry.mucus.localizationKey)
+//                                }
                                 
-                                detailLine(label: L10n.CycleDetail.mucusAmount) {
-                                    Text("\(entry.mucusAmount)/5")
-                                }
+//                                detailLine(label: L10n.CycleDetail.mucusAmount) {
+//                                    Text("\(entry.mucusAmount)/5")
+//                                }
                                 
-                                detailLine(label: L10n.CycleDetail.cervix) {
-                                    Text(entry.cervix.localizationKey)
-                                }
+//                                detailLine(label: L10n.CycleDetail.cervix) {
+//                                    Text(entry.cervix.localizationKey)
+//                                }
                                 
                                 if entry.lhTest != .none {
                                     detailLine(label: L10n.CycleDetail.lhTest) {
@@ -74,11 +74,11 @@ struct DayDetailSheetView: View {
                                     }
                                 }
 
-                                if entry.intercourse {
-                                    detailLine(label: L10n.CycleDetail.intercourse) {
-                                        Text(L10n.Common.yes)
-                                    }
-                                }
+//                                if entry.intercourse {
+//                                    detailLine(label: L10n.CycleDetail.intercourse) {
+//                                        Text(L10n.Common.yes)
+//                                    }
+//                                }
 
                                 if !entry.notes.isEmpty {
                                     Text(entry.notes)

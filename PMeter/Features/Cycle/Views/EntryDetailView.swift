@@ -32,20 +32,20 @@ struct EntryDetailView: View {
                     value: Text(entry.bleeding.localizationKey)
                 )
 
-                detailRow(
-                    title: L10n.CycleDetail.mucus,
-                    value: Text(entry.mucus.localizationKey)
-                )
+//                detailRow(
+//                    title: L10n.CycleDetail.mucus,
+//                    value: Text(entry.mucus.localizationKey)
+//                )
 
-                detailRow(
-                    title: L10n.CycleDetail.mucusAmount,
-                    value: Text("\(entry.mucusAmount)/5")
-                )
+//                detailRow(
+//                    title: L10n.CycleDetail.mucusAmount,
+//                    value: Text("\(entry.mucusAmount)/5")
+//                )
                 
-                detailRow(
-                    title: L10n.CycleDetail.cervix,
-                    value: Text(entry.cervix.localizationKey)
-                )
+//                detailRow(
+//                    title: L10n.CycleDetail.cervix,
+//                    value: Text(entry.cervix.localizationKey)
+//                )
 
                 detailRow(
                     title: L10n.CycleDetail.breastTenderness,
@@ -57,10 +57,10 @@ struct EntryDetailView: View {
                     value: Text(entry.lhTest.localizationKey)
                 )
 
-                detailRow(
-                    title: L10n.CycleDetail.intercourse,
-                    value: Text(entry.intercourse ? L10n.Common.yes : L10n.Common.no)
-                )
+//                detailRow(
+//                    title: L10n.CycleDetail.intercourse,
+//                    value: Text(entry.intercourse ? L10n.Common.yes : L10n.Common.no)
+//                )
 
                 if let temperature = entry.temperature {
                     detailRow(

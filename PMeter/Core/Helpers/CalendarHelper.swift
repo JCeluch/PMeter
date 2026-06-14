@@ -22,9 +22,9 @@ struct CycleChartDay: Identifiable, Hashable {
 
     var temperature: Double? { entry?.temperature }
     var bleeding: BleedingLevel { entry?.bleeding ?? .none }
-    var mucus: MucusObservation { entry?.mucus ?? .none }
+//    var mucus: MucusObservation { entry?.mucus ?? .none }
     var lhTest: LHTestResult { entry?.lhTest ?? .none }
-    var intercourse: Bool { entry?.intercourse ?? false }
+//    var intercourse: Bool { entry?.intercourse ?? false }
     var notes: String { entry?.notes ?? "" }
 }
 
