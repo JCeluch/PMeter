@@ -66,7 +66,7 @@ struct DayDetailSheetView: View {
 
                                 // Śluz
                                 if entry.mucusSensation != .none {
-                                    detailLine(label: "Śluz") {
+                                    detailLine(label: "Śluz:") {
                                         Text(entry.mucusSensation.localizationKey)
                                         + Text(" · ")
                                         + Text(entry.mucusAppearance.localizationKey)
@@ -75,8 +75,12 @@ struct DayDetailSheetView: View {
 
                                 // Szyjka
                                 if entry.cervixPosition != .none {
-                                    detailLine(label: "Szyjka") {
-                                        Text("\(entry.cervixPosition.localizationKey) · \(entry.cervixFirmness.localizationKey) · \(entry.cervixOpening.localizationKey)")
+                                    detailLine(label: "Szyjka:") {
+                                        Text(entry.cervixPosition.localizationKey)
+                                        + Text(" · ")
+                                        + Text(entry.cervixFirmness.localizationKey)
+                                        + Text(" · ")
+                                        + Text(entry.cervixOpening.localizationKey)
                                     }
                                 }
 
@@ -101,14 +105,14 @@ struct DayDetailSheetView: View {
                                     }
                                 }
                                 if let prog = entry.progesteroneTestPositive {
-                                    detailLine(label: "PdG") {
+                                    detailLine(label: "PdG:") {
                                         Text(prog ? "✓" : "✗")
                                     }
                                 }
 
                                 // Współżycie
                                 if entry.intercourse != .none {
-                                    detailLine(label: "Współżycie") {
+                                    detailLine(label: "Współżycie:") {
                                         Text(entry.intercourse.localizationKey)
                                     }
                                 }

@@ -22,7 +22,14 @@
       }
     },
     " · " : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " · "
+          }
+        }
+      }
     },
     "," : {
       "localizations" : {
@@ -106,6 +113,7 @@
       }
     },
     "%@ · %@ · %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3235,6 +3243,1014 @@
         }
       }
     },
+    "education.glossary.category.all" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wszystkie"
+          }
+        }
+      }
+    },
+    "education.glossary.category.cervix" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cervix"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szyjka macicy"
+          }
+        }
+      }
+    },
+    "education.glossary.category.cycle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cycle"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cykl"
+          }
+        }
+      }
+    },
+    "education.glossary.category.hormones" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hormones"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hormony"
+          }
+        }
+      }
+    },
+    "education.glossary.category.interpretation" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Interpretation"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Interpretacja"
+          }
+        }
+      }
+    },
+    "education.glossary.category.methods" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Methods"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metody"
+          }
+        }
+      }
+    },
+    "education.glossary.category.mucus" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mucus"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Śluz"
+          }
+        }
+      }
+    },
+    "education.glossary.category.temperature" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temperature"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temperatura"
+          }
+        }
+      }
+    },
+    "education.glossary.detail.related" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Related terms"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Powiązane pojęcia"
+          }
+        }
+      }
+    },
+    "education.glossary.detail.tags" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tags"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tagi"
+          }
+        }
+      }
+    },
+    "education.glossary.detail.tips" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Measurement tips"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wskazówki pomiaru"
+          }
+        }
+      }
+    },
+    "education.glossary.empty.message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try a different search term or category"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spróbuj innego słowa lub kategorii."
+          }
+        }
+      }
+    },
+    "education.glossary.empty.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No results"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brak wyników"
+          }
+        }
+      }
+    },
+    "education.glossary.entry.bbt.definition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Basal body temperature is the body's lowest temperature during rest. Measured every morning before getting up, it rises by about 0.2–0.5°C after ovulation due to progesterone and remains elevated until the next period."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podstawowa temperatura ciała (PTC) to najniższa temperatura spoczynkowa organizmu. Mierzona codziennie rano przed wstaniem z łóżka, wzrasta o ok. 0,2–0,5°C po owulacji pod wpływem progesteronu i pozostaje podwyższona do kolejnego krwawienia."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.bbt.short" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resting temperature measured after waking."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temperatura spoczynkowa mierzona po przebudzeniu."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.bbt.tip.1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Measure immediately after waking, before getting up, speaking or drinking"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mierz natychmiast po przebudzeniu, zanim wstaniesz, zanim zaczniesz mówić lub pić."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.bbt.tip.2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use the same thermometer each time and the same measurement site (oral, vaginal or rectal)."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Używaj zawsze tego samego termometru i tego samego miejsca pomiaru (usta, pochwa lub odbytnica)."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.bbt.tip.3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you had less than 3 hours of uninterrupted sleep, or drank alcohol the night before, mark the temperature as disturbed."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeśli miałaś mniej niż 3 godziny nieprzerwanego snu lub piłaś alkohol poprzedniego wieczoru, oznacz pomiar jako zakłócony."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.bbt.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Basal Body Temperature (BBT)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podstawowa temperatura ciała (PTC)"
+          }
+        }
+      }
+    },
+    "education.glossary.entry.biphasic-cycle.definition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A biphasic cycle is characterised by a clear, sustained rise in BBT that divides the cycle into a low-temperature pre-ovulatory phase and a high-temperature post-ovulatory phase. A biphasic pattern on the chart confirms ovulation occurred. Monophasic charts (no rise) may suggest anovulation."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cykl dwufazowy charakteryzuje się wyraźnym, trwałym wzrostem PTC dzielącym cykl na niską fazę przedowulacyjną i wyższą fazę pookoulacyjną. Wzorzec dwufazowy na wykresie potwierdza zajście owulacji. Wykresy jednofazowe (bez wzrostu) mogą sugerować brak owulacji."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.biphasic-cycle.short" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A cycle with two distinct temperature phases separated by ovulation."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cykl z dwoma wyraźnymi fazami temperatury rozdzielonymi owulacją."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.biphasic-cycle.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Biphasic Cycle"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cykl dwufazowy"
+          }
+        }
+      }
+    },
+    "education.glossary.entry.cervical-mucus.definition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cervical mucus changes in texture, colour and quantity throughout the cycle under the influence of oestrogen and progesterone. Near ovulation it becomes clear, slippery and stretchy – the most fertile type. After ovulation progesterone makes it thick and tacky, creating a natural barrier to sperm."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Śluz szyjkowy zmienia konsystencję, barwę i ilość przez cały cykl pod wpływem estrogenów i progesteronu. Przed owulacją staje się przezroczysty, śliski i rozciągliwy – to typ najbardziej płodny. Po owulacji progesteron sprawia, że jest gęsty i kleisty, tworząc naturalną barierę dla plemników."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.cervical-mucus.short" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vaginal discharge produced by the cervix throughout the cycle."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wydzielina pochwowa produkowana przez szyjkę macicy przez cały cykl."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.cervical-mucus.tip.1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Check mucus at every bathroom visit – observe the sensation at the vaginal opening before wiping."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sprawdzaj śluz przy każdej wizycie w toalecie – obserwuj odczucie przy wejściu do pochwy przed wytarciem."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.cervical-mucus.tip.2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The most fertile sign is the slippery, lubricative sensation, even without visible mucus."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Najbardziej płodnym sygnałem jest śliskie, nawilżające odczucie, nawet bez widocznego śluzu."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.cervical-mucus.tip.3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do not check mucus after intercourse – semen can disguise its appearance."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie sprawdzaj śluzu po stosunku – nasienie może maskować jego wygląd."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.cervical-mucus.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cervical Mucus"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Śluz szyjkowy"
+          }
+        }
+      }
+    },
+    "education.glossary.entry.cervix.definition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The cervix is the lower, narrow part of the uterus. Around ovulation it rises, softens and opens slightly (the SHOW signs: Soft, High, Open, Wet). After ovulation it descends, firms up and closes. Observing these changes is an additional fertility sign."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szyjka macicy to dolna, wąska część macicy. Przed owulacją unosi się, mięknie i lekko otwiera (znaki SHOW: Soft, High, Open, Wet). Po owulacji opada, twardnieje i zamyka się. Obserwowanie tych zmian to dodatkowy wskaźnik płodności."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.cervix.short" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lower part of the uterus whose position and texture change with the cycle."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dolna część macicy, której pozycja i konsystencja zmieniają się w cyklu."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.cervix.tip.1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Check once a day at the same time, ideally in the evening, with clean hands, in the same position each time."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sprawdzaj raz dziennie o tej samej porze, najlepiej wieczorem, czystymi rękami, zawsze w tej samej pozycji."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.cervix.tip.2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do not check during or just after menstruation."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie sprawdzaj podczas miesiączki ani bezpośrednio po niej."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.cervix.tip.3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Learn your own baseline – cervical position varies between individuals. What matters are changes within your own cycle."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naucz się swojego punktu odniesienia – pozycja szyjki różni się między osobami. Ważne są zmiany w Twoim własnym cyklu."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.cervix.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cervix"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szyjka macicy"
+          }
+        }
+      }
+    },
+    "education.glossary.entry.fertile-window.definition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The fertile window spans the days when pregnancy can result from unprotected intercourse. It includes the 5 days before ovulation (sperm survival) and the day of ovulation itself (egg survival 12–24 h). In practice it is identified by observing fertile-type mucus, LH surge and temperature shift."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Okno płodności obejmuje dni, w których niezabezpieczony stosunek może skutkować ciążą. Obejmuje 5 dni przed owulacją (przeżycie plemników) i sam dzień owulacji (przeżycie komórki jajowej 12–24 h). W praktyce identyfikuje się je przez obserwację płodnego śluzu, wyrzutu LH i skoku termicznego."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.fertile-window.short" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The days in the cycle when pregnancy is possible."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dni w cyklu, w których ciąża jest możliwa."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.fertile-window.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fertile Window"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Okno płodności"
+          }
+        }
+      }
+    },
+    "education.glossary.entry.lh.definition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The LH (luteinising hormone) surge is a sharp rise in hormone level that triggers the release of an egg from the follicle. An LH test detects this surge in urine. A positive result indicates that ovulation is likely within 12–36 hours."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyrzut LH (hormonu luteinizującego) to gwałtowny wzrost poziomu hormonu, który wyzwala uwolnienie komórki jajowej z pęcherzyka. Test LH wykrywa ten wyrzut w moczu. Wynik pozytywny oznacza, że owulacja nastąpi prawdopodobnie w ciągu 12–36 godzin."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.lh.short" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hormone surge that triggers ovulation."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyrzut hormonu wyzwalającego owulację."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.lh.tip.1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Test between 10:00 and 20:00 – avoid the first morning urine."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Testuj między 10:00 a 20:00 – unikaj pierwszego porannego moczu."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.lh.tip.2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A positive result means the test line is as dark as or darker than the control line."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wynik pozytywny oznacza, że linia testowa jest tak ciemna jak linia kontrolna lub ciemniejsza."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.lh.tip.3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peak means the darkest result you have seen this cycle – the real LH peak before it drops."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peak oznacza najciemniejszy wynik, jaki widziałaś w tym cyklu – prawdziwy szczyt LH tuż przed jego spadkiem."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.lh.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LH Surge (LH Test)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyrzut LH (Test LH)"
+          }
+        }
+      }
+    },
+    "education.glossary.entry.luteal-phase.definition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The luteal phase begins after ovulation and ends with the first day of the next period. It is driven by progesterone secreted by the corpus luteum. Its length is relatively constant for each person (usually 10–16 days) and is identified on the chart by the sustained high-temperature phase."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faza lutealna rozpoczyna się po owulacji i kończy pierwszym dniem kolejnego krwawienia. Steruje nią progesteron wydzielany przez ciałko żółte. Jej długość jest stosunkowo stała dla każdej osoby (zwykle 10–16 dni) i identyfikowana jest na wykresie przez trwałą wysoką fazę temperaturową."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.luteal-phase.short" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The second half of the cycle after ovulation."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Druga połowa cyklu po owulacji."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.luteal-phase.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luteal Phase"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faza lutealna"
+          }
+        }
+      }
+    },
+    "education.glossary.entry.peak-day.definition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peak Day is the last day you observe the most fertile-type cervical mucus – clear, slippery and stretchy like egg white. It is identified retrospectively, the day after the mucus changes. Ovulation typically occurs within ±2 days of Peak Day."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dzień Szczytowy to ostatni dzień, w którym obserwujesz śluz szyjkowy najbardziej płodnego typu – przezroczysty, śliski i rozciągliwy jak białko jajka. Rozpoznaje się go retrospektywnie, dzień po zmianie śluzu. Owulacja następuje zwykle w ciągu ±2 dni od Dnia Szczytowego."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.peak-day.short" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The last day of the most fertile mucus."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ostatni dzień najbardziej płodnego śluzu."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.peak-day.tip.1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mark Peak Day on the day after the slippery, stretchy feeling disappears – not the day you notice it."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oznacz Dzień Szczytowy dzień po zniknięciu śliskiego, rozciągliwego odczucia – nie w dniu, gdy je zauważysz."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.peak-day.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peak Day"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dzień Szczytowy"
+          }
+        }
+      }
+    },
+    "education.glossary.entry.show.definition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SHOW is a mnemonic for the four fertile signs of the cervix: Soft (the cervix feels like lips instead of a nose tip), High (it is hard to reach), Open (the os is slightly open), Wet (fertile mucus is present). All four signs together indicate peak fertility."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SHOW to mnemonic oznaczający cztery płodne cechy szyjki macicy: Soft (miękka jak wargi), High (trudno dosięgnąć), Open (ujście lekko otwarte), Wet (obecny płodny śluz). Wszystkie cztery cechy jednocześnie wskazują na szczyt płodności."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.show.short" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acronym for fertile cervix signs: Soft, High, Open, Wet."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Akronim płodnych cech szyjki: Soft (miękka), High (wysoka), Open (otwarta), Wet (mokra)."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.show.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SHOW"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SHOW"
+          }
+        }
+      }
+    },
+    "education.glossary.entry.thermal-shift.definition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The thermal shift is a sustained rise in basal body temperature of at least 0.2°C above the six previous temperatures, maintained for at least three days. It confirms that ovulation has occurred and marks the start of the infertile post-ovulatory phase."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skok termiczny to trwały wzrost podstawowej temperatury ciała o co najmniej 0,2°C powyżej sześciu poprzednich temperatur, utrzymujący się przez co najmniej trzy dni. Potwierdza zajście owulacji i wyznacza początek niepłodnej fazy pooowulacyjnej."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.thermal-shift.short" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The rise in BBT after ovulation caused by progesterone."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wzrost PTC po owulacji spowodowany progesteronem."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.thermal-shift.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thermal Shift"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skok termiczny"
+          }
+        }
+      }
+    },
+    "education.glossary.search.placeholder" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search terms…"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szukaj pojęć…"
+          }
+        }
+      }
+    },
+    "education.glossary.tag.basics" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Basics"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podstawy"
+          }
+        }
+      }
+    },
+    "education.glossary.tag.chart" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chart"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wykres"
+          }
+        }
+      }
+    },
+    "education.glossary.tag.fertility" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fertility"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Płodność"
+          }
+        }
+      }
+    },
+    "education.glossary.tag.interpretation" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Interpretation"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Interpretacja"
+          }
+        }
+      }
+    },
+    "education.glossary.tag.measurement" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Measurement"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pomiar"
+          }
+        }
+      }
+    },
+    "education.glossary.tag.symptoms" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Symptoms"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Objawy"
+          }
+        }
+      }
+    },
     "education.glossary.title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -3538,6 +4554,7 @@
       }
     },
     "PdG" : {
+      "extractionState" : "stale",
       "localizations" : {
         "pl" : {
           "stringUnit" : {
@@ -3546,6 +4563,9 @@
           }
         }
       }
+    },
+    "PdG:" : {
+
     },
     "Plamienie śródcykliczne" : {
       "localizations" : {
@@ -3894,6 +4914,9 @@
         }
       }
     },
+    "Śluz:" : {
+
+    },
     "Statystyki" : {
       "localizations" : {
         "en" : {
@@ -3927,6 +4950,7 @@
       }
     },
     "Szyjka" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3941,6 +4965,9 @@
           }
         }
       }
+    },
+    "Szyjka:" : {
+
     },
     "tabs.calendar" : {
       "localizations" : {
@@ -4111,6 +5138,9 @@
           }
         }
       }
+    },
+    "Współżycie:" : {
+
     },
     "Wygląd śluzu" : {
       "localizations" : {

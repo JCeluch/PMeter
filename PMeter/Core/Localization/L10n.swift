@@ -13,9 +13,9 @@ enum L10n {
             LocalizedStringKey(key)
         }
 
-        static func string(_ key: String) -> String {
-            String(localized: String.LocalizationValue(key))
-        }
+    static func string(_ key: String) -> String {
+        String(localized: String.LocalizationValue(key))
+    }
     
     enum Tabs {
         static let cycle: LocalizedStringKey = "tabs.cycle"
@@ -185,111 +185,111 @@ enum L10n {
 extension L10n {
     enum Education {
         enum Home {
-            static let title = key("education.home.title")
-            static let glossarySubtitle = key("education.home.glossary.subtitle")
+            static let title: LocalizedStringKey = "education.home.title"
+            static let glossarySubtitle: LocalizedStringKey = "education.home.glossary.subtitle"
         }
         
         enum Glossary {
-            static let title = key("education.glossary.title")
-            static let searchPlaceholder = key("education.glossary.search.placeholder")
-            static let emptyTitle = key("education.glossary.empty.title")
-            static let emptyMessage = key("education.glossary.empty.message")
-            static let allCategories = key("education.glossary.category.all")
-            static let tips = key("education.glossary.detail.tips")
-            static let related = key("education.glossary.detail.related")
-            static let tags = key("education.glossary.detail.tags")
+            static let title: LocalizedStringKey = "education.glossary.title"
+            static let searchPlaceholder: LocalizedStringKey = "education.glossary.search.placeholder"
+            static let emptyTitle: LocalizedStringKey = "education.glossary.empty.title"
+            static let emptyMessage: LocalizedStringKey = "education.glossary.empty.message"
+            static let allCategories: LocalizedStringKey = "education.glossary.category.all"
+            static let tips: LocalizedStringKey = "education.glossary.detail.tips"
+            static let related: LocalizedStringKey = "education.glossary.detail.related"
+            static let tags: LocalizedStringKey = "education.glossary.detail.tags"
 
             enum Category {
-                static let cycle = key("education.glossary.category.cycle")
-                static let temperature = key("education.glossary.category.temperature")
-                static let mucus = key("education.glossary.category.mucus")
-                static let cervix = key("education.glossary.category.cervix")
-                static let hormones = key("education.glossary.category.hormones")
-                static let interpretation = key("education.glossary.category.interpretation")
-                static let methods = key("education.glossary.category.methods")
+                static let cycle: LocalizedStringKey = "education.glossary.category.cycle"
+                static let temperature: LocalizedStringKey = "education.glossary.category.temperature"
+                static let mucus: LocalizedStringKey = "education.glossary.category.mucus"
+                static let cervix: LocalizedStringKey = "education.glossary.category.cervix"
+                static let hormones: LocalizedStringKey = "education.glossary.category.hormones"
+                static let interpretation: LocalizedStringKey = "education.glossary.category.interpretation"
+                static let methods: LocalizedStringKey = "education.glossary.category.methods"
             }
 
             enum Tag {
-                static let basics = key("education.glossary.tag.basics")
-                static let measurement = key("education.glossary.tag.measurement")
-                static let fertility = key("education.glossary.tag.fertility")
-                static let interpretation = key("education.glossary.tag.interpretation")
-                static let chart = key("education.glossary.tag.chart")
-                static let symptoms = key("education.glossary.tag.symptoms")
+                static let basics: LocalizedStringKey = "education.glossary.tag.basics"
+                static let measurement: LocalizedStringKey = "education.glossary.tag.measurement"
+                static let fertility: LocalizedStringKey = "education.glossary.tag.fertility"
+                static let interpretation: LocalizedStringKey = "education.glossary.tag.interpretation"
+                static let chart: LocalizedStringKey = "education.glossary.tag.chart"
+                static let symptoms: LocalizedStringKey = "education.glossary.tag.symptoms"
             }
 
             enum Entry {
                 enum BBT {
-                    static let title = key("education.glossary.entry.bbt.title")
-                    static let short = key("education.glossary.entry.bbt.short")
-                    static let definition = key("education.glossary.entry.bbt.definition")
-                    static let tip1 = key("education.glossary.entry.bbt.tip.1")
-                    static let tip2 = key("education.glossary.entry.bbt.tip.2")
-                    static let tip3 = key("education.glossary.entry.bbt.tip.3")
+                    static let title: LocalizedStringKey = "education.glossary.entry.bbt.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.bbt.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.bbt.definition"
+                    static let tip1: LocalizedStringKey = "education.glossary.entry.bbt.tip.1"
+                    static let tip2: LocalizedStringKey = "education.glossary.entry.bbt.tip.2"
+                    static let tip3: LocalizedStringKey = "education.glossary.entry.bbt.tip.3"
                 }
 
                 enum PeakDay {
-                    static let title = key("education.glossary.entry.peak-day.title")
-                    static let short = key("education.glossary.entry.peak-day.short")
-                    static let definition = key("education.glossary.entry.peak-day.definition")
-                    static let tip1 = key("education.glossary.entry.peak-day.tip.1")
+                    static let title: LocalizedStringKey = "education.glossary.entry.peak-day.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.peak-day.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.peak-day.definition"
+                    static let tip1: LocalizedStringKey = "education.glossary.entry.peak-day.tip.1"
                 }
 
                 enum LH {
-                    static let title = key("education.glossary.entry.lh.title")
-                    static let short = key("education.glossary.entry.lh.short")
-                    static let definition = key("education.glossary.entry.lh.definition")
-                    static let tip1 = key("education.glossary.entry.lh.tip.1")
-                    static let tip2 = key("education.glossary.entry.lh.tip.2")
-                    static let tip3 = key("education.glossary.entry.lh.tip.3")
+                    static let title: LocalizedStringKey = "education.glossary.entry.lh.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.lh.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.lh.definition"
+                    static let tip1: LocalizedStringKey = "education.glossary.entry.lh.tip.1"
+                    static let tip2: LocalizedStringKey = "education.glossary.entry.lh.tip.2"
+                    static let tip3: LocalizedStringKey = "education.glossary.entry.lh.tip.3"
                 }
 
                 enum CervicalMucus {
-                    static let title = key("education.glossary.entry.cervical-mucus.title")
-                    static let short = key("education.glossary.entry.cervical-mucus.short")
-                    static let definition = key("education.glossary.entry.cervical-mucus.definition")
-                    static let tip1 = key("education.glossary.entry.cervical-mucus.tip.1")
-                    static let tip2 = key("education.glossary.entry.cervical-mucus.tip.2")
-                    static let tip3 = key("education.glossary.entry.cervical-mucus.tip.3")
+                    static let title: LocalizedStringKey = "education.glossary.entry.cervical-mucus.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.cervical-mucus.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.cervical-mucus.definition"
+                    static let tip1: LocalizedStringKey = "education.glossary.entry.cervical-mucus.tip.1"
+                    static let tip2: LocalizedStringKey = "education.glossary.entry.cervical-mucus.tip.2"
+                    static let tip3: LocalizedStringKey = "education.glossary.entry.cervical-mucus.tip.3"
                 }
 
                 enum Cervix {
-                    static let title = key("education.glossary.entry.cervix.title")
-                    static let short = key("education.glossary.entry.cervix.short")
-                    static let definition = key("education.glossary.entry.cervix.definition")
-                    static let tip1 = key("education.glossary.entry.cervix.tip.1")
-                    static let tip2 = key("education.glossary.entry.cervix.tip.2")
-                    static let tip3 = key("education.glossary.entry.cervix.tip.3")
+                    static let title: LocalizedStringKey = "education.glossary.entry.cervix.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.cervix.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.cervix.definition"
+                    static let tip1: LocalizedStringKey = "education.glossary.entry.cervix.tip.1"
+                    static let tip2: LocalizedStringKey = "education.glossary.entry.cervix.tip.2"
+                    static let tip3: LocalizedStringKey = "education.glossary.entry.cervix.tip.3"
                 }
 
                 enum SHOW {
-                    static let title = key("education.glossary.entry.show.title")
-                    static let short = key("education.glossary.entry.show.short")
-                    static let definition = key("education.glossary.entry.show.definition")
+                    static let title: LocalizedStringKey = "education.glossary.entry.show.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.show.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.show.definition"
                 }
 
                 enum FertileWindow {
-                    static let title = key("education.glossary.entry.fertile-window.title")
-                    static let short = key("education.glossary.entry.fertile-window.short")
-                    static let definition = key("education.glossary.entry.fertile-window.definition")
+                    static let title: LocalizedStringKey = "education.glossary.entry.fertile-window.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.fertile-window.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.fertile-window.definition"
                 }
 
                 enum ThermalShift {
-                    static let title = key("education.glossary.entry.thermal-shift.title")
-                    static let short = key("education.glossary.entry.thermal-shift.short")
-                    static let definition = key("education.glossary.entry.thermal-shift.definition")
+                    static let title: LocalizedStringKey = "education.glossary.entry.thermal-shift.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.thermal-shift.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.thermal-shift.definition"
                 }
 
                 enum BiphasicCycle {
-                    static let title = key("education.glossary.entry.biphasic-cycle.title")
-                    static let short = key("education.glossary.entry.biphasic-cycle.short")
-                    static let definition = key("education.glossary.entry.biphasic-cycle.definition")
+                    static let title: LocalizedStringKey = "education.glossary.entry.biphasic-cycle.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.biphasic-cycle.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.biphasic-cycle.definition"
                 }
 
                 enum LutealPhase {
-                    static let title = key("education.glossary.entry.luteal-phase.title")
-                    static let short = key("education.glossary.entry.luteal-phase.short")
-                    static let definition = key("education.glossary.entry.luteal-phase.definition")
+                    static let title: LocalizedStringKey = "education.glossary.entry.luteal-phase.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.luteal-phase.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.luteal-phase.definition"
                 }
             }
 
