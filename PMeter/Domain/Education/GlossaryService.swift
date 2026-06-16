@@ -22,7 +22,9 @@ struct GlossaryService: GlossaryProviding {
     }
 }
 
-private extension GlossaryService {
+extension GlossaryService {
+    static let shared = GlossaryService()
+    
     static let entries: [GlossaryEntry] = [
         GlossaryEntry(
             id: "bbt",
@@ -199,4 +201,8 @@ private extension GlossaryService {
             keywords: ["skok termiczny", "wykres", "temperatura"]
         )
     ]
+    
+    func relatedEntries(for entry: GlossaryEntry) -> [GlossaryEntry] {
+        entry.relatedEntryIDs.compactMap { self.entry(withID: $0) }
+    }
 }

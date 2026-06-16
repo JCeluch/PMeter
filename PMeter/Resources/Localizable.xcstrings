@@ -2496,6 +2496,22 @@
         }
       }
     },
+    "cycleForm.cervixBleedingWarning" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cervix and SHOW observations are not recommended during menstrual bleeding."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Badanie szyjki macicy i SHOW nie jest zalecane podczas krwawienia miesiączkowego."
+          }
+        }
+      }
+    },
     "cycleForm.cervixFirmness" : {
       "localizations" : {
         "en" : {
@@ -4565,7 +4581,14 @@
       }
     },
     "PdG:" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PdG:"
+          }
+        }
+      }
     },
     "Plamienie śródcykliczne" : {
       "localizations" : {
@@ -4915,7 +4938,20 @@
       }
     },
     "Śluz:" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mucus:"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Śluz:"
+          }
+        }
+      }
     },
     "Statystyki" : {
       "localizations" : {
@@ -4967,7 +5003,20 @@
       }
     },
     "Szyjka:" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cervix:"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szyjka:"
+          }
+        }
+      }
     },
     "tabs.calendar" : {
       "localizations" : {
@@ -5140,7 +5189,20 @@
       }
     },
     "Współżycie:" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intercourse:"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Współżycie:"
+          }
+        }
+      }
     },
     "Wygląd śluzu" : {
       "localizations" : {

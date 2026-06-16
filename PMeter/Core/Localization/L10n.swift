@@ -65,6 +65,7 @@ enum L10n {
         static let cervixPosition: LocalizedStringKey = "cycleForm.cervixPosition"
         static let cervixFirmness: LocalizedStringKey = "cycleForm.cervixFirmness"
         static let cervixOpening: LocalizedStringKey = "cycleForm.cervixOpening"
+        static let cervixBleedingWarning: LocalizedStringKey = "cycleForm.cervixBleedingWarning"
         static let testsSection: LocalizedStringKey = "cycleForm.testsSection"
         static let symptomsSection: LocalizedStringKey = "cycleForm.symptomsSection"
         static let ovulationPain: LocalizedStringKey = "cycleForm.ovulationPain"

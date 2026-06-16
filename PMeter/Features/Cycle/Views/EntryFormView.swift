@@ -164,7 +164,7 @@ struct EntryFormView: View {
     }
 
     private var mucusSection: some View {
-        Section(L10n.CycleForm.mucusSection) {
+        Section {
             Picker(L10n.CycleForm.mucusSensation, selection: $mucusSensation) {
                 ForEach(MucusSensation.allCases, id: \.self) { Text($0.localizationKey).tag($0) }
             }
@@ -178,11 +178,14 @@ struct EntryFormView: View {
                 ForEach(MucusVolume.allCases, id: \.self) { Text($0.localizationKey).tag($0) }
             }
             Toggle(L10n.CycleForm.isPeakDay, isOn: $isPeakDay)
+        } header: {
+            Text(L10n.CycleForm.mucusSection)
+                .glossaryInfo("cervical-mucus")
         }
     }
 
     private var temperatureSection: some View {
-        Section(L10n.CycleForm.temperatureSection) {
+        Section {
             Toggle(L10n.CycleForm.addTemperature, isOn: $hasTemperature)
 
             if hasTemperature {
@@ -198,7 +201,7 @@ struct EntryFormView: View {
                     ForEach(BBTMeasurementSite.allCases, id: \.self) { Text($0.localizationKey).tag($0) }
                 }
 
-                Toggle(L10n.CycleForm.temperatureExcluded, isOn: $temperatureExcluded)
+//                Toggle(L10n.CycleForm.temperatureExcluded, isOn: $temperatureExcluded)
 
                 if !temperatureExcluded {
                     DisclosureGroup(L10n.CycleForm.bbtDisturbances) {
@@ -214,13 +217,29 @@ struct EntryFormView: View {
                     }
                 }
             }
+        } header: {
+            Text(L10n.CycleForm.temperatureSection)
+                .glossaryInfo("bbt")
         }
     }
 
     private var cervixSection: some View {
         Section {
+            if bleeding != .none {
+                Label {
+                    Text(L10n.CycleForm.cervixBleedingWarning)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                } icon: {
+                    Image(systemName: "exclamationmark.triangle.fill")
+                        .foregroundStyle(.orange)
+                }
+            }
+            
             Toggle(L10n.CycleForm.cervixSection, isOn: $showCervix)
-            if showCervix {
+                .disabled(bleeding != .none)
+            
+            if showCervix && bleeding == .none {
                 Picker(L10n.CycleForm.cervixPosition, selection: $cervixPosition) {
                     ForEach(CervixPosition.allCases, id: \.self) { Text($0.localizationKey).tag($0) }
                 }
@@ -231,14 +250,20 @@ struct EntryFormView: View {
                     ForEach(CervixOpening.allCases, id: \.self) { Text($0.localizationKey).tag($0) }
                 }
             }
+        } header: {
+            Text(L10n.CycleForm.cervixSection)
+                .glossaryInfo("cervix")
         }
     }
 
     private var testsSection: some View {
-        Section(L10n.CycleForm.testsSection) {
+        Section {
             Picker(L10n.CycleForm.lhTest, selection: $lhTest) {
                 ForEach(LHTestResult.allCases, id: \.self) { Text($0.localizationKey).tag($0) }
             }
+        } header: {
+            Text(L10n.CycleForm.testsSection)
+                .glossaryInfo("lh")
         }
     }
 
