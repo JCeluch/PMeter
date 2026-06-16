@@ -10,6 +10,7 @@ import SwiftUI
 struct GlossaryDetailView: View {
     let entry: GlossaryEntry
     let relatedEntries: [GlossaryEntry]
+    var relatedEntriesResolver: ((GlossaryEntry) -> [GlossaryEntry])?
 
     var body: some View {
         List {
@@ -73,14 +74,22 @@ struct GlossaryDetailView: View {
     private var relatedSection: some View {
         Section {
             ForEach(relatedEntries) { relatedEntry in
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(relatedEntry.title)
-                        .font(.headline)
+                NavigationLink {
+                    GlossaryDetailView(
+                        entry: relatedEntry,
+                        relatedEntries: relatedEntriesResolver?(relatedEntry) ?? [],
+                        relatedEntriesResolver: relatedEntriesResolver
+                    )
+                } label: {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(relatedEntry.title)
+                            .font(.headline)
 
-                    Text(relatedEntry.shortDefinition)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
+                        Text(relatedEntry.shortDefinition)
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(2)
+                    }
                 }
             }
         } header: {

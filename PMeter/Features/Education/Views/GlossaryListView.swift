@@ -20,7 +20,8 @@ struct GlossaryListView: View {
                         NavigationLink {
                             GlossaryDetailView(
                                 entry: entry,
-                                relatedEntries: relatedEntries(for: entry)
+                                relatedEntries: relatedEntries(for: entry),
+                                relatedEntriesResolver: relatedEntries(for:)
                             )
                         } label: {
                             GlossaryRowView(entry: entry)
