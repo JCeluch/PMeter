@@ -18,9 +18,6 @@ struct PMeterApp: App {
         WindowGroup {
             AppRootView()
                 .environment(\.locale, resolvedLocale)
-                .task {
-                    await seedInitialDataIfNeeded()
-                }
         }
         .modelContainer(sharedModelContainer)
     }
@@ -28,19 +25,5 @@ struct PMeterApp: App {
     private var resolvedLocale: Locale {
         let selection = AppLanguage(rawValue: appLanguage) ?? .system
         return selection.locale ?? .autoupdatingCurrent
-    }
-
-    @MainActor
-    private func seedInitialDataIfNeeded() async {
-        let repository = SwiftDataCycleEntryRepository(modelContext: sharedModelContainer.mainContext)
-        let seedService = SeedService(repository: repository)
-
-        do {
-            #if DEBUG
-            try seedService.seedIfNeeded()
-            #endif
-        } catch {
-            assertionFailure("Initial seed failed: \(error)")
-        }
     }
 }

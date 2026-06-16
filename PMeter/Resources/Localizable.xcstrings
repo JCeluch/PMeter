@@ -228,6 +228,12 @@
         }
       }
     },
+    "Anuluj" : {
+
+    },
+    "Błąd ładowania danych" : {
+
+    },
     "Bleed" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -3200,6 +3206,9 @@
         }
       }
     },
+    "Dane startowe" : {
+
+    },
     "Date" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4569,6 +4578,9 @@
         }
       }
     },
+    "OK" : {
+
+    },
     "PdG" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -5018,6 +5030,9 @@
         }
       }
     },
+    "Ta operacja jest nieodwracalna. Wszystkie Twoje wpisy zostaną usunięte." : {
+
+    },
     "tabs.calendar" : {
       "localizations" : {
         "en" : {
@@ -5235,6 +5250,15 @@
           }
         }
       }
+    },
+    "Załadowanie danych usunie wszystkie istniejące wpisy." : {
+
+    },
+    "Załaduj i usuń dane" : {
+
+    },
+    "Zastąpić istniejące dane?" : {
+
     }
   },
   "version" : "1.1"

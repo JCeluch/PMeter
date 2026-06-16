@@ -7,6 +7,13 @@
 
 import Foundation
 
+enum SeedPreset {
+    /// Losowe dane testowe (obecny PreviewSeed)
+    case random
+    /// Dane historyczne z eksportu aplikacji partnerki
+    case historicalPartner
+}
+
 @MainActor
 final class SeedService {
     private let repository: CycleEntryRepository
@@ -15,15 +22,16 @@ final class SeedService {
         self.repository = repository
     }
 
-    func seedIfNeeded() throws {
-        guard try repository.count() == 0 else { return }
-        let entries = PreviewSeed.makeCycleEntries()
-        try repository.insert(entries)
-    }
-
-    func reseed() throws {
+    /// Ładuje wybrany preset, usuwając wszystkie istniejące dane.
+    func reseed(preset: SeedPreset) throws {
         try repository.deleteAll()
-        let entries = PreviewSeed.makeCycleEntries()
+        let entries: [CycleEntry]
+        switch preset {
+        case .random:
+            entries = PreviewSeed.makeCycleEntries()
+        case .historicalPartner:
+            entries = HistoricalPartnerSeed.makeCycleEntries()
+        }
         try repository.insert(entries)
     }
 }
