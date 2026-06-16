@@ -21,6 +21,9 @@
         }
       }
     },
+    " · " : {
+
+    },
     "," : {
       "localizations" : {
         "en" : {
@@ -86,6 +89,7 @@
       }
     },
     "%@ · %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -212,6 +216,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "✗"
+          }
+        }
+      }
+    },
+    "Bleed" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Krw."
           }
         }
       }
@@ -944,6 +959,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tak"
+          }
+        }
+      }
+    },
+    "Cycle day" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dzień cyklu"
           }
         }
       }
@@ -3150,6 +3176,17 @@
         }
       }
     },
+    "Date" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data"
+          }
+        }
+      }
+    },
     "Długości cykli" : {
       "localizations" : {
         "en" : {
@@ -3194,6 +3231,68 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dzień szczytowy"
+          }
+        }
+      }
+    },
+    "education.glossary.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Glossary"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Słownik pojęć"
+          }
+        }
+      }
+    },
+    "education.home.glossary.subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tips, methods, guidance"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pojęcia, metody, wskazówki"
+          }
+        }
+      }
+    },
+    "education.home.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Education"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wiedza"
+          }
+        }
+      }
+    },
+    "Int." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wsp."
           }
         }
       }
@@ -3768,6 +3867,17 @@
         }
       }
     },
+    "SHOW" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macica"
+          }
+        }
+      }
+    },
     "Śluz" : {
       "localizations" : {
         "en" : {
@@ -3860,6 +3970,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cykl"
+          }
+        }
+      }
+    },
+    "tabs.education" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Education"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wiedza"
           }
         }
       }

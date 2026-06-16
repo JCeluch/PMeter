@@ -11,45 +11,43 @@ struct GlossaryListView: View {
     @State private var viewModel = GlossaryListViewModel()
 
     var body: some View {
-        NavigationStack {
-            List {
-                categoryFilterSection
+        List {
+            categoryFilterSection
 
-                ForEach(viewModel.groupedEntries, id: \.category) { section in
-                    Section {
-                        ForEach(section.entries) { entry in
-                            NavigationLink {
-                                GlossaryDetailView(
-                                    entry: entry,
-                                    relatedEntries: relatedEntries(for: entry)
-                                )
-                            } label: {
-                                GlossaryRowView(entry: entry)
-                            }
+            ForEach(viewModel.groupedEntries, id: \.category) { section in
+                Section {
+                    ForEach(section.entries) { entry in
+                        NavigationLink {
+                            GlossaryDetailView(
+                                entry: entry,
+                                relatedEntries: relatedEntries(for: entry)
+                            )
+                        } label: {
+                            GlossaryRowView(entry: entry)
                         }
-                    } header: {
-                        Label {
-                            Text(section.category.title)
-                        } icon: {
-                            Image(systemName: section.category.systemImage)
-                        }
+                    }
+                } header: {
+                    Label {
+                        Text(section.category.title)
+                    } icon: {
+                        Image(systemName: section.category.systemImage)
                     }
                 }
             }
-            .navigationTitle(L10n.Education.Glossary.title)
-            .searchable(
-                text: $viewModel.searchText,
-                placement: .navigationBarDrawer(displayMode: .automatic),
-                prompt: L10n.Education.Glossary.searchPlaceholder
-            )
-            .overlay {
-                if viewModel.filteredEntries.isEmpty {
-                    ContentUnavailableView(
-                        L10n.Education.Glossary.emptyTitle,
-                        systemImage: "magnifyingglass",
-                        description: Text(L10n.Education.Glossary.emptyMessage)
-                    )
-                }
+        }
+        .navigationTitle(L10n.Education.Glossary.title)
+        .navigationBarTitleDisplayMode(.large)
+        .searchable(
+            text: $viewModel.searchText,
+            prompt: L10n.Education.Glossary.searchPlaceholder
+        )
+        .overlay {
+            if viewModel.filteredEntries.isEmpty {
+                ContentUnavailableView(
+                    L10n.Education.Glossary.emptyTitle,
+                    systemImage: "magnifyingglass",
+                    description: Text(L10n.Education.Glossary.emptyMessage)
+                )
             }
         }
     }

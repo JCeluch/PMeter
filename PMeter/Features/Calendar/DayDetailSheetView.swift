@@ -48,6 +48,7 @@ struct DayDetailSheetView: View {
                             VStack(alignment: .leading, spacing: 8) {
                                 // Krwawienie jako nagłówek kafelka
                                 HStack {
+                                    Text(L10n.CycleDetail.bleeding)
                                     Text(entry.bleeding.localizationKey)
                                         .font(.headline)
                                         .foregroundStyle(entry.bleeding != .none ? Color.red : Color.pmTextPrimary)
@@ -66,7 +67,9 @@ struct DayDetailSheetView: View {
                                 // Śluz
                                 if entry.mucusSensation != .none {
                                     detailLine(label: "Śluz") {
-                                        Text("\(entry.mucusSensation.localizationKey) · \(entry.mucusAppearance.localizationKey)")
+                                        Text(entry.mucusSensation.localizationKey)
+                                        + Text(" · ")
+                                        + Text(entry.mucusAppearance.localizationKey)
                                     }
                                 }
 

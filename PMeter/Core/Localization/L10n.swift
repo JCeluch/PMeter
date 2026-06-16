@@ -20,8 +20,9 @@ enum L10n {
     enum Tabs {
         static let cycle: LocalizedStringKey = "tabs.cycle"
         static let calendar: LocalizedStringKey = "tabs.calendar"
-        static let settings: LocalizedStringKey = "tabs.settings"
         static let stats: LocalizedStringKey = "tabs.stats"
+        static let education: LocalizedStringKey = "tabs.education"
+        static let settings: LocalizedStringKey = "tabs.settings"
     }
 
     enum CycleForm {
@@ -183,6 +184,11 @@ enum L10n {
 
 extension L10n {
     enum Education {
+        enum Home {
+            static let title = key("education.home.title")
+            static let glossarySubtitle = key("education.home.glossary.subtitle")
+        }
+        
         enum Glossary {
             static let title = key("education.glossary.title")
             static let searchPlaceholder = key("education.glossary.search.placeholder")

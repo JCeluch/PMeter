@@ -37,6 +37,15 @@ struct AppRootView: View {
                     }
                 }
             
+            EducationHomeView()
+                .tabItem {
+                    Label {
+                        Text(L10n.Tabs.education)
+                    } icon: {
+                        Image(systemName: "book.circle")
+                    }
+                }
+            
             SettingsView()
                 .tabItem {
                     Label {
