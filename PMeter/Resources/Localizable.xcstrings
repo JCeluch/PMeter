@@ -3636,6 +3636,1337 @@
         }
       }
     },
+    "education.chart-guide.example-chart" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Example chart"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przykładowy wykres"
+          }
+        }
+      }
+    },
+    "education.chart-guide.intro" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Each lesson explains one element of the BBT chart — from reading temperatures to identifying the thermal shift and peak day."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Każda lekcja wyjaśnia jeden element wykresu PTC — od odczytu temperatur po identyfikację skoku termicznego i dnia szczytowego."
+          }
+        }
+      }
+    },
+    "education.chart-guide.key-points" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Key points"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kluczowe punkty"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.anovulatory.body1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An anovulatory chart shows temperatures fluctuating in one low zone with no clear upward shift. There is no second phase. Any bleeding that occurs is not a true menstruation — it is withdrawal bleeding caused by estrogen withdrawal, not a progesterone-driven cycle end."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wykres bezowulacyjny pokazuje temperatury wahające się w jednej niskiej strefie bez wyraźnego skoku ku górze. Nie ma drugiej fazy. Ewentualne krwawienie nie jest prawdziwą miesiączką — to krwawienie z odstawienia spowodowane spadkiem estrogenu, a nie zakończeniem cyklu napędzanego progesteronem."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.anovulatory.body2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Occasional anovulatory cycles are normal (illness, stress, travel). Frequent ones may warrant medical evaluation."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sporadyczne cykle bezowulacyjne są normalne (choroba, stres, podróż). Częste mogą wymagać konsultacji lekarskiej."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.anovulatory.point1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No thermal shift visible = no confirmed ovulation"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brak widocznego skoku termicznego = brak potwierdzenia owulacji"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.anovulatory.point2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bleeding in an anovulatory cycle is not counted as a new cycle start in some methods"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Krwawienie w cyklu bezowulacyjnym nie jest liczone jako nowy cykl w niektórych metodach"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.anovulatory.subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A flat chart with no thermal shift — ovulation did not occur this cycle."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Płaski wykres bez skoku termicznego — owulacja nie nastąpiła w tym cyklu."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.anovulatory.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anovulatory chart"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wykres bezowulacyjny"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.anovulatory.warning" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do not assume you are infertile just because the previous cycle was anovulatory. Ovulation can occur at any time in the current cycle."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie zakładaj, że jesteś niepłodna tylko dlatego, że poprzedni cykl był bezowulacyjny. Owulacja może nastąpić w dowolnym momencie bieżącego cyklu."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.biphasic.body1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A biphasic chart shows a low phase in the first part of the cycle and a high phase in the second part, separated by a clear thermal shift. This pattern is only possible when ovulation occurred — it is caused by progesterone from the corpus luteum."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wykres dwufazowy pokazuje niską fazę w pierwszej części cyklu i wysoką w drugiej, oddzielone wyraźnym skokiem termicznym. Ten wzorzec jest możliwy tylko gdy nastąpiła owulacja — jest powodowany progesteronem z ciałka żółtego."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.biphasic.body2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The luteal (high) phase is typically 12–16 days long. If menstruation doesn't arrive and temperatures remain elevated, consider a pregnancy test."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faza lutealna (wysoka) trwa zazwyczaj 12–16 dni. Jeśli miesiączka nie nadchodzi, a temperatury pozostają podwyższone, rozważ test ciążowy."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.biphasic.point1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Low phase: typically 36.2–36.7°C (before ovulation)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faza niska: zazwyczaj 36,2–36,7°C (przed owulacją)"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.biphasic.point2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "High phase: 0.2–0.4°C above the low phase (after ovulation)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faza wysoka: 0,2–0,4°C powyżej fazy niskiej (po owulacji)"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.biphasic.point3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "High phase lasts 12–16 days before menstruation"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faza wysoka trwa 12–16 dni przed miesiączką"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.biphasic.subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Two clearly distinct temperature levels confirm ovulation occurred."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dwa wyraźnie różne poziomy temperatury potwierdzają, że owulacja nastąpiła."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.biphasic.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Biphasic chart"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wykres dwufazowy"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.coverline.body1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The coverline is drawn 0.05°C above the highest of the last 6 pre-ovulatory temperatures, excluding any disturbed days. It acts as the threshold that each of the 3 temperatures in the thermal shift must exceed."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linię pokrycia wyznacza się 0,05°C powyżej najwyższej spośród ostatnich 6 temperatur przed owulacyjnych, z pominięciem dni zaburzonych. Stanowi próg, który każda z 3 temperatur w skoku termicznym musi przekroczyć."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.coverline.body2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The coverline is recalculated each cycle — it cannot be carried over from a previous cycle, because the temperature range shifts slightly each time."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linia pokrycia jest obliczana od nowa w każdym cyklu — nie można jej przenosić z poprzedniego cyklu, bo zakres temperatur nieznacznie się przesuwa."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.coverline.point1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Formula: highest of last 6 pre-ovulatory temps + 0.05°C"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wzór: najwyższa z ostatnich 6 temp. przed owulacyjnych + 0,05°C"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.coverline.point2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skip disturbed days when counting the 6"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pomiń dni zaburzone przy liczeniu 6"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.coverline.subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A reference line to objectively identify the thermal shift."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linia odniesienia do obiektywnej identyfikacji skoku termicznego."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.coverline.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coverline"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linia pokrycia"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.disturbed.body1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A disturbed temperature is any reading that is unusually high or low due to external factors, not the hormonal cycle. Common causes: fever or illness, alcohol the previous evening, sleeping fewer than 3 hours, measuring at an unusually different time, or mouth breathing at night."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaburzona temperatura to każdy odczyt, który jest nienormalnie wysoki lub niski z powodu czynników zewnętrznych, a nie cyklu hormonalnego. Częste przyczyny: gorączka lub choroba, alkohol poprzedniego wieczoru, mniej niż 3 godziny snu, pomiar o niezwykłej godzinie, oddychanie przez usta w nocy."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.disturbed.body2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mark the day as disturbed in the chart. Disturbed temperatures are excluded from the coverline calculation and do not count toward the 3 temperatures needed for a thermal shift."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oznacz dzień jako zaburzony na wykresie. Zaburzone temperatury są wykluczane z obliczania linii pokrycia i nie liczą się do 3 temperatur potrzebnych do skoku termicznego."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.disturbed.point1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mark as disturbed: illness, fever, alcohol, <3h sleep, unusual wake time"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oznacz jako zaburzony: choroba, gorączka, alkohol, <3h snu, nieporowa godzina"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.disturbed.point2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exclude disturbed days from coverline calculation"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyklucz zaburzone dni z obliczania linii pokrycia"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.disturbed.point3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do not count disturbed days in the 3-temperature thermal shift rule"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie licz zaburzonych dni w regule 3 temperatur skoku termicznego"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.disturbed.subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Measurements affected by illness, alcohol, or unusual sleep should be excluded."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pomiary zaburzone przez chorobę, alkohol lub nieregularny sen należy wykluczyć."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.disturbed.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disturbed temperature"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaburzona temperatura"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.disturbed.warning" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you have frequent disturbances (e.g. shift work, nursing infant), discuss with an STM instructor how to adapt the rules."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeśli masz częste zaburzenia (np. praca zmianowa, karmienie niemowlęcia), omów z instruktorem STM jak adaptować zasady."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.irregular.body1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cycle length variation is mostly determined by the length of the follicular phase — the time from menstruation to ovulation. The luteal phase is relatively constant (12–16 days). A \"late\" period almost always means ovulation was delayed, not that the luteal phase stretched."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmienność długości cyklu wynika głównie z długości fazy folikularnej — czasu od miesiączki do owulacji. Faza lutealna jest względnie stała (12–16 dni). „Spóźniona\" miesiączka prawie zawsze oznacza opóźnioną owulację, a nie wydłużoną fazę lutealną."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.irregular.body2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This is why the chart is so valuable in irregular cycles: it shows exactly when ovulation occurred (or didn't), making retrospective cycle analysis possible even when prediction is difficult."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dlatego wykres jest tak wartościowy w nieregularnych cyklach: pokazuje dokładnie kiedy nastąpiła (lub nie) owulacja, umożliwiając retrospektywną analizę cyklu nawet gdy przewidywanie jest trudne."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.irregular.point1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Follicular phase length varies → determines cycle length"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Długość fazy folikularnej zmienia się → determinuje długość cyklu"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.irregular.point2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luteal phase is constant: 12–16 days"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faza lutealna jest stała: 12–16 dni"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.irregular.point3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The chart reveals when ovulation actually occurred — calendar predictions are unreliable in irregular cycles"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wykres ujawnia kiedy owulacja naprawdę nastąpiła — przewidywania kalendarzowe są zawodne w nieregularnych cyklach"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.irregular.subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Long, short, or unpredictable cycles — how to read them on the chart."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Długie, krótkie lub nieprzewidywalne cykle — jak je czytać na wykresie."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.irregular.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Irregular cycles"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nieregularne cykle"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.mucus.body1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cervical mucus changes throughout the cycle in response to estrogen and progesterone. After menstruation there is typically dryness or no sensation, then mucus becomes progressively wetter and more stretchy as ovulation approaches."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Śluz szyjkowy zmienia się przez cały cykl pod wpływem estrogenu i progesteronu. Po miesiączce zazwyczaj panuje suchość lub brak odczucia, potem śluz staje się stopniowo bardziej wilgotny i rozciągliwy w miarę zbliżania się owulacji."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.mucus.body2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The most fertile type is egg-white mucus (EWCM) — clear, stretchy, slippery. After the peak day, mucus abruptly becomes thick, sticky, or disappears entirely under the influence of progesterone."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Najbardziej płodny typ to śluz jak białko jajka (EWCM) — przezroczysty, rozciągliwy, śliski. Po dniu szczytowym śluz gwałtownie staje się gęsty, kleisty lub zanika całkowicie pod wpływem progesteronu."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.mucus.point1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dry / no sensation → infertile type"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sucho / brak odczucia → typ niepłodny"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.mucus.point1 1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dry / no sensation → infertile type"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sucho / brak odczucia → typ niepłodny"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.mucus.point2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sticky, creamy, white → approaching fertile window"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kleisty, kremowy, biały → zbliżające się okno płodności"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.mucus.point3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Egg-white, stretchy, slippery → fertile type (peak days)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jak białko jajka, rozciągliwy, śliski → typ płodny (dni szczytowe)"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.mucus.point4" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dry or sticky again after peak → post-ovulatory infertile phase"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ponownie sucho lub kleisto po szczycie → poowulacyjna faza niepłodna"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.mucus.subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The mucus pattern reveals the approach and passing of the fertile window."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wzorzec śluzu ujawnia zbliżanie się i mijanie okna płodności."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.mucus.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reading cervical mucus"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odczytywanie śluzu szyjkowego"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.peak-day.body1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The peak day is the last day of slippery, wet, egg-white, or lubricative mucus sensation. It is identified retrospectively — you only know it was the peak day when the next day's mucus is less fertile (sticky, dry, or absent)."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dzień szczytowy to ostatni dzień śliskiego, mokrego, podobnego do białka jajka lub nawilżającego odczucia śluzu. Identyfikowany jest retrospektywnie — wiesz, że to był dzień szczytowy dopiero gdy śluz następnego dnia jest mniej płodny (kleisty, suchy lub nieobecny)."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.peak-day.body2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ovulation typically occurs on or within 2 days of the peak day. In the sympto-thermal method, the peak day must coincide with or precede the thermal shift for the double-check rule to apply."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Owulacja zazwyczaj następuje w dniu szczytowym lub w ciągu 2 dni od niego. W metodzie symptotermicznej dzień szczytowy musi przypadać przed lub w momencie skoku termicznego, aby zastosować regułę podwójnego sprawdzenia."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.peak-day.point1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The peak day is identified the day AFTER it occurs"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dzień szczytowy identyfikuje się dzień PO jego wystąpieniu"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.peak-day.point2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ovulation occurs on or within 2 days of the peak"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Owulacja następuje w dniu szczytowym lub do 2 dni od niego"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.peak-day.point3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "After peak: 3 days of post-peak observation before declaring infertile phase"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Po szczycie: 3 dni obserwacji podszczytowej przed ogłoszeniem fazy niepłodnej"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.peak-day.point3 1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "After peak: 3 days of post-peak observation before declaring infertile phase"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Po szczycie: 3 dni obserwacji podszczytowej przed ogłoszeniem fazy niepłodnej"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.peak-day.subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The last day of the most fertile mucus type — identified only in retrospect."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ostatni dzień najbardziej płodnego typu śluzu — identyfikowany jedynie z perspektywy czasu."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.peak-day.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peak day"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dzień szczytowy"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.temperature.body1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In the first (follicular) phase, temperatures are lower — typically in the range of 36.2–36.7°C. After ovulation, progesterone produced by the corpus luteum raises the temperature by 0.2–0.4°C, creating a clearly higher second phase."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W pierwszej (folikularnej) fazie temperatury są niższe — zazwyczaj w zakresie 36,2–36,7°C. Po owulacji progesteron wydzielany przez ciałko żółte podnosi temperaturę o 0,2–0,4°C, tworząc wyraźnie wyższą drugą fazę."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.temperature.body2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The exact values differ between women and even between cycles of the same woman. What matters is the relative shift — not the absolute number."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dokładne wartości różnią się między kobietami, a nawet między cyklami tej samej kobiety. Liczy się względny skok, nie wartość bezwzględna."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.temperature.point1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Measure at the same time each day (±30 min max)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mierz codziennie o tej samej porze (±30 min maks.)"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.temperature.point2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Minimum 3–4 hours of uninterrupted sleep before measuring"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Minimum 3–4 godziny nieprzerwanego snu przed pomiarem"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.temperature.point3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use a basal thermometer (resolution 0.01°C)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Używaj termometru owulacyjnego (rozdzielczość 0,01°C)"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.temperature.subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How daily measurements form the two-phase pattern."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jak codzienne pomiary tworzą wzorzec dwóch faz."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.temperature.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reading the temperature"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odczytywanie temperatury"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.temperature.warning" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Illness, alcohol, very late bedtime, or measuring at an unusual time can disturb the reading. Mark the day as disturbed and exclude it from thermal shift analysis."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choroba, alkohol, bardzo późne kładzenie się spać lub pomiar o nieporowej godzinie mogą zaburzyć odczyt. Oznacz dzień jako zaburzony i wyklucz go z analizy skoku termicznego."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.temperature.warning 1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Illness, alcohol, very late bedtime, or measuring at an unusual time can disturb the reading. Mark the day as disturbed and exclude it from thermal shift analysis."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choroba, alkohol, bardzo późne kładzenie się spać lub pomiar o nieporowej godzinie mogą zaburzyć odczyt. Oznacz dzień jako zaburzony i wyklucz go z analizy skoku termicznego."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.thermal-shift.body1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A thermal shift is confirmed when 3 consecutive temperatures all rise above the coverline — a line drawn 0.05°C above the highest of the last 6 pre-ovulatory temperatures. The third high temperature marks the beginning of the post-ovulatory infertile phase."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skok termiczny jest potwierdzony, gdy 3 kolejne temperatury przekraczają linię pokrycia — linię wyznaczoną 0,05°C powyżej najwyższej spośród ostatnich 6 temperatur przed owulacyjnych. Trzecia wysoka temperatura wyznacza początek poowulacyjnej fazy niepłodnej."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.thermal-shift.body2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In the sympto-thermal method, the thermal shift is always combined with the peak mucus day for a double-check confirmation of ovulation."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W metodzie symptotermicznej skok termiczny jest zawsze łączony z dniem szczytowym śluzu dla podwójnego potwierdzenia owulacji."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.thermal-shift.point1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3 temperatures above the coverline are required"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wymagane są 3 temperatury powyżej linii pokrycia"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.thermal-shift.point2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All 3 must be undisturbed measurements"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wszystkie 3 muszą być niezaburzonymi pomiarami"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.thermal-shift.point3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The 3rd high temperature = start of post-peak infertile phase (in STM)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3. wysoka temperatura = początek podszczytowej fazy niepłodnej (w STM)"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.thermal-shift.subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The moment temperatures rise clearly above the pre-ovulatory level."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moment, w którym temperatury wyraźnie wzrastają powyżej poziomu przed owulacyjnego."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.thermal-shift.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thermal shift"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skok termiczny"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.thermal-shift.warning" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A single temperature above the coverline is not enough. One high temperature can be a disturbance. Always wait for 3."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jedna temperatura powyżej linii pokrycia nie wystarczy. Jedna wysoka temperatura może być zaburzeniem. Zawsze czekaj na 3."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.what-is-chart.body1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A BBT (Basal Body Temperature) chart is a graph showing daily morning temperatures plotted across the cycle. Each dot represents one measurement. Over time, a pattern of two phases becomes visible in ovulatory cycles."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wykres PTC (podstawowej temperatury ciała) to wykres codziennych porannych temperatur nanoszonych na przestrzeni cyklu. Każda kropka to jeden pomiar. Z czasem w cyklach owulacyjnych widoczny staje się wzorzec dwóch faz."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.what-is-chart.body2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In addition to temperature, the chart records cervical mucus observations, cervix status, LH tests, menstruation, and any notes. Together these form a complete picture of the cycle."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oprócz temperatury wykres rejestruje obserwacje śluzu szyjkowego, stan szyjki, testy LH, menstruację i notatki. Razem tworzą kompletny obraz cyklu."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.what-is-chart.point1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temperature is measured every morning at the same time, before getting up"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temperaturę mierzy się każdego ranka o tej samej porze, przed wstaniem"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.what-is-chart.point2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The horizontal axis shows cycle days (1 = first day of menstruation)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oś pozioma pokazuje dni cyklu (1 = pierwszy dzień miesiączki)"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.what-is-chart.point3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The vertical axis shows temperature in 0.05°C increments"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oś pionowa pokazuje temperaturę w krokach co 0,05°C"
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.what-is-chart.subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A daily record of temperature and observations across the cycle."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Codzienny zapis temperatury i obserwacji przez cały cykl."
+          }
+        }
+      }
+    },
+    "education.chart-guide.lesson.what-is-chart.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is a BBT chart?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czym jest wykres PTC?"
+          }
+        }
+      }
+    },
+    "education.chart-guide.section.basics" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Basics"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podstawy"
+          }
+        }
+      }
+    },
+    "education.chart-guide.section.disturbances" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disturbances & Exceptions"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaburzenia i wyjątki"
+          }
+        }
+      }
+    },
+    "education.chart-guide.section.interpretation" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Interpretation"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Interpretacja"
+          }
+        }
+      }
+    },
+    "education.chart-guide.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How to Read the Chart"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jak interpretować wykres"
+          }
+        }
+      }
+    },
     "education.glossary.category.all" : {
       "localizations" : {
         "en" : {
@@ -5429,6 +6760,22 @@
         }
       }
     },
+    "education.home.chart-guide.subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Understand your temperature and mucus chart"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naucz się czytać wykres temperatury i śluzu"
+          }
+        }
+      }
+    },
     "education.home.glossary.subtitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -6864,5 +8211,5 @@
       }
     }
   },
-  "version" : "1.1"
+  "version" : "1.2"
 }

@@ -187,6 +187,7 @@ extension L10n {
     enum Education {
         enum Home {
             static let title: LocalizedStringKey = "education.home.title"
+            static let chartGuideSubtitle: LocalizedStringKey = "education.home.chart-guide.subtitle"
             static let glossarySubtitle: LocalizedStringKey = "education.home.glossary.subtitle"
         }
         
@@ -389,7 +390,127 @@ extension L10n {
                     static let definition: LocalizedStringKey = "education.glossary.entry.breastfeeding.definition"
                 }
             }
+        }
+        
+        enum ChartGuide {
+            static let title: LocalizedStringKey = "education.chart-guide.title"
+            static let intro: LocalizedStringKey = "education.chart-guide.intro"
+            static let exampleChart: LocalizedStringKey = "education.chart-guide.example-chart"
+            static let keyPoints: LocalizedStringKey = "education.chart-guide.key-points"
+            
+            enum Section {
+                static let basics: LocalizedStringKey = "education.chart-guide.section.basics"
+                static let interpretation: LocalizedStringKey = "education.chart-guide.section.interpretation"
+                static let disturbances: LocalizedStringKey = "education.chart-guide.section.disturbances"
+            }
+            
+            enum Lesson {
+                enum WhatIsChart {
+                    static let title: LocalizedStringKey = "education.chart-guide.lesson.what-is-chart.title"
+                    static let subtitle: LocalizedStringKey = "education.chart-guide.lesson.what-is-chart.subtitle"
+                    static let body1: LocalizedStringKey = "education.chart-guide.lesson.what-is-chart.body1"
+                    static let body2: LocalizedStringKey = "education.chart-guide.lesson.what-is-chart.body2"
+                    static let point1: LocalizedStringKey = "education.chart-guide.lesson.what-is-chart.point1"
+                    static let point2: LocalizedStringKey = "education.chart-guide.lesson.what-is-chart.point2"
+                    static let point3: LocalizedStringKey = "education.chart-guide.lesson.what-is-chart.point3"
 
+                }
+                
+                enum Temperature {
+                    static let title: LocalizedStringKey = "education.chart-guide.lesson.temperature.title"
+                    static let subtitle: LocalizedStringKey = "education.chart-guide.lesson.temperature.subtitle"
+                    static let body1: LocalizedStringKey = "education.chart-guide.lesson.temperature.body1"
+                    static let body2: LocalizedStringKey = "education.chart-guide.lesson.temperature.body2"
+                    static let point1: LocalizedStringKey = "education.chart-guide.lesson.temperature.point1"
+                    static let point2: LocalizedStringKey = "education.chart-guide.lesson.temperature.point2"
+                    static let point3: LocalizedStringKey = "education.chart-guide.lesson.temperature.point3"
+                    static let warning: LocalizedStringKey = "education.chart-guide.lesson.temperature.warning"
+
+                }
+                
+                enum Mucus {
+                    static let title: LocalizedStringKey = "education.chart-guide.lesson.mucus.title"
+                    static let subtitle: LocalizedStringKey = "education.chart-guide.lesson.mucus.subtitle"
+                    static let body1: LocalizedStringKey = "education.chart-guide.lesson.mucus.body1"
+                    static let body2: LocalizedStringKey = "education.chart-guide.lesson.mucus.body2"
+                    static let point1: LocalizedStringKey = "education.chart-guide.lesson.mucus.point1"
+                    static let point2: LocalizedStringKey = "education.chart-guide.lesson.mucus.point2"
+                    static let point3: LocalizedStringKey = "education.chart-guide.lesson.mucus.point3"
+                    static let point4: LocalizedStringKey = "education.chart-guide.lesson.mucus.point4"
+
+                }
+                
+                enum Biphasic {
+                    static let title: LocalizedStringKey = "education.chart-guide.lesson.biphasic.title"
+                    static let subtitle: LocalizedStringKey = "education.chart-guide.lesson.biphasic.subtitle"
+                    static let body1: LocalizedStringKey = "education.chart-guide.lesson.biphasic.body1"
+                    static let body2: LocalizedStringKey = "education.chart-guide.lesson.biphasic.body2"
+                    static let point1: LocalizedStringKey = "education.chart-guide.lesson.biphasic.point1"
+                    static let point2: LocalizedStringKey = "education.chart-guide.lesson.biphasic.point2"
+                    static let point3: LocalizedStringKey = "education.chart-guide.lesson.biphasic.point3"
+                }
+
+                enum ThermalShift {
+                    static let title: LocalizedStringKey = "education.chart-guide.lesson.thermal-shift.title"
+                    static let subtitle: LocalizedStringKey = "education.chart-guide.lesson.thermal-shift.subtitle"
+                    static let body1: LocalizedStringKey = "education.chart-guide.lesson.thermal-shift.body1"
+                    static let body2: LocalizedStringKey = "education.chart-guide.lesson.thermal-shift.body2"
+                    static let point1: LocalizedStringKey = "education.chart-guide.lesson.thermal-shift.point1"
+                    static let point2: LocalizedStringKey = "education.chart-guide.lesson.thermal-shift.point2"
+                    static let point3: LocalizedStringKey = "education.chart-guide.lesson.thermal-shift.point3"
+                    static let warning: LocalizedStringKey = "education.chart-guide.lesson.thermal-shift.warning"
+                }
+
+                enum Coverline {
+                    static let title: LocalizedStringKey = "education.chart-guide.lesson.coverline.title"
+                    static let subtitle: LocalizedStringKey = "education.chart-guide.lesson.coverline.subtitle"
+                    static let body1: LocalizedStringKey = "education.chart-guide.lesson.coverline.body1"
+                    static let body2: LocalizedStringKey = "education.chart-guide.lesson.coverline.body2"
+                    static let point1: LocalizedStringKey = "education.chart-guide.lesson.coverline.point1"
+                    static let point2: LocalizedStringKey = "education.chart-guide.lesson.coverline.point2"
+                }
+
+                enum PeakDay {
+                    static let title: LocalizedStringKey = "education.chart-guide.lesson.peak-day.title"
+                    static let subtitle: LocalizedStringKey = "education.chart-guide.lesson.peak-day.subtitle"
+                    static let body1: LocalizedStringKey = "education.chart-guide.lesson.peak-day.body1"
+                    static let body2: LocalizedStringKey = "education.chart-guide.lesson.peak-day.body2"
+                    static let point1: LocalizedStringKey = "education.chart-guide.lesson.peak-day.point1"
+                    static let point2: LocalizedStringKey = "education.chart-guide.lesson.peak-day.point2"
+                    static let point3: LocalizedStringKey = "education.chart-guide.lesson.peak-day.point3"
+                }
+
+                enum Disturbed {
+                    static let title: LocalizedStringKey = "education.chart-guide.lesson.disturbed.title"
+                    static let subtitle: LocalizedStringKey = "education.chart-guide.lesson.disturbed.subtitle"
+                    static let body1: LocalizedStringKey = "education.chart-guide.lesson.disturbed.body1"
+                    static let body2: LocalizedStringKey = "education.chart-guide.lesson.disturbed.body2"
+                    static let point1: LocalizedStringKey = "education.chart-guide.lesson.disturbed.point1"
+                    static let point2: LocalizedStringKey = "education.chart-guide.lesson.disturbed.point2"
+                    static let point3: LocalizedStringKey = "education.chart-guide.lesson.disturbed.point3"
+                    static let warning: LocalizedStringKey = "education.chart-guide.lesson.disturbed.warning"
+                }
+
+                enum Anovulatory {
+                    static let title: LocalizedStringKey = "education.chart-guide.lesson.anovulatory.title"
+                    static let subtitle: LocalizedStringKey = "education.chart-guide.lesson.anovulatory.subtitle"
+                    static let body1: LocalizedStringKey = "education.chart-guide.lesson.anovulatory.body1"
+                    static let body2: LocalizedStringKey = "education.chart-guide.lesson.anovulatory.body2"
+                    static let point1: LocalizedStringKey = "education.chart-guide.lesson.anovulatory.point1"
+                    static let point2: LocalizedStringKey = "education.chart-guide.lesson.anovulatory.point2"
+                    static let warning: LocalizedStringKey = "education.chart-guide.lesson.anovulatory.warning"
+                }
+
+                enum Irregular {
+                    static let title: LocalizedStringKey = "education.chart-guide.lesson.irregular.title"
+                    static let subtitle: LocalizedStringKey = "education.chart-guide.lesson.irregular.subtitle"
+                    static let body1: LocalizedStringKey = "education.chart-guide.lesson.irregular.body1"
+                    static let body2: LocalizedStringKey = "education.chart-guide.lesson.irregular.body2"
+                    static let point1: LocalizedStringKey = "education.chart-guide.lesson.irregular.point1"
+                    static let point2: LocalizedStringKey = "education.chart-guide.lesson.irregular.point2"
+                    static let point3: LocalizedStringKey = "education.chart-guide.lesson.irregular.point3"
+                }
+            }
         }
     }
 }

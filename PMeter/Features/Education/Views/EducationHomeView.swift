@@ -13,6 +13,24 @@ struct EducationHomeView: View {
             List {
                 Section {
                     NavigationLink {
+                        ChartGuideView()
+                    } label: {
+                        Label {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(L10n.Education.ChartGuide.title)
+                                    .font(.headline)
+                                Text(L10n.Education.Home.chartGuideSubtitle)
+                                    .font(.subheadline)
+                                    .foregroundStyle(.secondary)
+                            }
+                        } icon: {
+                            Image(systemName: "chart.xyaxis.line")
+                                .foregroundStyle(.accent)
+                        }
+                    }
+                    .padding(.vertical, 4)
+                    
+                    NavigationLink {
                         GlossaryListView()
                     } label: {
                         Label {
