@@ -108,6 +108,37 @@ enum CycleAnalyticsService {
             from: sortedEntries, cycleStarts: cycleStarts
         )
         
+        // MARK: Ból owulacyjny
+        let ovPainValues = sortedEntries.map(\.ovulationPainIntensity).filter { $0 > 0 }
+        let avgOvPain = ovPainValues.isEmpty ? 0.0
+            : Double(ovPainValues.reduce(0, +)) / Double(ovPainValues.count)
+        let maxOvPain = ovPainValues.max()
+        let dominantPainSide = dominantOvulationPainSide(from: sortedEntries)
+
+        // MARK: Czułość piersi per faza
+        let breastTenderness = calculateBreastTendernessPerPhase(
+            from: sortedEntries, cycleStarts: cycleStarts
+        )
+
+        // MARK: Plamienie
+        let spottingDays = sortedEntries.filter { $0.intermenstrualSpotting }.count
+        let spottingCycles = cyclesWithSpottingCount(from: sortedEntries, cycleStarts: cycleStarts)
+
+        // MARK: Test progesteron
+        let progCycles = cyclesWithProgesteroneTestCount(from: sortedEntries, cycleStarts: cycleStarts)
+
+        // MARK: Peak Day
+        let avgPeakDay = averagePeakDayOfCycle(from: sortedEntries, cycleStarts: cycleStarts)
+
+        // MARK: Szyjka SHOW
+        let showStats = calculateSHOWStats(from: sortedEntries)
+
+        // MARK: Streak BBT
+        let bbtStreak = longestBBTStreak(from: sortedEntries)
+
+        // MARK: Karmienie
+        let breastfeedingDays = sortedEntries.filter { $0.isBreastfeeding }.count
+        
         return CycleStatistics(
             cycleCount: cycleLengths.count,
             cycleLengths: cycleLengths,
@@ -149,6 +180,20 @@ enum CycleAnalyticsService {
             averageMoodOvulatory: moodByPhase.ovulatory,
             averageMoodLuteal: moodByPhase.luteal,
             averageMoodMenstrual: moodByPhase.menstrual,
+            averageOvulationPain: avgOvPain,
+            maxOvulationPain: maxOvPain,
+            dominantOvulationPainSide: dominantPainSide,
+            averageBreastTendernessFollicular: breastTenderness.follicular,
+            averageBreastTendernessLuteal: breastTenderness.luteal,
+            cyclesWithSpotting: spottingCycles,
+            spotting: spottingDays,
+            cyclesWithProgesteroneTest: progCycles.tested,
+            cyclesWithConfirmedProgesterone: progCycles.confirmed,
+            averagePeakDayOfCycle: avgPeakDay,
+            showDaysCount: showStats.days,
+            showPercentage: showStats.percentage,
+            longestBBTStreak: bbtStreak,
+            breastfeedingDaysCount: breastfeedingDays,
         )
     }
 
@@ -429,5 +474,170 @@ enum CycleAnalyticsService {
             luteal: avg(lutealMoods),
             menstrual: avg(menstrualMoods)
         )
+    }
+    
+    // MARK: - Ból owulacyjny
+
+    private static func dominantOvulationPainSide(from entries: [CycleEntry]) -> PainSide? {
+        let sides = entries
+            .filter { $0.ovulationPainIntensity > 0 && $0.ovulationPainSide != .none }
+            .map(\.ovulationPainSide)
+        guard !sides.isEmpty else { return nil }
+        return sides.max(by: { a, b in
+            sides.filter { $0 == a }.count < sides.filter { $0 == b }.count
+        })
+    }
+
+    // MARK: - Czułość piersi
+
+    private struct BreastTendernessPerPhase {
+        let follicular: Double?
+        let luteal: Double?
+    }
+
+    private static func calculateBreastTendernessPerPhase(
+        from entries: [CycleEntry],
+        cycleStarts: [Date]
+    ) -> BreastTendernessPerPhase {
+        guard cycleStarts.count >= 2 else {
+            return BreastTendernessPerPhase(follicular: nil, luteal: nil)
+        }
+        let ovulations = detectOvulationDates(from: entries, cycleStarts: cycleStarts)
+        var follicular: [Int] = []
+        var luteal: [Int] = []
+
+        for (i, cycleStart) in cycleStarts.dropLast().enumerated() {
+            let nextStart = cycleStarts[i + 1]
+            let cycleEntries = entries
+                .filter { $0.date >= cycleStart && $0.date < nextStart && $0.breastTenderness > 0 }
+            let ovDate: Date? = i < ovulations.count ? ovulations[i] : nil
+
+            for entry in cycleEntries {
+                if let ov = ovDate {
+                    let daysFromOv = Calendar.current.dateComponents([.day], from: ov, to: entry.date).day ?? -1
+                    if daysFromOv >= 0 {
+                        luteal.append(entry.breastTenderness)
+                    } else {
+                        follicular.append(entry.breastTenderness)
+                    }
+                } else {
+                    let cycleLen = Calendar.current.dateComponents([.day], from: cycleStart, to: nextStart).day ?? 28
+                    let dayOfCycle = Calendar.current.dateComponents([.day], from: cycleStart, to: entry.date).day ?? 0
+                    if dayOfCycle < cycleLen / 2 {
+                        follicular.append(entry.breastTenderness)
+                    } else {
+                        luteal.append(entry.breastTenderness)
+                    }
+                }
+            }
+        }
+
+        func avg(_ arr: [Int]) -> Double? {
+            guard !arr.isEmpty else { return nil }
+            return Double(arr.reduce(0, +)) / Double(arr.count)
+        }
+        return BreastTendernessPerPhase(follicular: avg(follicular), luteal: avg(luteal))
+    }
+
+    // MARK: - Plamienie
+
+    private static func cyclesWithSpottingCount(
+        from entries: [CycleEntry],
+        cycleStarts: [Date]
+    ) -> Int {
+        guard cycleStarts.count >= 2 else { return 0 }
+        return zip(cycleStarts, cycleStarts.dropFirst()).filter { start, next in
+            entries.contains { $0.date >= start && $0.date < next && $0.intermenstrualSpotting }
+        }.count
+    }
+
+    // MARK: - Test progesteron
+
+    private struct ProgesteroneStats {
+        let tested: Int
+        let confirmed: Int
+    }
+
+    private static func cyclesWithProgesteroneTestCount(
+        from entries: [CycleEntry],
+        cycleStarts: [Date]
+    ) -> ProgesteroneStats {
+        guard cycleStarts.count >= 2 else { return ProgesteroneStats(tested: 0, confirmed: 0) }
+        var tested = 0
+        var confirmed = 0
+        for (start, next) in zip(cycleStarts, cycleStarts.dropFirst()) {
+            let cycleEntries = entries.filter {
+                $0.date >= start && $0.date < next && $0.progesteroneTestPositive != nil
+            }
+            if !cycleEntries.isEmpty {
+                tested += 1
+                if cycleEntries.contains(where: { $0.progesteroneTestPositive == true }) {
+                    confirmed += 1
+                }
+            }
+        }
+        return ProgesteroneStats(tested: tested, confirmed: confirmed)
+    }
+
+    // MARK: - Peak Day
+
+    private static func averagePeakDayOfCycle(
+        from entries: [CycleEntry],
+        cycleStarts: [Date]
+    ) -> Double? {
+        guard cycleStarts.count >= 2 else { return nil }
+        let peakDays: [Int] = zip(cycleStarts, cycleStarts.dropFirst()).compactMap { start, next in
+            guard let peakEntry = entries.first(where: {
+                $0.date >= start && $0.date < next && $0.isPeakDay
+            }) else { return nil }
+            return (Calendar.current.dateComponents([.day], from: start, to: peakEntry.date).day ?? 0) + 1
+        }
+        guard !peakDays.isEmpty else { return nil }
+        return Double(peakDays.reduce(0, +)) / Double(peakDays.count)
+    }
+
+    // MARK: - Szyjka SHOW
+
+    private struct SHOWStats {
+        let days: Int
+        let percentage: Double
+    }
+
+    private static func calculateSHOWStats(from entries: [CycleEntry]) -> SHOWStats {
+        let withCervix = entries.filter { $0.cervixPosition != .none }
+        guard !withCervix.isEmpty else { return SHOWStats(days: 0, percentage: 0) }
+        let showDays = withCervix.filter {
+            $0.cervixPosition == .high &&
+            $0.cervixFirmness == .soft &&
+            $0.cervixOpening == .open
+        }.count
+        let pct = Double(showDays) / Double(withCervix.count)
+        return SHOWStats(days: showDays, percentage: pct)
+    }
+
+    // MARK: - Streak BBT
+
+    private static func longestBBTStreak(from entries: [CycleEntry]) -> Int {
+        let datesWithTemp = Set(
+            entries
+                .filter { $0.temperature != nil && !$0.temperatureExcluded }
+                .map { Calendar.current.startOfDay(for: $0.date) }
+        ).sorted()
+
+        guard !datesWithTemp.isEmpty else { return 0 }
+        var longest = 1
+        var current = 1
+        for i in 1..<datesWithTemp.count {
+            let diff = Calendar.current.dateComponents(
+                [.day], from: datesWithTemp[i - 1], to: datesWithTemp[i]
+            ).day ?? 99
+            if diff == 1 {
+                current += 1
+                longest = max(longest, current)
+            } else {
+                current = 1
+            }
+        }
+        return longest
     }
 }

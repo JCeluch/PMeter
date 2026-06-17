@@ -176,6 +176,91 @@ struct StatsView: View {
                             moodPhaseRow("Lutealna", value: stats.averageMoodLuteal)
                         }
                     }
+                    
+                    // Ból owulacyjny
+                    if stats.averageOvulationPain > 0 {
+                        Section("Ból owulacyjny") {
+                            statRow("Średnia intensywność", value: painLabel(stats.averageOvulationPain))
+                            if let max = stats.maxOvulationPain {
+                                statRow("Maksimum", value: painLabel(Double(max)))
+                            }
+                            if let side = stats.dominantOvulationPainSide {
+                                statRow("Najczęstsza strona", value: painSideLabel(side))
+                            }
+                        }
+                    }
+
+                    // Czułość piersi
+                    if stats.averageBreastTendernessFollicular != nil || stats.averageBreastTendernessLuteal != nil {
+                        Section("Czułość piersi") {
+                            if let f = stats.averageBreastTendernessFollicular {
+                                statRow("Faza folikularna", value: painLabel(f))
+                            }
+                            if let l = stats.averageBreastTendernessLuteal {
+                                statRow("Faza lutealna", value: painLabel(l))
+                            }
+                        }
+                    }
+
+                    // Plamienie
+                    if stats.cyclesWithSpotting > 0 {
+                        Section("Plamienie międzymiesiączkowe") {
+                            statRow("Cykle z plamieniem", value: "\(stats.cyclesWithSpotting) / \(stats.cycleCount)")
+                            statRow("Łącznie dni", value: "\(stats.spotting)")
+                        }
+                    }
+
+                    // Test progesteron
+                    if stats.cyclesWithProgesteroneTest > 0 {
+                        Section {
+                            statRow("Cykle z testem", value: "\(stats.cyclesWithProgesteroneTest)")
+                            statRow("Potwierdzony wyrzut", value: "\(stats.cyclesWithConfirmedProgesterone) / \(stats.cyclesWithProgesteroneTest)")
+                            let pct = Int(round(Double(stats.cyclesWithConfirmedProgesterone) / Double(stats.cyclesWithProgesteroneTest) * 100))
+                            statRow("Skuteczność", value: "\(pct)%")
+                        } header: {
+                            Text("Progesteron (Proov/PdG)")
+                                .glossaryInfo("luteal-phase")
+                        }
+                    }
+
+                    // Peak Day
+                    if let peakDay = stats.averagePeakDayOfCycle {
+                        Section {
+                            statRow("Średni dzień szczytowy", value: "dzień \(Int(round(peakDay)))")
+                        } header: {
+                            Text("Peak Day")
+                                .glossaryInfo("fertile-window")
+                        }
+                    }
+
+                    // Szyjka SHOW
+                    if stats.showDaysCount > 0 {
+                        Section {
+                            statRow("Dni z pełnym SHOW", value: "\(stats.showDaysCount)")
+                            let pct = Int(round(stats.showPercentage * 100))
+                            statRow("% dni z obserwacją", value: "\(pct)%")
+                        } header: {
+                            Text("Szyjka macicy")
+                                .glossaryInfo("cervix")
+                        }
+                    }
+
+                    // Streak BBT
+                    if stats.longestBBTStreak > 0 {
+                        Section {
+                            statRow("Najdłuższa seria pomiarów", value: "\(stats.longestBBTStreak) dni")
+                        } header: {
+                            Text("Konsekwencja BBT")
+                                .glossaryInfo("bbt")
+                        }
+                    }
+
+                    // Karmienie piersią
+                    if stats.breastfeedingDaysCount > 0 {
+                        Section("Karmienie piersią") {
+                            statRow("Dni z karmieniem", value: "\(stats.breastfeedingDaysCount)")
+                        }
+                    }
 
                     if stats.intercourseCount > 0 {
                         Section("Stosunek") {
@@ -401,5 +486,14 @@ struct StatsView: View {
         if diff <= 2 { return .secondary }
         if diff <= 5 { return .orange }
         return .red
+    }
+    
+    private func painSideLabel(_ side: PainSide) -> String {
+        switch side {
+        case .none: return "—"
+        case .left: return "Lewa"
+        case .right: return "Prawa"
+        case .both: return "Obie strony"
+        }
     }
 }

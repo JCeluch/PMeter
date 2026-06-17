@@ -66,6 +66,36 @@ struct CycleStatistics {
     let averageMoodOvulatory: Double?
     let averageMoodLuteal: Double?
     let averageMoodMenstrual: Double?
+    
+    // MARK: - Ból owulacyjny
+    let averageOvulationPain: Double        // 0 = brak danych
+    let maxOvulationPain: Int?
+    let dominantOvulationPainSide: PainSide?
+
+    // MARK: - Czułość piersi
+    let averageBreastTendernessFollicular: Double?
+    let averageBreastTendernessLuteal: Double?
+
+    // MARK: - Plamienie międzymiesiączkowe
+    let cyclesWithSpotting: Int
+    let spotting: Int                       // łączna liczba dni
+
+    // MARK: - Test progesteron
+    let cyclesWithProgesteroneTest: Int
+    let cyclesWithConfirmedProgesterone: Int
+
+    // MARK: - Peak Day
+    let averagePeakDayOfCycle: Double?      // średni dzień cyklu (1-based)
+
+    // MARK: - Szyjka macicy SHOW
+    let showDaysCount: Int                  // dni z pełnym SHOW
+    let showPercentage: Double              // % dni z obserwacją szyjki
+
+    // MARK: - Streak BBT
+    let longestBBTStreak: Int              // najdłuższa seria bez przerwy
+
+    // MARK: - Karmienie piersią
+    let breastfeedingDaysCount: Int
 }
 
 struct CycleInfo {

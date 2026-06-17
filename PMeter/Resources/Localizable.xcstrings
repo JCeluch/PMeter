@@ -3328,6 +3328,9 @@
         }
       }
     },
+    "Czułość piersi" : {
+
+    },
     "Dane startowe" : {
       "localizations" : {
         "en" : {
@@ -4547,6 +4550,9 @@
         }
       }
     },
+    "Karmienie piersią" : {
+
+    },
     "Kolor krwawienia" : {
       "localizations" : {
         "en" : {
@@ -4562,6 +4568,9 @@
           }
         }
       }
+    },
+    "Konsekwencja BBT" : {
+
     },
     "lh.symbols.negative" : {
       "localizations" : {
@@ -4837,6 +4846,12 @@
         }
       }
     },
+    "Peak Day" : {
+
+    },
+    "Plamienie międzymiesiączkowe" : {
+
+    },
     "Plamienie śródcykliczne" : {
       "localizations" : {
         "en" : {
@@ -4884,6 +4899,9 @@
           }
         }
       }
+    },
+    "Progesteron (Proov/PdG)" : {
+
     },
     "Przewidywania" : {
       "localizations" : {
@@ -5270,6 +5288,9 @@
           }
         }
       }
+    },
+    "Szyjka macicy" : {
+
     },
     "Szyjka:" : {
       "localizations" : {
