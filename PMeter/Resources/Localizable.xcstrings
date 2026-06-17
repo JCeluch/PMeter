@@ -31,6 +31,9 @@
         }
       }
     },
+    "–" : {
+
+    },
     "—" : {
 
     },
@@ -452,6 +455,9 @@
           }
         }
       }
+    },
+    "Brak wniosków w tej kategorii" : {
+
     },
     "calendar.addEntry" : {
       "localizations" : {
@@ -3406,9 +3412,6 @@
         }
       }
     },
-    "Dodaj przynajmniej dwa cykle, aby zobaczyć wnioski." : {
-
-    },
     "Dodaj wagę" : {
 
     },
@@ -5533,6 +5536,19 @@
 
     },
     "Wnioski" : {
+
+    },
+    "Wnioski oparte na %lld %@. Im więcej danych, tym trafniejsze obserwacje." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Wnioski oparte na %1$lld %2$@. Im więcej danych, tym trafniejsze obserwacje."
+          }
+        }
+      }
+    },
+    "Wnioski pojawią się po zebraniu danych z co najmniej 2 cykli." : {
 
     },
     "Współżycie" : {

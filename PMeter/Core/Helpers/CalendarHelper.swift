@@ -51,6 +51,11 @@ struct CycleChartDay: Identifiable, Hashable {
     var intercourse: IntercourseType       { entry?.intercourse ?? .none }
     var ovulationPainIntensity: Int        { entry?.ovulationPainIntensity ?? 0 }
     var breastTenderness: Int              { entry?.breastTenderness ?? 0 }
+    
+    var energyLevel: Int    { entry?.energyLevel ?? 0 }
+    var sleepQuality: Int   { entry?.sleepQuality ?? 0 }
+    var weight: Double?     { entry?.weight ?? nil }
+    
     var notes: String                      { entry?.notes ?? "" }
     
     var isPlaceholder: Bool = false

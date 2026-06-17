@@ -104,6 +104,9 @@ struct CycleChartView: View {
                         cervixRow
                         observationRow(title: "LH", values: days.map { lhSymbol(for: $0.lhTest) })
                         intercourseRow
+                        energyRow
+                        sleepRow
+                        weightRow
                     }
                     .padding(.bottom, 8)
                     .frame(minWidth: gridWidth, alignment: .leading)
@@ -465,7 +468,17 @@ struct CycleChartView: View {
                     .frame(width: slotWidth, height: 28)
                     .background(
                         RoundedRectangle(cornerRadius: 6)
-                            .fill(mucusCellBackground(for: day.mucusSensation))
+                            .fill(
+                                day.isPeakDay
+                                    ? Color.pmPrimary.opacity(0.22)
+                                    : mucusCellBackground(for: day.mucusSensation)
+                            )
+                            .overlay(
+                                day.isPeakDay
+                                    ? RoundedRectangle(cornerRadius: 6)
+                                        .strokeBorder(Color.pmPrimary.opacity(0.5), lineWidth: 1)
+                                    : nil
+                            )
                     )
             }
         }
@@ -543,6 +556,91 @@ struct CycleChartView: View {
         case .none:        return ""
         case .unprotected: return "♥"
         case .protected:   return "○"
+        }
+    }
+    
+    // MARK: - Energy row
+    private var energyRow: some View {
+        HStack(spacing: 0) {
+            rowTitle("⚡")
+                .frame(width: rowLeadingPadding, alignment: .leading)
+            ForEach(days) { day in
+                let value = day.energyLevel
+                Text(value > 0 ? "\(value)" : "–")
+                    .font(.caption)
+                    .foregroundStyle(energyColor(for: value))
+                    .frame(width: slotWidth, height: 28)
+                    .background(
+                        RoundedRectangle(cornerRadius: 6)
+                            .fill(value > 0 ? energyColor(for: value).opacity(0.12) : Color.pmSurface)
+                    )
+            }
+        }
+    }
+
+    // MARK: - Sleep row
+    private var sleepRow: some View {
+        HStack(spacing: 0) {
+            rowTitle("💤")
+                .frame(width: rowLeadingPadding, alignment: .leading)
+            ForEach(days) { day in
+                let value = day.sleepQuality
+                Text(value > 0 ? "\(value)" : "–")
+                    .font(.caption)
+                    .foregroundStyle(sleepColor(for: value))
+                    .frame(width: slotWidth, height: 28)
+                    .background(
+                        RoundedRectangle(cornerRadius: 6)
+                            .fill(value > 0 ? sleepColor(for: value).opacity(0.12) : Color.pmSurface)
+                    )
+            }
+        }
+    }
+
+    // MARK: - Weight row
+    private var weightRow: some View {
+        HStack(spacing: 0) {
+            rowTitle("kg")
+                .frame(width: rowLeadingPadding, alignment: .leading)
+            ForEach(days) { day in
+                if let w = day.weight {
+                    Text(String(format: "%.1f", w))
+                        .font(.system(size: 9))
+                        .foregroundStyle(Color.pmTextPrimary)
+                        .frame(width: slotWidth, height: 28)
+                        .background(
+                            RoundedRectangle(cornerRadius: 6)
+                                .fill(Color.pmSurface)
+                        )
+                } else {
+                    Text("–")
+                        .font(.caption)
+                        .foregroundStyle(Color.pmTextSecondary.opacity(0.3))
+                        .frame(width: slotWidth, height: 28)
+                }
+            }
+        }
+    }
+    
+    private func energyColor(for value: Int) -> Color {
+        switch value {
+        case 1: return .orange
+        case 2: return .yellow
+        case 3: return .pmTextSecondary
+        case 4: return .pmPrimary.opacity(0.8)
+        case 5: return .pmPrimary
+        default: return .pmTextSecondary
+        }
+    }
+
+    private func sleepColor(for value: Int) -> Color {
+        switch value {
+        case 1: return .red.opacity(0.7)
+        case 2: return .orange
+        case 3: return .pmTextSecondary
+        case 4: return .pmPrimary.opacity(0.7)
+        case 5: return .pmPrimary
+        default: return .pmTextSecondary
         }
     }
 }
