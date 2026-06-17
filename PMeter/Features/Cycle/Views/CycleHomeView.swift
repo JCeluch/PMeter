@@ -13,6 +13,14 @@ struct CycleHomeView: View {
     @Query(sort: \CycleEntry.date, order: .reverse) private var entries: [CycleEntry]
 
     @State private var showingAddEntry = false
+    
+    private var prediction: CyclePredictionService.Prediction {
+        CyclePredictionService.predict(from: Array(entries))
+    }
+
+    private var currentCycleDay: Int? {
+        CalendarHelper.cycleDay(for: .now, entries: Array(entries))
+    }
 
     var body: some View {
         NavigationStack {
@@ -67,6 +75,17 @@ struct CycleHomeView: View {
 
     private var entriesList: some View {
         List {
+            if prediction.nextPeriodStart != nil || currentCycleDay != nil {
+                Section {
+                    PredictionBannerView(
+                        prediction: prediction,
+                        currentCycleDay: currentCycleDay
+                    )
+                    .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                }
+            }
             Section(L10n.CycleList.recentEntries) {
                 ForEach(entries) { entry in
                     NavigationLink {

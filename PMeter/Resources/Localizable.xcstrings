@@ -266,6 +266,9 @@
         }
       }
     },
+    "📍 W oknie płodnym" : {
+
+    },
     "Aktualny cykl" : {
 
     },
@@ -3418,6 +3421,9 @@
     "dzień %lld" : {
 
     },
+    "Dzień %lld cyklu" : {
+
+    },
     "Dzień szczytowy" : {
       "localizations" : {
         "en" : {
@@ -4589,6 +4595,16 @@
     "kg" : {
 
     },
+    "Kolejna miesiączka za %lld %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Kolejna miesiączka za %1$lld %2$@"
+          }
+        }
+      }
+    },
     "Kolor krwawienia" : {
       "localizations" : {
         "en" : {
@@ -4674,6 +4690,12 @@
           }
         }
       }
+    },
+    "Miesiączka spodziewana %lld dni temu" : {
+
+    },
+    "Miesiączka spodziewana dzisiaj" : {
+
     },
     "mucus.symbols.creamy" : {
       "localizations" : {
