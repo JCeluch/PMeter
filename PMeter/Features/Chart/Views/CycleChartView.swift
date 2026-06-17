@@ -19,21 +19,45 @@ struct CycleChartView: View {
     
     private let cellWidth: CGFloat = 32
     private let rowSpacing: CGFloat = 8
+    
+    // MARK: - Nowe: wykrywamy czy to bieżący cykl
+    private var isCurrentCycle: Bool {
+        guard let lastStart = CalendarHelper.cycleStartDate(for: .now, entries: entries) else { return false }
+        guard let anchorStart = CalendarHelper.cycleStartDate(for: anchorDate, entries: entries) else { return false }
+        return CalendarHelper.isSameDay(lastStart, anchorStart)
+    }
+    
+    // MARK: - Prognozowana długość cyklu ze średniej historycznej
+    private var predictedCycleLength: Int {
+        let stats = CycleAnalyticsService.statistics(from: entries)
+        let avg = stats.averageCycleLength
+        // Fallback 28 jeżeli brak historii
+        return avg > 0 ? max(Int(round(avg)), days.count) : 28
+    }
+    
+    // MARK: - Dni z paddingiem dla bieżącego cyklu
+    private var days: [CycleChartDay] {
+        let rawDays = CalendarHelper.cycleDays(containing: anchorDate, entries: entries)
+        guard isCurrentCycle else { return rawDays }
+        return CalendarHelper.cycleDaysWithPredictedPadding(
+            containing: anchorDate,
+            entries: entries,
+            predictedLength: predictedCycleLength
+        )
+    }
 
+    // MARK: - Minimalna szerokość = max(obliczona, szerokość ekranu)
     private var gridWidth: CGFloat {
         let count = CGFloat(days.count)
-        guard count > 0 else { return 0 }
-        return count * cellWidth + max(0, count - 1) * rowSpacing
+        guard count > 0 else { return UIScreen.main.bounds.width }
+        let computed = count * cellWidth + max(0, count - 1) * rowSpacing
+        return max(computed, UIScreen.main.bounds.width)
     }
     
     private var chartOnlyWidth: CGFloat {
         let count = CGFloat(days.count)
         guard count > 0 else { return 0 }
         return count * cellWidth + max(0, count - 1) * rowSpacing
-    }
-    
-    private var days: [CycleChartDay] {
-        CalendarHelper.cycleDays(containing: anchorDate, entries: entries)
     }
 
     private var temperatureDays: [CycleChartDay] {
@@ -62,7 +86,7 @@ struct CycleChartView: View {
         VStack(alignment: .leading, spacing: 16) {
             header
 
-            if days.isEmpty {
+            if days.filter({ !$0.isPlaceholder }).isEmpty {
                 ContentUnavailableView(
                     L10n.Calendar.emptyTitle,
                     systemImage: "waveform.path.ecg",
@@ -81,7 +105,9 @@ struct CycleChartView: View {
                         intercourseRow
                     }
                     .padding(.bottom, 8)
+                    .frame(minWidth: gridWidth, alignment: .leading)
                 }
+                .id(anchorDate)
             }
         }
         .padding()
@@ -132,22 +158,37 @@ struct CycleChartView: View {
                 .frame(width: rowLeadingPadding, alignment: .leading)
 
             ForEach(days) { day in
-                Button {
-                    selectedDate = day.date
-                } label: {
-                    Text("\(day.cycleDay)")
+                if day.isPlaceholder {
+                    Text("·")
                         .font(.caption.weight(.semibold))
                         .frame(width: slotWidth, height: 28)
+                        .foregroundStyle(Color.pmTextSecondary.opacity(0.3))
                         .background(
                             RoundedRectangle(cornerRadius: 8)
-                                .fill(
-                                    isSelected(day.date)
-                                    ? Color.pmPrimary.opacity(0.18)
-                                    : Color.pmSurface
+                                .fill(Color.pmSurface.opacity(0.5))
+                                .strokeBorder(
+                                    Color.pmTextSecondary.opacity(0.1),
+                                    lineWidth: 0.5
                                 )
                         )
+                } else {
+                    Button {
+                        selectedDate = day.date
+                    } label: {
+                        Text("\(day.cycleDay)")
+                            .font(.caption.weight(.semibold))
+                            .frame(width: slotWidth, height: 28)
+                            .background(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .fill(
+                                        isSelected(day.date)
+                                        ? Color.pmPrimary.opacity(0.18)
+                                        : Color.pmSurface
+                                    )
+                            )
+                    }
+                    .buttonStyle(.plain)
                 }
-                .buttonStyle(.plain)
             }
         }
     }
@@ -158,10 +199,14 @@ struct CycleChartView: View {
                 .frame(width: rowLeadingPadding, alignment: .leading)
 
             ForEach(days) { day in
-                Text(day.date.formatted(.dateTime.day()))
+                Text(day.isPlaceholder ? "?" : day.date.formatted(.dateTime.day()))
                     .font(.caption2)
                     .frame(width: slotWidth, height: 28)
-                    .foregroundStyle(Color.pmTextSecondary)
+                    .foregroundStyle(
+                        day.isPlaceholder
+                            ? Color.pmTextSecondary.opacity(0.25)
+                            : Color.pmTextSecondary
+                    )
             }
         }
     }
@@ -236,7 +281,7 @@ struct CycleChartView: View {
                         .onAppear {
                             updatePlotMetrics(proxy: proxy, geo: geo)
                         }
-                        .onChange(of: days.count) {
+                        .onChange(of: days.map(\.cycleDay)) {
                             updatePlotMetrics(proxy: proxy, geo: geo)
                         }
                 }
@@ -409,11 +454,11 @@ struct CycleChartView: View {
     // MARK: - Mucus row
     private var mucusRow: some View {
         HStack(spacing: 0) {
-            rowTitle("Śluz")
+            rowTitle(String(localized: "calendar.chart.mucus"))
                 .frame(width: rowLeadingPadding, alignment: .leading)
             
             ForEach(days) { day in
-                Text(mucusSymbol(for: day.mucusSensation))
+                Text(day.isPlaceholder ? "?" : mucusSymbol(for: day.mucusSensation))
                     .font(.caption)
                     .foregroundStyle(mucusColor(for: day.mucusSensation))
                     .frame(width: slotWidth, height: 28)
@@ -428,10 +473,10 @@ struct CycleChartView: View {
     // MARK: - Cervix row
     private var cervixRow: some View {
         HStack(spacing: 0) {
-            rowTitle("SHOW")
+            rowTitle(String(localized: "calendar.chart.cervix"))
                 .frame(width: rowLeadingPadding, alignment: .leading)
             ForEach(days) { day in
-                Text(cervixSymbol(fertilityScore: day.cervixFertilityScore))
+                Text(day.isPlaceholder ? "?" : cervixSymbol(fertilityScore: day.cervixFertilityScore))
                     .font(.caption)
                     .foregroundStyle(Color.pmTextPrimary)
                     .frame(width: slotWidth, height: 28)
@@ -446,10 +491,10 @@ struct CycleChartView: View {
     // MARK: - Intercourse row
     private var intercourseRow: some View {
         HStack(spacing: 0) {
-            rowTitle("Int.")
+            rowTitle(String(localized: "calendar.chart.intercourse"))
                 .frame(width: rowLeadingPadding, alignment: .leading)
             ForEach(days) { day in
-                Text(intercourseSymbol(for: day.intercourse))
+                Text(day.isPlaceholder ? "?" : intercourseSymbol(for: day.intercourse))
                     .font(.caption)
                     .foregroundStyle(day.intercourse != .none ? Color.pmPrimary : Color.pmTextSecondary.opacity(0.4))
                     .frame(width: slotWidth, height: 28)

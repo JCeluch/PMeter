@@ -47,6 +47,9 @@
         }
       }
     },
+    "·" : {
+
+    },
     "· PEAK" : {
       "localizations" : {
         "en" : {
@@ -405,6 +408,9 @@
         }
       }
     },
+    "calendar.chart.cervix" : {
+
+    },
     "calendar.chart.dateShort" : {
       "localizations" : {
         "en" : {
@@ -421,6 +427,9 @@
         }
       }
     },
+    "calendar.chart.intercourse" : {
+
+    },
     "calendar.chart.intercourseShort" : {
       "localizations" : {
         "en" : {
@@ -436,6 +445,9 @@
           }
         }
       }
+    },
+    "calendar.chart.mucus" : {
+
     },
     "calendar.chart.mucusShort" : {
       "localizations" : {
@@ -4934,6 +4946,7 @@
       }
     },
     "Śluz" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

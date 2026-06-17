@@ -52,6 +52,8 @@ struct CycleChartDay: Identifiable, Hashable {
     var ovulationPainIntensity: Int        { entry?.ovulationPainIntensity ?? 0 }
     var breastTenderness: Int              { entry?.breastTenderness ?? 0 }
     var notes: String                      { entry?.notes ?? "" }
+    
+    var isPlaceholder: Bool = false
 }
 
 enum CalendarHelper {
@@ -203,5 +205,36 @@ enum CalendarHelper {
                 entry: entry
             )
         }
+    }
+
+    /// Zwraca dni bieżącego cyklu uzupełnione pustymi placeholderami
+    /// do przewidywanej długości (ze średniej historycznej).
+    static func cycleDaysWithPredictedPadding(
+        containing date: Date,
+        entries: [CycleEntry],
+        predictedLength: Int
+    ) -> [CycleChartDay] {
+        var days = cycleDays(containing: date, entries: entries)
+        guard !days.isEmpty else { return days }
+
+        let currentCount = days.count
+        let target = max(currentCount, predictedLength)
+
+        guard target > currentCount else { return days }
+
+        let calendar = Calendar.current
+        guard let lastDate = days.last?.date else { return days }
+
+        for offset in 1...(target - currentCount) {
+            guard let nextDate = calendar.date(byAdding: .day, value: offset, to: lastDate) else { break }
+            let placeholder = CycleChartDay(
+                date: nextDate,
+                cycleDay: currentCount + offset,
+                entry: nil,
+                isPlaceholder: true
+            )
+            days.append(placeholder)
+        }
+        return days
     }
 }
