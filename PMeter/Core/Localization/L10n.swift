@@ -298,6 +298,96 @@ extension L10n {
                     static let short: LocalizedStringKey = "education.glossary.entry.menstrual-cycle.short"
                     static let definition: LocalizedStringKey = "education.glossary.entry.menstrual-cycle.definition"
                 }
+                
+                enum FollicularPhase {
+                    static let title: LocalizedStringKey = "education.glossary.entry.follicular-phase.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.follicular-phase.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.follicular-phase.definition"
+                }
+
+                enum Ovulation {
+                    static let title: LocalizedStringKey = "education.glossary.entry.ovulation.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.ovulation.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.ovulation.definition"
+                }
+
+                enum CorpusLuteum {
+                    static let title: LocalizedStringKey = "education.glossary.entry.corpus-luteum.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.corpus-luteum.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.corpus-luteum.definition"
+                }
+
+                enum Estrogen {
+                    static let title: LocalizedStringKey = "education.glossary.entry.estrogen.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.estrogen.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.estrogen.definition"
+                }
+
+                enum Progesterone {
+                    static let title: LocalizedStringKey = "education.glossary.entry.progesterone.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.progesterone.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.progesterone.definition"
+                }
+
+                enum FSH {
+                    static let title: LocalizedStringKey = "education.glossary.entry.fsh.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.fsh.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.fsh.definition"
+                }
+
+                enum AnovulatoryCycle {
+                    static let title: LocalizedStringKey = "education.glossary.entry.anovulatory-cycle.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.anovulatory-cycle.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.anovulatory-cycle.definition"
+                }
+
+                enum Coverline {
+                    static let title: LocalizedStringKey = "education.glossary.entry.coverline.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.coverline.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.coverline.definition"
+                }
+
+                enum SymptothermalMethod {
+                    static let title: LocalizedStringKey = "education.glossary.entry.sympto-thermal.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.sympto-thermal.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.sympto-thermal.definition"
+                }
+
+                enum BillingsMethod {
+                    static let title: LocalizedStringKey = "education.glossary.entry.billings.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.billings.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.billings.definition"
+                }
+
+                enum CreightonModel {
+                    static let title: LocalizedStringKey = "education.glossary.entry.creighton.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.creighton.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.creighton.definition"
+                }
+
+                enum PMS {
+                    static let title: LocalizedStringKey = "education.glossary.entry.pms.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.pms.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.pms.definition"
+                }
+
+                enum Implantation {
+                    static let title: LocalizedStringKey = "education.glossary.entry.implantation.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.implantation.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.implantation.definition"
+                }
+
+                enum SpottingEntry {
+                    static let title: LocalizedStringKey = "education.glossary.entry.spotting.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.spotting.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.spotting.definition"
+                }
+
+                enum Breastfeeding {
+                    static let title: LocalizedStringKey = "education.glossary.entry.breastfeeding.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.breastfeeding.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.breastfeeding.definition"
+                }
             }
 
         }

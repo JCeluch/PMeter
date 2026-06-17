@@ -32,10 +32,24 @@
       }
     },
     "–" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "–"
+          }
+        }
+      }
     },
     "—" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "—"
+          }
+        }
+      }
     },
     "," : {
       "localizations" : {
@@ -224,10 +238,24 @@
       }
     },
     "%lld%%" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld%%"
+          }
+        }
+      }
     },
     "%lldd" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lldd"
+          }
+        }
+      }
     },
     "°C" : {
       "extractionState" : "stale",
@@ -267,10 +295,36 @@
       }
     },
     "📍 W oknie płodnym" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📍 In fertile window"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📍 W oknie płodnym"
+          }
+        }
+      }
     },
     "Aktualny cykl" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Current cycle"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktualny cykl"
+          }
+        }
+      }
     },
     "Anuluj" : {
       "localizations" : {
@@ -290,6 +344,12 @@
     },
     "BBT" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BBT"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
@@ -299,7 +359,20 @@
       }
     },
     "BBT i fazy" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BBT and fazes"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PTC i fazy"
+          }
+        }
+      }
     },
     "Błąd ładowania danych" : {
       "localizations" : {
@@ -320,6 +393,12 @@
     "Bleed" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bleed"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
@@ -409,7 +488,20 @@
       }
     },
     "Ból głowy" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Headache"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ból głowy"
+          }
+        }
+      }
     },
     "Ból menstruacyjny" : {
       "localizations" : {
@@ -460,7 +552,20 @@
       }
     },
     "Brak wniosków w tej kategorii" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No insights in this cathegory"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brak wniosków w tej kategorii"
+          }
+        }
+      }
     },
     "calendar.addEntry" : {
       "localizations" : {
@@ -3344,10 +3449,36 @@
       }
     },
     "Czułość piersi" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Breast sensitivity"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czułość piersi"
+          }
+        }
+      }
     },
     "Czysta" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clean"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czysta"
+          }
+        }
+      }
     },
     "Dane startowe" : {
       "localizations" : {
@@ -3377,7 +3508,20 @@
       }
     },
     "Długość cykli" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cycles length"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Długość cykli"
+          }
+        }
+      }
     },
     "Długości cykli" : {
       "extractionState" : "stale",
@@ -3397,7 +3541,20 @@
       }
     },
     "Dni" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Days"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dni"
+          }
+        }
+      }
     },
     "Dodaj przynajmniej dwa cykle, aby zobaczyć statystyki i przewidywania." : {
       "localizations" : {
@@ -3416,13 +3573,52 @@
       }
     },
     "Dodaj wagę" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add weight"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodaj wagę"
+          }
+        }
+      }
     },
     "dzień %lld" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "day %lld"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dzień %lld"
+          }
+        }
+      }
     },
     "Dzień %lld cyklu" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Day %lld of cycle"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dzień %lld cyklu"
+          }
+        }
+      }
     },
     "Dzień szczytowy" : {
       "localizations" : {
@@ -3648,6 +3844,54 @@
         }
       }
     },
+    "education.glossary.entry.anovulatory-cycle.definition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An anovulatory cycle is one in which no egg is released. The uterine lining still builds up under estrogen influence and eventually sheds (withdrawal bleeding), but no thermal shift appears on the BBT chart. Common causes include stress, illness, significant weight changes, intense exercise, breastfeeding, and perimenopause. Occasional anovulatory cycles are normal; frequent ones may require medical evaluation."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cykl bezowulacyjny to taki, w którym nie dochodzi do uwolnienia komórki jajowej. Endometrium nadal narasta pod wpływem estrogenu i ulega złuszczeniu (krwawienie z odstawienia), ale na wykresie PTC nie pojawia się skok termiczny. Częste przyczyny to stres, choroba, znaczne zmiany masy ciała, intensywny wysiłek, karmienie piersią i perimenopauza. Sporadyczne cykle bezowulacyjne są normalne; częste wymagają konsultacji lekarskiej."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.anovulatory-cycle.short" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A cycle in which ovulation does not occur, showing a flat BBT chart."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cykl, w którym nie dochodzi do owulacji – wykres PTC jest jednofazowy."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.anovulatory-cycle.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anovulatory cycle"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cykl bezowulacyjny"
+          }
+        }
+      }
+    },
     "education.glossary.entry.bbt.definition" : {
       "localizations" : {
         "en" : {
@@ -3744,6 +3988,54 @@
         }
       }
     },
+    "education.glossary.entry.billings.definition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The Billings Ovulation Method (BOM) was developed by Drs. John and Evelyn Billings. It is based solely on observing the sensation at the vulva and the appearance of cervical mucus throughout the day. The woman identifies a \"peak day\" — the last day of slippery or stretchy mucus — after which a defined number of infertile days are counted. No thermometer is required."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metoda Billingsów (BOM) opracowana przez dr. Johna i Evelyn Billings opiera się wyłącznie na obserwacji odczucia przy wejściu do pochwy i wyglądu śluzu szyjkowego przez cały dzień. Kobieta identyfikuje „dzień szczytowy\" — ostatni dzień śluzu o charakterze ślisko-rozciągliwym — po którym odlicza określoną liczbę niepłodnych dni. Nie wymaga termometru."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.billings.short" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A mucus-only FAM method based on observing the sensation and appearance of cervical secretions."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metoda NPR oparta wyłącznie na obserwacji odczucia i wyglądu wydzieliny szyjkowej."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.billings.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Billings Ovulation Method"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metoda Billingsów"
+          }
+        }
+      }
+    },
     "education.glossary.entry.biphasic-cycle.definition" : {
       "localizations" : {
         "en" : {
@@ -3788,6 +4080,54 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cykl dwufazowy"
+          }
+        }
+      }
+    },
+    "education.glossary.entry.breastfeeding.definition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "During breastfeeding, prolactin suppresses the release of FSH and LH from the pituitary, inhibiting ovulation. This natural postpartum infertility (LAM) can be used as contraception under specific conditions (exclusive breastfeeding, amenorrhoea, baby under 6 months). As nursing frequency decreases, cycles gradually return — often irregular and anovulatory at first. Charting during this period requires patience."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podczas karmienia piersią prolaktyna hamuje wydzielanie FSH i LH przez przysadkę, blokując owulację. Ta naturalna niepłodność poporodowa (LAM) może być stosowana jako antykoncepcja przy spełnieniu określonych warunków (wyłączne karmienie, brak miesiączki, dziecko poniżej 6 miesiąca). Gdy częstotliwość karmień maleje, cykle stopniowo powracają — często nieregularne i bezowulacyjne. Prowadzenie karty w tym okresie wymaga cierpliwości."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.breastfeeding.short" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Breastfeeding suppresses ovulation due to elevated prolactin, often causing anovulatory cycles."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Karmienie piersią hamuje owulację przez podwyższony prolaktynę, często powodując cykle bezowulacyjne."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.breastfeeding.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Breastfeeding and the cycle"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Karmienie piersią a cykl"
           }
         }
       }
@@ -3984,6 +4324,198 @@
         }
       }
     },
+    "education.glossary.entry.corpus-luteum.definition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "After ovulation, the follicle transforms into the corpus luteum — a temporary endocrine gland that produces progesterone and some estrogen. Progesterone causes the BBT rise, thickens cervical mucus, and prepares the uterine lining for implantation. If fertilization does not occur, the corpus luteum degrades after about 12–16 days, progesterone drops, and menstruation begins."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Po owulacji pęcherzyk przekształca się w ciałko żółte — tymczasowy gruczoł dokrewny produkujący progesteron i nieco estrogenu. Progesteron powoduje wzrost PTC, zagęszcza śluz szyjkowy i przygotowuje endometrium do implantacji. Jeśli zapłodnienie nie nastąpi, ciałko żółte zanika po ok. 12–16 dniach, progesteron spada i rozpoczyna się miesiączka."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.corpus-luteum.short" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temporary gland formed after ovulation, producing progesterone."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tymczasowy gruczoł powstały po owulacji, produkujący progesteron."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.corpus-luteum.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corpus luteum"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ciałko żółte"
+          }
+        }
+      }
+    },
+    "education.glossary.entry.coverline.definition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The coverline is drawn 0.05°C above the highest of the last 6 pre-ovulatory temperatures (excluding any disturbances). When 3 consecutive temperatures rise above the coverline, a thermal shift is confirmed and the post-ovulatory infertile phase begins. The coverline is a key interpretation tool in the sympto-thermal method."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linię pokrycia wyznacza się 0,05°C powyżej najwyższej spośród ostatnich 6 temperatur przed owulacją (z pominięciem zaburzeń). Gdy 3 kolejne temperatury przekraczają linię pokrycia, skok termiczny jest potwierdzony i rozpoczyna się poowulacyjna faza niepłodna. Linia pokrycia jest kluczowym narzędziem interpretacyjnym w metodzie symptotermicznej."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.coverline.short" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A horizontal line on the BBT chart drawn above the pre-ovulatory temperatures to confirm thermal shift."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pozioma linia na wykresie PTC wyznaczana powyżej temperatur przed owulacją, potwierdzająca skok termiczny."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.coverline.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coverline"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linia pokrycia"
+          }
+        }
+      }
+    },
+    "education.glossary.entry.creighton.definition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The Creighton Model FertilityCare System (CrMS) uses a precise code system to record the color, consistency, and sensation of cervical secretions. CrMS forms the basis of NaProTechnology — a medical approach to diagnosing and treating reproductive health conditions (e.g., PCOS, endometriosis, recurrent miscarriage) using charted data."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Model Creightona (CrMS) używa precyzyjnego systemu kodów do zapisu koloru, konsystencji i odczucia wydzieliny szyjkowej. CrMS stanowi podstawę NaProTechnology — medycznego podejścia do diagnozowania i leczenia problemów rozrodczych (PCOS, endometrioza, nawykowe poronienia) z użyciem danych z kart."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.creighton.short" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A standardized mucus-based FAM method using a detailed observation code system."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ustandaryzowana metoda NPR oparta na obserwacji śluzu z szczegółowym systemem kodów."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.creighton.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Creighton Model"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Model Creightona (CrMS)"
+          }
+        }
+      }
+    },
+    "education.glossary.entry.estrogen.definition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estrogen (primarily estradiol) is produced by growing ovarian follicles during the follicular phase. It is responsible for the development of egg-white cervical mucus, the proliferation of the uterine lining, and — when it reaches peak levels — triggers the LH surge that causes ovulation. In FAM, rising estrogen is reflected in mucus becoming increasingly wet and stretchy."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estrogen (głównie estradiol) jest produkowany przez rosnące pęcherzyki jajnikowe w fazie folikularnej. Odpowiada za powstawanie śluzu jak białko jajka, rozrost endometrium oraz — gdy osiąga szczyt — wyzwala skok LH wywołujący owulację. W metodach NPR rosnący estrogen objawia się coraz bardziej wilgotnym i rozciągliwym śluzem."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.estrogen.short" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hormone produced by follicles, responsible for fertile-type mucus and the LH surge."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hormon produkowany przez pęcherzyki, odpowiedzialny za śluz płodny i skok LH."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.estrogen.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estrogen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estrogen"
+          }
+        }
+      }
+    },
     "education.glossary.entry.fertile-window.definition" : {
       "localizations" : {
         "en" : {
@@ -4028,6 +4560,150 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Okno płodności"
+          }
+        }
+      }
+    },
+    "education.glossary.entry.follicular-phase.definition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The follicular phase begins on the first day of menstruation and ends with ovulation. Under the influence of FSH, follicles in the ovary develop, and the dominant follicle produces increasing amounts of estrogen. Estrogen causes the uterine lining to thicken and triggers the LH surge that leads to ovulation. The length of this phase varies between cycles and determines the total cycle length."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faza folikularna rozpoczyna się pierwszego dnia miesiączki i kończy owulacją. Pod wpływem FSH rozwijają się pęcherzyki w jajniku, a dominujący produkuje rosnące ilości estrogenu. Estrogen powoduje rozrost błony śluzowej macicy i wyzwala skok LH prowadzący do owulacji. Długość tej fazy zmienia się między cyklami i determinuje całkowitą długość cyklu."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.follicular-phase.short" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "First phase of the cycle, from menstruation to ovulation."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pierwsza faza cyklu, od menstruacji do owulacji."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.follicular-phase.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Follicular phase"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faza folikularna"
+          }
+        }
+      }
+    },
+    "education.glossary.entry.fsh.definition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FSH is secreted by the pituitary gland at the beginning of the cycle. It stimulates the growth and maturation of ovarian follicles. As estrogen levels rise, FSH is suppressed (negative feedback), leaving only the dominant follicle to continue growing. Elevated FSH levels can indicate diminished ovarian reserve and are often monitored in fertility diagnostics."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FSH jest wydzielany przez przysadkę mózgową na początku cyklu. Stymuluje wzrost i dojrzewanie pęcherzyków jajnikowych. W miarę wzrostu estrogenu FSH jest hamowany (ujemne sprzężenie zwrotne), co pozwala tylko dominującemu pęcherzykowi kontynuować wzrost. Podwyższone FSH może świadczyć o obniżonej rezerwie jajnikowej i jest często monitorowane w diagnostyce płodności."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.fsh.short" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pituitary hormone that stimulates follicle growth at the start of the cycle."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hormon przysadki stymulujący wzrost pęcherzyków na początku cyklu."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.fsh.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FSH (Follicle-Stimulating Hormone)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FSH (hormon folikulotropowy)"
+          }
+        }
+      }
+    },
+    "education.glossary.entry.implantation.definition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Implantation occurs when a fertilized egg (blastocyst) attaches to and embeds in the uterine lining, typically 6–10 days after ovulation. This triggers hCG production, which maintains the corpus luteum and prolongs progesterone secretion. On the BBT chart, successful implantation may be visible as an implantation dip — a brief temperature drop in the luteal phase — though this sign is not reliable enough for interpretation."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Implantacja następuje, gdy zapłodnione jajo (blastocysta) przyczepia się do endometrium i zagnieżdża, zazwyczaj 6–10 dni po owulacji. Wyzwala to produkcję hCG, która podtrzymuje ciałko żółte i przedłuża wydzielanie progesteronu. Na wykresie PTC udana implantacja może być widoczna jako „implantation dip\" — krótkotrwały spadek temperatury w fazie lutealnej — choć ten znak nie jest wystarczająco wiarygodny do interpretacji."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.implantation.short" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Embedding of a fertilized egg in the uterine lining, occurring 6–10 days after ovulation."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zagnieżdżenie zapłodnionej komórki jajowej w endometrium, następujące 6–10 dni po owulacji."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.implantation.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Implantation"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Implantacja"
           }
         }
       }
@@ -4224,6 +4900,54 @@
         }
       }
     },
+    "education.glossary.entry.ovulation.definition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ovulation is the moment when a mature egg is released from the dominant follicle, typically 24–36 hours after the LH peak. The egg can be fertilized for approximately 12–24 hours. Ovulation marks the boundary between the follicular and luteal phases. Signs include egg-white cervical mucus, slippery sensation, a positive LH test, and a BBT rise the following day."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Owulacja to moment uwolnienia dojrzałej komórki jajowej z dominującego pęcherzyka, zazwyczaj 24–36 godzin po szczycie LH. Komórka jajowa może zostać zapłodniona przez około 12–24 godziny. Owulacja wyznacza granicę między fazą folikularną a lutealną. Sygnały to śluz jak białko jajka, uczucie śliskości, pozytywny test LH oraz wzrost PTC następnego dnia."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.ovulation.short" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Release of a mature egg from the ovary, triggered by the LH surge."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uwolnienie dojrzałej komórki jajowej z jajnika, wywołane skokiem LH."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.ovulation.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ovulation"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Owulacja"
+          }
+        }
+      }
+    },
     "education.glossary.entry.peak-day.definition" : {
       "localizations" : {
         "en" : {
@@ -4288,6 +5012,102 @@
         }
       }
     },
+    "education.glossary.entry.pms.definition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PMS refers to a cluster of physical and psychological symptoms appearing 1–2 weeks before menstruation and resolving with its onset. Common symptoms include mood swings, irritability, bloating, breast tenderness, fatigue, and food cravings. Tracking symptoms in the chart can help identify patterns and predict onset."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PMS to zespół objawów fizycznych i psychicznych pojawiających się 1–2 tygodnie przed miesiączką i ustępujących wraz z jej początkiem. Typowe objawy to wahania nastroju, drażliwość, wzdęcia, tkliwość piersi, zmęczenie i zachcianki pokarmowe. Śledzenie objawów w karcie pomaga identyfikować wzorce i przewidywać wystąpienie PMS."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.pms.short" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Physical and emotional symptoms appearing in the luteal phase before menstruation."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Objawy fizyczne i emocjonalne pojawiające się w fazie lutealnej przed miesiączką."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.pms.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PMS (Premenstrual Syndrome)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PMS (zespół napięcia przedmiesiączkowego)"
+          }
+        }
+      }
+    },
+    "education.glossary.entry.progesterone.definition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Progesterone is produced by the corpus luteum after ovulation. It causes the characteristic BBT rise (thermal shift) visible on the chart, thickens cervical mucus (blocking further sperm), and prepares the uterine lining for a fertilized egg. Progesterone maintains the luteal phase at a relatively constant length of 12–16 days. Its drop at the end of the cycle triggers menstruation."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Progesteron jest produkowany przez ciałko żółte po owulacji. Powoduje charakterystyczny wzrost PTC (skok termiczny) widoczny na wykresie, zagęszcza śluz szyjkowy (blokując dalsze plemniki) i przygotowuje endometrium na zapłodnione jajo. Progesteron utrzymuje fazę lutealną o względnie stałej długości 12–16 dni. Jego spadek pod koniec cyklu wywołuje miesiączkę."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.progesterone.short" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hormone of the luteal phase, causing the BBT rise and drying of mucus."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hormon fazy lutealnej, powodujący wzrost PTC i wysychanie śluzu."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.progesterone.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Progesterone"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Progesteron"
+          }
+        }
+      }
+    },
     "education.glossary.entry.show.definition" : {
       "localizations" : {
         "en" : {
@@ -4332,6 +5152,102 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "SHOW"
+          }
+        }
+      }
+    },
+    "education.glossary.entry.spotting.definition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spotting is light bleeding that does not meet the criteria for full menstrual flow. It may occur around ovulation (mid-cycle spotting), in the early luteal phase (implantation spotting), at the start or end of menstruation, or due to cervical irritation. In FAM charting, spotting is recorded separately and does not mark the start of a new cycle. Frequent or unusual spotting should be evaluated by a doctor."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plamienie to lekkie krwawienie niespełniające kryteriów pełnego przepływu miesiączkowego. Może pojawić się wokół owulacji (plamienie środkowe), na początku fazy lutealnej (plamienie implantacyjne), na początku lub końcu miesiączki albo w wyniku podrażnienia szyjki. W karcie NPR plamienie jest notowane oddzielnie i nie wyznacza początku nowego cyklu. Częste lub nietypowe plamienie powinno być zbadane przez lekarza."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.spotting.short" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Light, irregular bleeding outside of menstruation, not counted as a cycle start."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lekkie, nieregularne krwawienie poza miesiączką, niezaliczane jako początek cyklu."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.spotting.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spotting"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plamienie"
+          }
+        }
+      }
+    },
+    "education.glossary.entry.sympto-thermal.definition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The sympto-thermal method (STM) combines daily BBT charting with cervical mucus observation, and optionally cervix monitoring. Ovulation is confirmed by a double check: thermal shift (3 temps above coverline) AND peak mucus day. With correct and consistent use, STM has a method effectiveness comparable to hormonal contraception (99%+). It is used both to avoid and to achieve pregnancy."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metoda symptotermalna (STM) łączy codzienne mierzenie PTC z obserwacją śluzu szyjkowego, opcjonalnie też szyjki macicy. Owulacja jest potwierdzana podwójnym sprawdzeniem: skok termiczny (3 temp. powyżej linii pokrycia) ORAZ szczytowy dzień śluzu. Przy prawidłowym stosowaniu skuteczność STM jest porównywalna z antykoncepcją hormonalną (99%+). Stosuje się ją zarówno do unikania, jak i osiągania ciąży."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.sympto-thermal.short" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A FAM method combining BBT and cervical mucus observation to identify fertile and infertile days."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metoda NPR łącząca obserwację PTC i śluzu szyjkowego w celu identyfikacji dni płodnych i niepłodnych."
+          }
+        }
+      }
+    },
+    "education.glossary.entry.sympto-thermal.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sympto-thermal method"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metoda symptotermalna (STM)"
           }
         }
       }
@@ -4548,10 +5464,36 @@
       }
     },
     "Energia" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Energy"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Energia"
+          }
+        }
+      }
     },
     "Energia wg fazy" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Energy by faze"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Energia wg fazy"
+          }
+        }
+      }
     },
     "Fazy cyklu" : {
       "localizations" : {
@@ -4570,7 +5512,20 @@
       }
     },
     "Historia cykli" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cycle history"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Historia cykli"
+          }
+        }
+      }
     },
     "Int." : {
       "extractionState" : "manual",
@@ -4584,16 +5539,68 @@
       }
     },
     "Jakość snu" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sleep quality"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jakość snu"
+          }
+        }
+      }
     },
     "Jakość snu wg fazy" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sleep quality by faze"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jakość snu wg fazy"
+          }
+        }
+      }
     },
     "Karmienie piersią" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Breastfeeding"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Karmienie piersią"
+          }
+        }
+      }
     },
     "kg" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kg"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kg"
+          }
+        }
+      }
     },
     "Kolejna miesiączka za %lld %@" : {
       "localizations" : {
@@ -4601,6 +5608,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Kolejna miesiączka za %1$lld %2$@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kolejna miesiączka za %lld %@ "
           }
         }
       }
@@ -4622,10 +5635,30 @@
       }
     },
     "Konsekwencja BBT" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BBT consequency"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konsekwencja PTC"
+          }
+        }
+      }
     },
     "Lekkie przetłuszczenie" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lekkie przetłuszczenie"
+          }
+        }
+      }
     },
     "lh.symbols.negative" : {
       "localizations" : {
@@ -4692,10 +5725,24 @@
       }
     },
     "Miesiączka spodziewana %lld dni temu" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miesiączka spodziewana %lld dni temu"
+          }
+        }
+      }
     },
     "Miesiączka spodziewana dzisiaj" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miesiączka spodziewana dzisiaj"
+          }
+        }
+      }
     },
     "mucus.symbols.creamy" : {
       "localizations" : {
@@ -4794,7 +5841,14 @@
       }
     },
     "Nastrój wg fazy" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nastrój wg fazy"
+          }
+        }
+      }
     },
     "Negatywny" : {
       "localizations" : {
@@ -4813,7 +5867,14 @@
       }
     },
     "Nie zaznaczono" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie zaznaczono"
+          }
+        }
+      }
     },
     "Objętość śluzu" : {
       "localizations" : {
@@ -4911,10 +5972,24 @@
       }
     },
     "Peak Day" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dzień szczytowy (peak day)"
+          }
+        }
+      }
     },
     "Plamienie międzymiesiączkowe" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plamienie międzymiesiączkowe"
+          }
+        }
+      }
     },
     "Plamienie śródcykliczne" : {
       "localizations" : {
@@ -4965,10 +6040,24 @@
       }
     },
     "Progesteron (Proov/PdG)" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Progesteron (Proov/PdG)"
+          }
+        }
+      }
     },
     "Pryszcze / trądzik" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pryszcze / trądzik"
+          }
+        }
+      }
     },
     "Przewidywania" : {
       "localizations" : {
@@ -4987,7 +6076,14 @@
       }
     },
     "Regularność pomiarów" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Regularność pomiarów"
+          }
+        }
+      }
     },
     "Rozciągliwość" : {
       "localizations" : {
@@ -5006,7 +6102,14 @@
       }
     },
     "Samopoczucie" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Samopoczucie"
+          }
+        }
+      }
     },
     "Setne" : {
       "localizations" : {
@@ -5260,7 +6363,14 @@
       }
     },
     "Skóra (faza lutealna)" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skóra (faza lutealna)"
+          }
+        }
+      }
     },
     "Śluz" : {
       "localizations" : {
@@ -5295,10 +6405,24 @@
       }
     },
     "Średnia" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Średnia"
+          }
+        }
+      }
     },
     "Stan skóry" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stan skóry"
+          }
+        }
+      }
     },
     "Statystyki" : {
       "localizations" : {
@@ -5366,7 +6490,14 @@
       }
     },
     "Szyjka macicy" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szyjka macicy"
+          }
+        }
+      }
     },
     "Szyjka:" : {
       "localizations" : {
@@ -5555,10 +6686,24 @@
       }
     },
     "Waga" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waga"
+          }
+        }
+      }
     },
     "Wnioski" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wnioski"
+          }
+        }
+      }
     },
     "Wnioski oparte na %lld %@. Im więcej danych, tym trafniejsze obserwacje." : {
       "localizations" : {
@@ -5567,11 +6712,24 @@
             "state" : "new",
             "value" : "Wnioski oparte na %1$lld %2$@. Im więcej danych, tym trafniejsze obserwacje."
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wnioski oparte na %lld %@. Im więcej danych, tym trafniejsze obserwacje."
+          }
         }
       }
     },
     "Wnioski pojawią się po zebraniu danych z co najmniej 2 cykli." : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wnioski pojawią się po zebraniu danych z co najmniej 2 cykli."
+          }
+        }
+      }
     },
     "Współżycie" : {
       "localizations" : {
@@ -5622,7 +6780,14 @@
       }
     },
     "Za mało danych" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Za mało danych"
+          }
+        }
+      }
     },
     "Zakłócenia BBT" : {
       "localizations" : {
@@ -5641,7 +6806,14 @@
       }
     },
     "Zakres (±%lld dni)" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zakres (±%lld dni)"
+          }
+        }
+      }
     },
     "Załadowanie danych usunie wszystkie istniejące wpisy." : {
       "localizations" : {
