@@ -27,6 +27,19 @@ extension GlossaryService {
     
     static let entries: [GlossaryEntry] = [
         GlossaryEntry(
+            id: "menstrual-cycle",
+            title: L10n.Education.Glossary.Entry.MenstrualCycle.title,
+            shortDefinition: L10n.Education.Glossary.Entry.MenstrualCycle.short,
+            definition: L10n.Education.Glossary.Entry.MenstrualCycle.definition,
+            searchableTitle: L10n.string("education.glossary.entry.menstrual-cycle.title"),
+            searchableShortDefinition: L10n.string("education.glossary.entry.menstrual-cycle.short"),
+            category: .cycle,
+            tags: [.basics, .fertility, .interpretation],
+            relatedEntryIDs: ["fertile-window", "luteal-phase", "bbt"],
+            measurementTips: [],
+            keywords: ["cykl", "menstruacja", "okres", "miesiączka", "cycle", "menstrual"]
+        ),
+        GlossaryEntry(
             id: "bbt",
             title: L10n.Education.Glossary.Entry.BBT.title,
             shortDefinition: L10n.Education.Glossary.Entry.BBT.short,

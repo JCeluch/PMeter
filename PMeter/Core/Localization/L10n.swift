@@ -292,6 +292,12 @@ extension L10n {
                     static let short: LocalizedStringKey = "education.glossary.entry.luteal-phase.short"
                     static let definition: LocalizedStringKey = "education.glossary.entry.luteal-phase.definition"
                 }
+                
+                enum MenstrualCycle {
+                    static let title: LocalizedStringKey = "education.glossary.entry.menstrual-cycle.title"
+                    static let short: LocalizedStringKey = "education.glossary.entry.menstrual-cycle.short"
+                    static let definition: LocalizedStringKey = "education.glossary.entry.menstrual-cycle.definition"
+                }
             }
 
         }

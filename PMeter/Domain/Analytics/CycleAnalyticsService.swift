@@ -52,6 +52,37 @@ enum CycleAnalyticsService {
             return CycleInfo(length: length, startDate: start, endDate: end)
         }
         
+        // MARK: Krwawienie
+        let bleedingDaysPerCycle = bleedingDaysLengths(from: sortedEntries, cycleStarts: cycleStarts)
+        let avgBleeding = bleedingDaysPerCycle.isEmpty ? 0.0 : Double(bleedingDaysPerCycle.reduce(0, +)) / Double(bleedingDaysPerCycle.count)
+        let minBleeding = bleedingDaysPerCycle.min()
+        let maxBleeding = bleedingDaysPerCycle.max()
+        
+        // MARK: Faza lutealna
+        let lutealLengths = calculatedLutealLengths(from: sortedEntries, cycleStarts: cycleStarts)
+        let avgLuteal = lutealLengths.isEmpty ? 0.0 : Double(lutealLengths.reduce(0, +)) / Double(lutealLengths.count)
+        let minLuteal = lutealLengths.min()
+        let maxLuteal = lutealLengths.max()
+
+        // MARK: Owulacja
+        let ovulationDates = detectOvulationDates(from: sortedEntries, cycleStarts: cycleStarts)
+        let cyclesWithOvulation = ovulationDates.count
+        let completeCyclesCount = max(cycleStarts.count - 1, 0)
+        let cyclesWithoutOvulation = max(completeCyclesCount - cyclesWithOvulation, 0)
+
+        // MARK: Trend BBT
+        let bbtTrend = calculateBBTTrend(from: sortedEntries)
+
+        // MARK: Dominujący śluz
+        let dominantAppearance = dominantMucusAppearance(from: sortedEntries)
+        let dominantSensation = dominantMucusSensation(from: sortedEntries)
+
+        // MARK: Stosunek
+        let allIntercourse = sortedEntries.filter { $0.intercourse != .none }
+        let intercourseCount = allIntercourse.count
+        let unprotectedCount = allIntercourse.filter { $0.intercourse == .unprotected }.count
+        let protectedCount = allIntercourse.filter { $0.intercourse == .protected }.count
+        
         return CycleStatistics(
             cycleCount: cycleLengths.count,
             cycleLengths: cycleLengths,
@@ -62,6 +93,20 @@ enum CycleAnalyticsService {
             longestCycle: longest,
             cycleVariability: variability,
             regularityScore: regularity,
+            averageBleedingDays: avgBleeding,
+            minBleedingDays: minBleeding,
+            maxBleedingDays: maxBleeding,
+            averageLutealLength: avgLuteal,
+            minLutealLength: minLuteal,
+            maxLutealLength: maxLuteal,
+            cyclesWithOvulation: cyclesWithOvulation,
+            cyclesWithoutOvulation: cyclesWithoutOvulation,
+            bbtTrend: bbtTrend,
+            dominantMucusAppearance: dominantAppearance,
+            dominantMucusSensation: dominantSensation,
+            intercourseCount: intercourseCount,
+            intercourseUnprotectedCount: unprotectedCount,
+            intercourseProtectedCount: protectedCount,
             predictedNextPeriodStart: predictedNextPeriodStart,
             predictedOvulationDate: predictedOvulationDate,
             predictedFertileWindowStart: fertileWindowStart,
@@ -165,4 +210,69 @@ enum CycleAnalyticsService {
             return nil
         }
     }
+    
+    // MARK: - Krwawienie
+    
+    private static func bleedingDaysLengths(from entries: [CycleEntry], cycleStarts: [Date]) -> [Int] {
+        guard cycleStarts.count >= 2 else { return [] }
+        return zip(cycleStarts, cycleStarts.dropFirst()).map { start, next in
+            entries.filter {
+                $0.date >= start && $0.date < next &&
+                $0.bleeding != .none && $0.bleeding != .spotting
+            }.count
+        }.filter { $0 > 0 }
+    }
+    
+    // MARK: - Faza lutealna
+    
+    private static func calculatedLutealLengths(from entries: [CycleEntry], cycleStarts: [Date]) -> [Int] {
+        guard cycleStarts.count >= 2 else { return [] }
+        let ovulationDates = detectOvulationDates(from: entries, cycleStarts: cycleStarts)
+        return zip(ovulationDates, cycleStarts.dropFirst()).compactMap { ovulation, nextStart in
+            let days = Calendar.current.dateComponents([.day], from: ovulation, to: nextStart).day
+            guard let d = days, d >= 8, d <= 18 else { return nil }
+            return d
+        }
+    }
+    
+    // MARK: - Trend BBT
+
+    private static func calculateBBTTrend(from entries: [CycleEntry]) -> BBTTrend {
+        let temps = entries
+            .filter { $0.temperature != nil && $0.bbtDisturbances.isEmpty }
+            .sorted { $0.date < $1.date }
+            .compactMap(\.temperature)
+
+        guard temps.count >= 6 else { return .insufficient }
+
+        let recentCount = min(10, temps.count)
+        let recent = Array(temps.suffix(recentCount))
+        let half = recentCount / 2
+        let firstHalfAvg = recent.prefix(half).reduce(0, +) / Double(half)
+        let secondHalfAvg = recent.suffix(half).reduce(0, +) / Double(half)
+        let diff = secondHalfAvg - firstHalfAvg
+
+        if diff > 0.15 { return .rising }
+        if diff < -0.15 { return .falling }
+        return .stable
+    }
+
+    // MARK: - Dominujący śluz
+
+    private static func dominantMucusAppearance(from entries: [CycleEntry]) -> MucusAppearance? {
+        let values = entries.compactMap(\.mucusAppearance).filter { $0 != .none && $0 != .absent }
+        guard !values.isEmpty else { return nil }
+        return values.max(by: { a, b in
+            values.filter { $0 == a }.count < values.filter { $0 == b }.count
+        })
+    }
+
+    private static func dominantMucusSensation(from entries: [CycleEntry]) -> MucusSensation? {
+        let values = entries.compactMap(\.mucusSensation).filter { $0 != .none && $0 != .dry }
+        guard !values.isEmpty else { return nil }
+        return values.max(by: { a, b in
+            values.filter { $0 == a }.count < values.filter { $0 == b }.count
+        })
+    }
+
 }

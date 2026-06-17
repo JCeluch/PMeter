@@ -32,7 +32,7 @@ struct StatsView: View {
                         statRow("Najkrótszy cykl", value: intDays(stats.shortestCycle))
                         statRow("Najdłuższy cykl", value: intDays(stats.longestCycle))
                         statRow("Zmienność", value: formatted(stats.cycleVariability))
-                        statRow("Regularność", value: "\(Int(stats.regularityScore))%")
+                        statRow("Regularność cykli", value: regularityLabel(stats.regularityScore))
                     }
 
                     Section {
@@ -53,13 +53,92 @@ struct StatsView: View {
                     }
 
                     Section {
-                        statRow("Pomiarów temperatury", value: "\(stats.temperatureEntryCount)")
-                        statRow("Średnia temperatura", value: temperature(stats.averageTemperature))
+//                        statRow("Pomiarów temperatury", value: "\(stats.temperatureEntryCount)")
+//                        statRow("Średnia temperatura", value: temperature(stats.averageTemperature))
                         statRow("LH peak", value: "\(stats.lhPeakCount)")
                     } header: {
                         Text("Obserwacje")
-                            .glossaryInfo("bbt")
+                            .glossaryInfo("lh")
                     }
+                    
+                    if stats.averageBleedingDays > 0 || stats.averageLutealLength > 0 {
+                        Section {
+                            if stats.averageBleedingDays > 0 {
+                                statRow(
+                                    "Średnia długość krwawienia",
+                                    value: rangeRow(avg: stats.averageBleedingDays,
+                                                    min: stats.minBleedingDays,
+                                                    max: stats.maxBleedingDays)
+                                )
+                            }
+                            if stats.averageLutealLength > 0 {
+                                statRow(
+                                    "Średnia faza lutealna",
+                                    value: rangeRow(avg: stats.averageLutealLength,
+                                                    min: stats.minLutealLength,
+                                                    max: stats.maxLutealLength)
+                                )
+                            }
+                        } header: {
+                            Text("Fazy cyklu")
+                                .glossaryInfo("luteal-phase")
+                        }
+                    }
+
+                    Section("Owulacja") {
+                        let total = stats.cyclesWithOvulation + stats.cyclesWithoutOvulation
+                        if total > 0 {
+                            statRow("Z wykrytą owulacją", value: "\(stats.cyclesWithOvulation) / \(total)")
+                            if stats.cyclesWithOvulation > 0 {
+                                let pct = Int(round(Double(stats.cyclesWithOvulation) / Double(total) * 100))
+                                statRow("Skuteczność detekcji", value: "\(pct)%")
+                            }
+                        } else {
+                            statRow("Z wykrytą owulacją", value: "—")
+                        }
+                    }
+
+                    if stats.bbtTrend != .insufficient {
+                        Section {
+                            statRow("Trend temperatury bazowej", value: bbtTrendLabel(stats.bbtTrend))
+                            statRow("Pomiarów temperatury", value: "\(stats.temperatureEntryCount)")
+                            statRow("Średnia temperatura", value: temperature(stats.averageTemperature))
+                        } header: {
+                            Text("BBT")
+                                .glossaryInfo("bbt")
+                        }
+                    } else {
+                        Section {
+                            statRow("Pomiarów temperatury", value: "\(stats.temperatureEntryCount)")
+                            statRow("Średnia temperatura", value: temperature(stats.averageTemperature))
+                        } header: {
+                            Text("BBT")
+                                .glossaryInfo("bbt")
+                        }
+                    }
+
+                    if stats.dominantMucusAppearance != nil || stats.dominantMucusSensation != nil {
+                        Section {
+                            if let appearance = stats.dominantMucusAppearance {
+                                statRow("Najczęstszy wygląd śluzu", value: mucusAppearanceLabel(appearance))
+                            }
+                            if let sensation = stats.dominantMucusSensation {
+                                statRow("Najczęstsza konsystencja", value: mucusSensationLabel(sensation))
+                            }
+                        } header: {
+                            Text("Śluz")
+                                .glossaryInfo("cervical-mucus")
+                        }
+                    }
+
+                    if stats.intercourseCount > 0 {
+                        Section("Stosunek") {
+                            statRow("Łącznie odnotowanych", value: "\(stats.intercourseCount)")
+                            statRow("Bez zabezpieczenia", value: "\(stats.intercourseUnprotectedCount)")
+                            statRow("Z zabezpieczeniem", value: "\(stats.intercourseProtectedCount)")
+                        }
+                    }
+
 
                     if !stats.cycleLengths.isEmpty {
                         Section("Długości cykli") {
@@ -167,6 +246,54 @@ struct StatsView: View {
         case -1: return "wczoraj"
         case ..<0: return "\(abs(days)) dni temu"
         default: return "za \(days) dni"
+        }
+    }
+    
+    private func rangeRow(avg: Double, min: Int?, max: Int?) -> String {
+        guard avg > 0 else { return "—" }
+        let avgStr = "\(Int(round(avg))) dni"
+        if let mn = min, let mx = max, mn != mx {
+            return "\(avgStr) (\(mn)–\(mx))"
+        }
+        return avgStr
+    }
+
+    private func regularityLabel(_ score: Double) -> String {
+        switch score {
+        case 85...: return "Bardzo regularne (\(Int(score))%)"
+        case 65..<85: return "Regularne (\(Int(score))%)"
+        case 40..<65: return "Umiarkowane (\(Int(score))%)"
+        default: return "Nieregularne (\(Int(score))%)"
+        }
+    }
+
+    private func bbtTrendLabel(_ trend: BBTTrend) -> String {
+        switch trend {
+        case .rising: return "↗ Rosnący"
+        case .falling: return "↘ Malejący"
+        case .stable: return "→ Stabilny"
+        case .insufficient: return "—"
+        }
+    }
+
+    private func mucusAppearanceLabel(_ appearance: MucusAppearance) -> String {
+        switch appearance {
+        case .none, .absent: return "Sucho"
+        case .cloudy: return "Mętny"
+        case .yellow: return "Żółtawy"
+        case .mixed: return "Mieszany"
+        case .clear: return "Przezroczysty"
+        case .eggWhite: return "Jak białko jaja"
+        }
+    }
+
+    private func mucusSensationLabel(_ sensation: MucusSensation) -> String {
+        switch sensation {
+        case .none: return "—"
+        case .dry: return "Sucho"
+        case .damp: return "Wilgotno"
+        case .wet: return "Mokro"
+        case .slippery: return "Ślisko"
         }
     }
 }

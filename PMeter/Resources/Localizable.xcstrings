@@ -257,6 +257,9 @@
         }
       }
     },
+    "BBT" : {
+
+    },
     "Błąd ładowania danych" : {
       "localizations" : {
         "en" : {
@@ -4104,6 +4107,15 @@
         }
       }
     },
+    "education.glossary.entry.menstrual-cycle.definition" : {
+
+    },
+    "education.glossary.entry.menstrual-cycle.short" : {
+
+    },
+    "education.glossary.entry.menstrual-cycle.title" : {
+
+    },
     "education.glossary.entry.peak-day.definition" : {
       "localizations" : {
         "en" : {
@@ -4427,6 +4439,9 @@
         }
       }
     },
+    "Fazy cyklu" : {
+
+    },
     "Int." : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4687,6 +4702,9 @@
           }
         }
       }
+    },
+    "Owulacja" : {
+
     },
     "PdG" : {
       "extractionState" : "stale",
@@ -5041,7 +5059,6 @@
       }
     },
     "Śluz" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5104,6 +5121,9 @@
           }
         }
       }
+    },
+    "Stosunek" : {
+
     },
     "Szyjka" : {
       "extractionState" : "stale",
