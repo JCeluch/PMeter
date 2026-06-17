@@ -31,8 +31,9 @@ struct CycleChartView: View {
     private var predictedCycleLength: Int {
         let stats = CycleAnalyticsService.statistics(from: entries)
         let avg = stats.averageCycleLength
+        let rawCount = CalendarHelper.cycleDays(containing: anchorDate, entries: entries).count
         // Fallback 28 jeżeli brak historii
-        return avg > 0 ? max(Int(round(avg)), days.count) : 28
+        return avg > 0 ? max(Int(round(avg)), rawCount) : max(28, rawCount)
     }
     
     // MARK: - Dni z paddingiem dla bieżącego cyklu

@@ -49,7 +49,7 @@ struct StatsView: View {
 
                     if !stats.cycleLengths.isEmpty {
                         Section("Długości cykli") {
-                            ForEach(Array(stats.cycleLengths.enumerated()), id: \.offset) { index, value in
+                            ForEach(Array(stats.cycleLengths.enumerated()).reversed(), id: \.offset) { index, value in
                                 statRow("Cykl \(index + 1)", value: "\(value) dni")
                             }
                         }

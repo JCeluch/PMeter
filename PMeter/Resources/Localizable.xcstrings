@@ -48,7 +48,14 @@
       }
     },
     "·" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "·"
+          }
+        }
+      }
     },
     "· PEAK" : {
       "localizations" : {
@@ -232,10 +239,36 @@
       }
     },
     "Anuluj" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anuluj"
+          }
+        }
+      }
     },
     "Błąd ładowania danych" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error fetching data"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Błąd ładowania danych"
+          }
+        }
+      }
     },
     "Bleed" : {
       "extractionState" : "manual",
@@ -409,7 +442,20 @@
       }
     },
     "calendar.chart.cervix" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SHOW"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SHOW"
+          }
+        }
+      }
     },
     "calendar.chart.dateShort" : {
       "localizations" : {
@@ -428,7 +474,20 @@
       }
     },
     "calendar.chart.intercourse" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Int."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wsp."
+          }
+        }
+      }
     },
     "calendar.chart.intercourseShort" : {
       "localizations" : {
@@ -447,7 +506,20 @@
       }
     },
     "calendar.chart.mucus" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mucus"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Śluz"
+          }
+        }
+      }
     },
     "calendar.chart.mucusShort" : {
       "localizations" : {
@@ -3219,7 +3291,20 @@
       }
     },
     "Dane startowe" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starting data"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dane startowe"
+          }
+        }
+      }
     },
     "Date" : {
       "extractionState" : "manual",
@@ -4591,7 +4676,14 @@
       }
     },
     "OK" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
     },
     "PdG" : {
       "extractionState" : "stale",
@@ -5044,7 +5136,20 @@
       }
     },
     "Ta operacja jest nieodwracalna. Wszystkie Twoje wpisy zostaną usunięte." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This operation is unreversable. All your entries will be removed."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ta operacja jest nieodwracalna. Wszystkie Twoje wpisy zostaną usunięte."
+          }
+        }
+      }
     },
     "tabs.calendar" : {
       "localizations" : {
@@ -5265,13 +5370,52 @@
       }
     },
     "Załadowanie danych usunie wszystkie istniejące wpisy." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uploading data will delete existing entries."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Załadowanie danych usunie wszystkie istniejące wpisy."
+          }
+        }
+      }
     },
     "Załaduj i usuń dane" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upload and delete data"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Załaduj i usuń dane"
+          }
+        }
+      }
     },
     "Zastąpić istniejące dane?" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Replace current data?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zastąpić istniejące dane?"
+          }
+        }
+      }
     }
   },
   "version" : "1.1"

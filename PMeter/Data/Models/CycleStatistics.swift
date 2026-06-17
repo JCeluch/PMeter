@@ -10,6 +10,7 @@ import Foundation
 struct CycleStatistics {
     let cycleCount: Int
     let cycleLengths: [Int]
+//    let cycleInfos: [CycleInfo]
     let averageCycleLength: Double
     let medianCycleLength: Double
     let shortestCycle: Int?
@@ -25,4 +26,10 @@ struct CycleStatistics {
     let averageTemperature: Double?
     let temperatureEntryCount: Int
     let lhPeakCount: Int
+}
+
+struct CycleInfo {
+    let length: Int
+    let startDate: Date
+    let endDate: Date?
 }
