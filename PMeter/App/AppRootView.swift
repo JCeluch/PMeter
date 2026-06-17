@@ -27,6 +27,11 @@ struct AppRootView: View {
                         Image(systemName: "calendar")
                     }
                 }
+            
+            InsightsView()
+                .tabItem {
+                    Label("Wnioski", systemImage: "lightbulb.fill")
+                }
 
             StatsView()
                 .tabItem {

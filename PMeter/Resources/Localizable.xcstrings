@@ -3400,6 +3400,9 @@
         }
       }
     },
+    "Dodaj przynajmniej dwa cykle, aby zobaczyć wnioski." : {
+
+    },
     "dzień %lld" : {
 
     },
@@ -5484,6 +5487,9 @@
         }
       }
     },
+    "Wnioski" : {
+
+    },
     "Współżycie" : {
       "localizations" : {
         "en" : {
@@ -5531,6 +5537,9 @@
           }
         }
       }
+    },
+    "Za mało danych" : {
+
     },
     "Zakłócenia BBT" : {
       "localizations" : {
