@@ -200,6 +200,53 @@ struct StatsView: View {
                                 .glossaryInfo("bbt")
                         }
                     }
+                    
+                    // Energia per faza
+                    if stats.averageEnergyFollicular != nil || stats.averageEnergyLuteal != nil {
+                        Section("Energia wg fazy") {
+                            moodPhaseRow("Menstruacyjna", value: stats.averageEnergyMenstrual)
+                            moodPhaseRow("Folikularna", value: stats.averageEnergyFollicular)
+                            moodPhaseRow("Lutealna", value: stats.averageEnergyLuteal)
+                        }
+                    }
+
+                    // Sen per faza
+                    if stats.averageSleepQualityFollicular != nil || stats.averageSleepQualityLuteal != nil {
+                        Section("Jakość snu wg fazy") {
+                            moodPhaseRow("Folikularna", value: stats.averageSleepQualityFollicular)
+                            moodPhaseRow("Lutealna", value: stats.averageSleepQualityLuteal)
+                        }
+                    }
+
+                    // Ból głowy
+                    if stats.headacheDaysCount > 0 {
+                        Section("Ból głowy") {
+                            statRow("Dni z bólem głowy", value: "\(stats.headacheDaysCount)")
+                            if stats.averageHeadacheIntensity > 0 {
+                                statRow("Średnia intensywność", value: painLabel(stats.averageHeadacheIntensity))
+                            }
+                        }
+                    }
+
+                    // Skóra
+                    if let skin = stats.dominantSkinConditionLuteal {
+                        Section("Skóra (faza lutealna)") {
+                            statRow("Najczęstszy stan", value: skinConditionLabel(skin))
+                        }
+                    }
+
+                    // Waga
+                    if stats.weightEntryCount > 0 {
+                        Section("Waga") {
+                            if let avg = stats.averageWeight {
+                                statRow("Średnia", value: String(format: "%.1f kg", avg))
+                            }
+                            if let min = stats.minWeight, let max = stats.maxWeight, min != max {
+                                statRow("Zakres", value: String(format: "%.1f – %.1f kg", min, max))
+                            }
+                            statRow("Liczba pomiarów", value: "\(stats.weightEntryCount)")
+                        }
+                    }
 
                     // Ból menstruacyjny
                     if stats.averageMenstrualPain > 0 {
@@ -558,6 +605,15 @@ struct StatsView: View {
         case .brown:       return "Brązowy"
         case .pink:        return "Różowy"
         case .black:       return "Czarny"
+        }
+    }
+    
+    private func skinConditionLabel(_ value: Int) -> String {
+        switch value {
+        case 1: return "Czysta"
+        case 2: return "Lekkie przetłuszczenie"
+        case 3: return "Pryszcze / trądzik"
+        default: return "—"
         }
     }
 }

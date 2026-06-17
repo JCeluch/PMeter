@@ -117,6 +117,26 @@ struct CycleStatistics {
     // MARK: - Aktywny cykl
     let currentCycleDayCount: Int?            // ile dni trwa aktualny cykl
     let currentCycleIsLate: Bool              // trwa dłużej niż średnia + 1 std
+    
+    // MARK: - Samopoczucie per faza
+    let averageEnergyFollicular: Double?
+    let averageEnergyLuteal: Double?
+    let averageEnergyMenstrual: Double?
+
+    let averageSleepQualityFollicular: Double?
+    let averageSleepQualityLuteal: Double?
+
+    let headacheDaysCount: Int
+    let averageHeadacheIntensity: Double   // 0 = brak danych
+
+    // MARK: - Skóra
+    let dominantSkinConditionLuteal: Int?  // 1–3, najczęstsza wartość w fazie lutealnej
+
+    // MARK: - Waga
+    let averageWeight: Double?
+    let minWeight: Double?
+    let maxWeight: Double?
+    let weightEntryCount: Int
 }
 
 struct CycleInfo {

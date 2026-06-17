@@ -55,6 +55,16 @@ final class CycleEntry {
     var intercourseRawValue: String = IntercourseType.none.rawValue
     var isBreastfeeding: Bool = false      // dla metody LAM
     var mood: Int = 0                      // 0 = nie zaznaczono, 1–5 (opcjonalne)
+    
+    // MARK: - Samopoczucie
+    var headacheIntensity: Int = 0    // 0 = brak, 1–5
+    var energyLevel: Int = 0          // 0 = nie zaznaczono, 1–5
+    var sleepQuality: Int = 0         // 0 = nie zaznaczono, 1–5
+    var skinCondition: Int = 0        // 0 = nie zaznaczono, 1 = czysta, 2 = lekkie przetłuszczenie, 3 = pryszcze
+
+    // MARK: - Waga
+    var weight: Double? = nil         // kg, opcjonalna
+    
     var notes: String = ""
     
     // MARK: - Init
@@ -84,6 +94,12 @@ final class CycleEntry {
         menstrualPainIntensity: Int = 0,
         intercourse: IntercourseType = .none,
         isBreastfeeding: Bool = false,
+        mood: Int = 0,
+        headacheIntensity: Int = 0,
+        energyLevel: Int = 0,
+        sleepQuality: Int = 0,
+        skinCondition: Int = 0,
+        weight: Double? = nil,
         notes: String = ""
     ) {
         self.date = date
@@ -120,6 +136,14 @@ final class CycleEntry {
 
         self.intercourseRawValue = intercourse.rawValue
         self.isBreastfeeding = isBreastfeeding
+        self.mood = mood
+        
+        self.headacheIntensity = headacheIntensity
+        self.energyLevel = energyLevel
+        self.sleepQuality = sleepQuality
+        self.skinCondition = skinCondition
+        self.weight = weight
+        
         self.notes = notes
     }
 

@@ -168,6 +168,22 @@ enum CycleAnalyticsService {
             stdDev: stdDev
         )
         
+        // MARK: Samopoczucie per faza
+        let wellbeing = calculateWellbeingByPhase(from: sortedEntries, cycleStarts: cycleStarts)
+
+        // MARK: Ból głowy
+        let headacheEntries = sortedEntries.filter { $0.headacheIntensity > 0 }
+        let avgHeadache = headacheEntries.isEmpty ? 0.0
+            : Double(headacheEntries.map(\.headacheIntensity).reduce(0, +)) / Double(headacheEntries.count)
+
+        // MARK: Skóra
+        let dominantSkin = dominantSkinConditionInLuteal(from: sortedEntries, cycleStarts: cycleStarts)
+
+        // MARK: Waga
+        let weightValues = sortedEntries.compactMap(\.weight)
+        let avgWeight = weightValues.isEmpty ? nil
+            : weightValues.reduce(0, +) / Double(weightValues.count)
+        
         return CycleStatistics(
             cycleCount: cycleLengths.count,
             cycleLengths: cycleLengths,
@@ -232,6 +248,18 @@ enum CycleAnalyticsService {
             dominantBleedingColor: dominantColor,
             currentCycleDayCount: activeCycleInfo.dayCount,
             currentCycleIsLate: activeCycleInfo.isLate,
+            averageEnergyFollicular: wellbeing.energyFollicular,
+            averageEnergyLuteal: wellbeing.energyLuteal,
+            averageEnergyMenstrual: wellbeing.energyMenstrual,
+            averageSleepQualityFollicular: wellbeing.sleepFollicular,
+            averageSleepQualityLuteal: wellbeing.sleepLuteal,
+            headacheDaysCount: headacheEntries.count,
+            averageHeadacheIntensity: avgHeadache,
+            dominantSkinConditionLuteal: dominantSkin,
+            averageWeight: avgWeight,
+            minWeight: weightValues.min(),
+            maxWeight: weightValues.max(),
+            weightEntryCount: weightValues.count,
         )
     }
 
@@ -780,5 +808,104 @@ enum CycleAnalyticsService {
         let dayCount = (Calendar.current.dateComponents([.day], from: lastStart, to: today).day ?? 0) + 1
         let threshold = average + max(stdDev, 2)
         return ActiveCycleInfo(dayCount: dayCount, isLate: Double(dayCount) > threshold)
+    }
+    
+    // MARK: - Samopoczucie per faza
+
+    private struct WellbeingByPhase {
+        let energyFollicular: Double?
+        let energyLuteal: Double?
+        let energyMenstrual: Double?
+        let sleepFollicular: Double?
+        let sleepLuteal: Double?
+    }
+
+    private static func calculateWellbeingByPhase(
+        from entries: [CycleEntry],
+        cycleStarts: [Date]
+    ) -> WellbeingByPhase {
+        guard cycleStarts.count >= 2 else {
+            return WellbeingByPhase(energyFollicular: nil, energyLuteal: nil,
+                                    energyMenstrual: nil, sleepFollicular: nil, sleepLuteal: nil)
+        }
+        let ovulations = detectOvulationDates(from: entries, cycleStarts: cycleStarts)
+
+        var eFollicular: [Int] = [], eLuteal: [Int] = [], eMenstrual: [Int] = []
+        var sFollicular: [Int] = [], sLuteal: [Int] = []
+
+        for (i, cycleStart) in cycleStarts.dropLast().enumerated() {
+            let nextStart = cycleStarts[i + 1]
+            let cycleEntries = entries.filter { $0.date >= cycleStart && $0.date < nextStart }
+            let ovDate: Date? = i < ovulations.count ? ovulations[i] : nil
+            let cycleLen = Calendar.current.dateComponents([.day], from: cycleStart, to: nextStart).day ?? 28
+
+            for entry in cycleEntries {
+                let isLuteal: Bool
+                if let ov = ovDate {
+                    let daysFromOv = Calendar.current.dateComponents([.day], from: ov, to: entry.date).day ?? -1
+                    isLuteal = daysFromOv >= 0
+                } else {
+                    let day = Calendar.current.dateComponents([.day], from: cycleStart, to: entry.date).day ?? 0
+                    isLuteal = day >= cycleLen / 2
+                }
+
+                let isMenstrual = entry.bleeding != .none && entry.bleeding != .spotting
+
+                if entry.energyLevel > 0 {
+                    if isMenstrual { eMenstrual.append(entry.energyLevel) }
+                    else if isLuteal { eLuteal.append(entry.energyLevel) }
+                    else { eFollicular.append(entry.energyLevel) }
+                }
+                if entry.sleepQuality > 0 {
+                    if isLuteal { sLuteal.append(entry.sleepQuality) }
+                    else { sFollicular.append(entry.sleepQuality) }
+                }
+            }
+        }
+
+        func avg(_ arr: [Int]) -> Double? {
+            guard !arr.isEmpty else { return nil }
+            return Double(arr.reduce(0, +)) / Double(arr.count)
+        }
+
+        return WellbeingByPhase(
+            energyFollicular: avg(eFollicular),
+            energyLuteal: avg(eLuteal),
+            energyMenstrual: avg(eMenstrual),
+            sleepFollicular: avg(sFollicular),
+            sleepLuteal: avg(sLuteal)
+        )
+    }
+
+    // MARK: - Skóra w fazie lutealnej
+
+    private static func dominantSkinConditionInLuteal(
+        from entries: [CycleEntry],
+        cycleStarts: [Date]
+    ) -> Int? {
+        guard cycleStarts.count >= 2 else { return nil }
+        let ovulations = detectOvulationDates(from: entries, cycleStarts: cycleStarts)
+
+        var lutealSkin: [Int] = []
+        for (i, cycleStart) in cycleStarts.dropLast().enumerated() {
+            let nextStart = cycleStarts[i + 1]
+            let ovDate: Date? = i < ovulations.count ? ovulations[i] : nil
+            let cycleLen = Calendar.current.dateComponents([.day], from: cycleStart, to: nextStart).day ?? 28
+
+            let lutealEntries = entries.filter { entry in
+                guard entry.date >= cycleStart && entry.date < nextStart && entry.skinCondition > 0 else { return false }
+                if let ov = ovDate {
+                    return (Calendar.current.dateComponents([.day], from: ov, to: entry.date).day ?? -1) >= 0
+                }
+                let day = Calendar.current.dateComponents([.day], from: cycleStart, to: entry.date).day ?? 0
+                return day >= cycleLen / 2
+            }
+            lutealSkin.append(contentsOf: lutealEntries.map(\.skinCondition))
+        }
+
+        guard !lutealSkin.isEmpty else { return nil }
+        return lutealSkin.max(by: { a, b in
+            lutealSkin.filter { $0 == a }.count < lutealSkin.filter { $0 == b }.count
+        })
     }
 }

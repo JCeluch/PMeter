@@ -402,6 +402,9 @@
         }
       }
     },
+    "Ból głowy" : {
+
+    },
     "Ból menstruacyjny" : {
       "localizations" : {
         "en" : {
@@ -3334,6 +3337,9 @@
     "Czułość piersi" : {
 
     },
+    "Czysta" : {
+
+    },
     "Dane startowe" : {
       "localizations" : {
         "en" : {
@@ -3401,6 +3407,9 @@
       }
     },
     "Dodaj przynajmniej dwa cykle, aby zobaczyć wnioski." : {
+
+    },
+    "Dodaj wagę" : {
 
     },
     "dzień %lld" : {
@@ -4529,6 +4538,12 @@
         }
       }
     },
+    "Energia" : {
+
+    },
+    "Energia wg fazy" : {
+
+    },
     "Fazy cyklu" : {
       "localizations" : {
         "en" : {
@@ -4559,7 +4574,16 @@
         }
       }
     },
+    "Jakość snu" : {
+
+    },
+    "Jakość snu wg fazy" : {
+
+    },
     "Karmienie piersią" : {
+
+    },
+    "kg" : {
 
     },
     "Kolor krwawienia" : {
@@ -4579,6 +4603,9 @@
       }
     },
     "Konsekwencja BBT" : {
+
+    },
+    "Lekkie przetłuszczenie" : {
 
     },
     "lh.symbols.negative" : {
@@ -4760,6 +4787,9 @@
         }
       }
     },
+    "Nie zaznaczono" : {
+
+    },
     "Objętość śluzu" : {
       "localizations" : {
         "en" : {
@@ -4912,6 +4942,9 @@
     "Progesteron (Proov/PdG)" : {
 
     },
+    "Pryszcze / trądzik" : {
+
+    },
     "Przewidywania" : {
       "localizations" : {
         "en" : {
@@ -4946,6 +4979,9 @@
           }
         }
       }
+    },
+    "Samopoczucie" : {
+
     },
     "Setne" : {
       "localizations" : {
@@ -5198,6 +5234,9 @@
         }
       }
     },
+    "Skóra (faza lutealna)" : {
+
+    },
     "Śluz" : {
       "localizations" : {
         "en" : {
@@ -5231,6 +5270,9 @@
       }
     },
     "Średnia" : {
+
+    },
+    "Stan skóry" : {
 
     },
     "Statystyki" : {
@@ -5486,6 +5528,9 @@
           }
         }
       }
+    },
+    "Waga" : {
+
     },
     "Wnioski" : {
 

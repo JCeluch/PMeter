@@ -61,8 +61,19 @@ struct EntryFormView: View {
     @State private var isBreastfeeding = false
     @State private var mood = 0
     @State private var notes = ""
+    
+    // Samopoczucie
+    @State private var headacheIntensity = 0
+    @State private var energyLevel = 0
+    @State private var sleepQuality = 0
+    @State private var skinCondition = 0
+
+    // Waga
+    @State private var hasWeight = false
+    @State private var weight: Double = 60.0
 
     @FocusState private var focusedField: Field?
+    @State private var isEditingWeight = false
 
     // MARK: - Init
 
@@ -88,6 +99,7 @@ struct EntryFormView: View {
                 cervixSection
                 testsSection
                 symptomsSection
+                wellbeingSection
                 otherSection
                 notesSection
                 
@@ -112,6 +124,7 @@ struct EntryFormView: View {
             }
             .iosKeyboardDoneToolbar {
                 focusedField = nil
+                isEditingWeight = false
             }
             .onAppear { loadExistingDataIfNeeded() }
         }
@@ -351,8 +364,21 @@ struct EntryFormView: View {
 
             intercourse = entry.intercourse
             isBreastfeeding = entry.isBreastfeeding
-//            mood = entry.mood
+            mood = entry.mood
             notes = entry.notes
+            headacheIntensity = entry.headacheIntensity
+            energyLevel = entry.energyLevel
+            sleepQuality = entry.sleepQuality
+            skinCondition = entry.skinCondition
+
+            if let w = entry.weight {
+                hasWeight = true
+                weight = w
+            } else {
+                hasWeight = false
+                weight = 60.0
+            }
+            
             return
         }
 
@@ -401,6 +427,12 @@ struct EntryFormView: View {
             entry.intercourse = intercourse
             entry.isBreastfeeding = isBreastfeeding
             entry.mood = mood
+            entry.headacheIntensity = headacheIntensity
+            entry.energyLevel = energyLevel
+            entry.sleepQuality = sleepQuality
+            entry.skinCondition = skinCondition
+            entry.weight = hasWeight ? weight : nil
+            
             entry.notes = notes.trimmingCharacters(in: .whitespacesAndNewlines)
             entry.touch()
         } else {
@@ -429,7 +461,13 @@ struct EntryFormView: View {
                 menstrualPainIntensity: menstrualPainIntensity,
                 intercourse: intercourse,
                 isBreastfeeding: isBreastfeeding,
-//                mood: mood,
+                mood: mood,
+                headacheIntensity: headacheIntensity,
+                energyLevel: energyLevel,
+                sleepQuality: sleepQuality,
+                skinCondition: skinCondition,
+                weight: hasWeight ? weight : nil,
+                
                 notes: notes.trimmingCharacters(in: .whitespacesAndNewlines)
             )
             modelContext.insert(entry)
@@ -441,7 +479,7 @@ struct EntryFormView: View {
     
     // MARK: - Helpers
     
-    private enum Field: Hashable { case notes }
+    private enum Field: Hashable { case notes, weight }
     
     private var temperatureWheelPicker: some View {
         HStack(spacing: 0) {
@@ -462,5 +500,59 @@ struct EntryFormView: View {
             .frame(maxWidth: .infinity)
         }
         .frame(height: 160)
+    }
+    
+    private var wellbeingSection: some View {
+        Section("Samopoczucie") {
+            Picker("Ból głowy", selection: $headacheIntensity) {
+                ForEach(0...5, id: \.self) { Text("\($0)").tag($0) }
+            }
+
+            Picker("Energia", selection: $energyLevel) {
+                Text("Nie zaznaczono").tag(0)
+                ForEach(1...5, id: \.self) { Text("\($0)").tag($0) }
+            }
+
+            Picker("Jakość snu", selection: $sleepQuality) {
+                Text("Nie zaznaczono").tag(0)
+                ForEach(1...5, id: \.self) { Text("\($0)").tag($0) }
+            }
+
+            Picker("Stan skóry", selection: $skinCondition) {
+                Text("Nie zaznaczono").tag(0)
+                Text("Czysta").tag(1)
+                Text("Lekkie przetłuszczenie").tag(2)
+                Text("Pryszcze / trądzik").tag(3)
+            }
+
+            Toggle("Dodaj wagę", isOn: $hasWeight.animation())
+
+            if hasWeight {
+                HStack {
+                    Text("Waga")
+                    Spacer()
+                    if isEditingWeight {
+                        TextField("kg", value: $weight, format: .number.precision(.fractionLength(1)))
+                            .keyboardType(.decimalPad)
+                            .multilineTextAlignment(.trailing)
+                            .focused($focusedField, equals: .weight)
+                            .frame(width: 70)
+                            .onSubmit { isEditingWeight = false }
+                    } else {
+                        Text(String(format: "%.1f kg", weight))
+                            .foregroundStyle(Color.pmPrimary)
+                            .onTapGesture {
+                                isEditingWeight = true
+                                focusedField = .weight
+                            }
+                    }
+                }
+
+                if !isEditingWeight {
+                    Slider(value: $weight, in: 30...150, step: 0.1)
+                        .tint(Color.pmPrimary)
+                }
+            }
+        }
     }
 }

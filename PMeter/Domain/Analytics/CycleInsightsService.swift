@@ -39,6 +39,8 @@ enum CycleInsightsService {
         result += painInsights(stats)
         result += breastfeedingInsights(stats)
         result += progressInsights(stats)
+        result += wellbeingInsights(stats)
+        result += weightInsights(stats)
 
         return result
     }
@@ -219,5 +221,40 @@ enum CycleInsightsService {
 
     private static func formatted(_ value: Double) -> String {
         String(format: "%.1f", value)
+    }
+    
+    private static func wellbeingInsights(_ s: CycleStatistics) -> [CycleInsight] {
+        var r: [CycleInsight] = []
+
+        if let ef = s.averageEnergyFollicular, let el = s.averageEnergyLuteal {
+            if ef - el >= 1.0 {
+                r.append(.init(category: .general, message: "Energia w fazie lutealnej (\(formatted(el))/5) jest wyraźnie niższa niż w folikularnej (\(formatted(ef))/5). To typowy wzorzec — warto zaplanować odpoczynek przed miesiączką.", severity: .neutral))
+            }
+        }
+
+        if let sf = s.averageSleepQualityFollicular, let sl = s.averageSleepQualityLuteal {
+            if sf - sl >= 0.8 {
+                r.append(.init(category: .general, message: "Jakość snu w fazie lutealnej (\(formatted(sl))/5) jest niższa niż w folikularnej (\(formatted(sf))/5). Progesteron może wpływać na sen.", severity: .neutral))
+            }
+        }
+
+        if s.headacheDaysCount > 0 {
+            let pct = Int(round(Double(s.headacheDaysCount) / Double(max(s.cycleCount * 28, 1)) * 100))
+            if pct > 20 {
+                r.append(.init(category: .pain, message: "Bóle głowy odnotowane w \(s.headacheDaysCount) dniach. Mogą być związane ze zmianami hormonalnymi — warto obserwować w którym dniu cyklu się pojawiają.", severity: .neutral))
+            }
+        }
+
+        return r
+    }
+
+    private static func weightInsights(_ s: CycleStatistics) -> [CycleInsight] {
+        guard s.weightEntryCount >= 5,
+              let min = s.minWeight, let max = s.maxWeight else { return [] }
+        let diff = max - min
+        if diff >= 3 {
+            return [.init(category: .general, message: "Waga wahała się o \(String(format: "%.1f", diff)) kg w analizowanym okresie. Duże wahania wagi mogą wpływać na regularność cykli.", severity: .neutral)]
+        }
+        return []
     }
 }
