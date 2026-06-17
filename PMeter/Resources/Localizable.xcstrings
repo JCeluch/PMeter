@@ -6793,6 +6793,38 @@
         }
       }
     },
+    "education.home.measurement-tips.subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Step-by-step tips for temperature, mucus, and cervix"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Praktyczne wskazówki dla PTC, śluzu i szyjki"
+          }
+        }
+      }
+    },
+    "education.home.npr-methods.subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Overview of natural family planning methods"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przegląd metod naturalnego planowania rodziny"
+          }
+        }
+      }
+    },
     "education.home.title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -6806,6 +6838,2502 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wiedza"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.donts" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avoid"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unikaj"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.dos" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rób tak"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.intro" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accurate observations are the foundation of cycle charting. These tips help you measure consistently and record what matters."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dokładne obserwacje to fundament prowadzenia karty cyklu. Te wskazówki pomogą Ci mierzyć konsekwentnie i notować to, co ważne."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.section.cervix" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cervix"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szyjka macicy"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.section.mucus" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cervical Mucus"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Śluz szyjkowy"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.section.temperature" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Basal Body Temperature"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podstawowa temperatura ciała"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.cervix-basics.body1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cervix observation is an optional third sign used in some sympto-thermal variants. The cervix changes in predictable ways under estrogen influence: it rises higher in the vagina, becomes softer, and its opening (os) widens slightly as ovulation approaches. After ovulation, progesterone causes it to descend, firm up, and close."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obserwacja szyjki to opcjonalny trzeci znak stosowany w niektórych wariantach metody symptotermicznej. Szyjka zmienia się w przewidywalny sposób pod wpływem estrogenu: unosi się wyżej w pochwie, staje się miększa, a jej ujście nieznacznie poszerza się w miarę zbliżania się owulacji. Po owulacji progesteron powoduje jej opadnięcie, stwardnienie i zamknięcie."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.cervix-basics.body2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cervix observation is particularly useful as a corroborating sign when mucus or temperature observations are ambiguous, and is especially recommended for women learning the method."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obserwacja szyjki jest szczególnie przydatna jako znak potwierdzający gdy obserwacje śluzu lub temperatury są niejednoznaczne, i jest szczególnie zalecana kobietom uczącym się metody."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.cervix-basics.do1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Check once a day, at the same time (e.g. after showering)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sprawdzaj raz dziennie, o tej samej porze (np. po prysznicu)"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.cervix-basics.do2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use the same position every time (squatting or one leg raised)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Używaj tej samej pozycji za każdym razem (kucanie lub jedna noga uniesiona)"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.cervix-basics.do3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Record position (low/high), firmness (firm/soft), and opening (closed/open)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapisuj pozycję (nisko/wysoko), twardość (twarda/miękka) i ujście (zamknięte/otwarte)"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.cervix-basics.dont1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't check during or just after intercourse — the cervix position changes temporarily"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie sprawdzaj podczas ani tuż po stosunku — pozycja szyjki zmienia się tymczasowo"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.cervix-basics.subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The cervix changes position, firmness, and opening around ovulation."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szyjka zmienia pozycję, twardość i otwarcie wokół owulacji."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.cervix-basics.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Why observe the cervix?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Po co obserwować szyjkę?"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.cervix-basics.warning" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cervix observation requires practice — it may take 2–3 cycles before you feel confident. Consider guidance from an STM instructor when starting."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obserwacja szyjki wymaga praktyki — może minąć 2–3 cykle zanim poczujesz się pewnie. Rozważ wskazówki od instruktora STM na początku."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.cervix-technique.body1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wash your hands thoroughly. Use one or two fingers inserted into the vagina to locate the cervix — it feels like the tip of a nose when firm, and like pursed lips when soft and open. Note its position (how far your fingers had to reach), firmness, and whether the opening feels closed (like a dimple) or open (a small gap)."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dokładnie umyj ręce. Użyj jednego lub dwóch palców wprowadzonych do pochwy, aby zlokalizować szyjkę — w stanie twardym przypomina czubek nosa, a w miękkim i otwartym — zmarszczone usta. Zanotuj jej pozycję (jak głęboko musiały sięgnąć palce), twardość oraz czy ujście jest zamknięte (jak dołeczek) lub otwarte (mała szczelinа)."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.cervix-technique.body2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "It is normal for the cervix to feel slightly different after childbirth — the os may always feel slightly open. What matters is the relative change throughout your cycle, not the absolute state."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Normalne jest, że szyjka może czuć się nieco inaczej po porodzie — ujście może zawsze wydawać się lekko otwarte. Liczy się względna zmiana przez cały cykl, nie stan bezwzględny."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.cervix-technique.do1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wash hands before and after"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Myj ręce przed i po"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.cervix-technique.do2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Check at the same time of day, in the same position"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sprawdzaj o tej samej porze, w tej samej pozycji"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.cervix-technique.dont1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't check if you have a vaginal infection or unusual discharge"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie sprawdzaj jeśli masz infekcję pochwy lub nietypową wydzielinę"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.cervix-technique.dont2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't compare your findings with others — focus on your own pattern"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie porównuj wyników z innymi — skup się na swoim własnym wzorcu"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.cervix-technique.subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Step-by-step guide to safe and consistent self-examination."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Krok po kroku: bezpieczne i spójne samobadanie."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.cervix-technique.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cervix observation technique"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Technika obserwacji szyjki"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.disturbances.body1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A disturbed temperature is one that is artificially elevated or lowered by a non-hormonal factor. Common causes include illness or fever, alcohol the previous evening, fewer than 3 hours of sleep, measuring more than an hour later or earlier than usual, stress, travel across time zones, or mouth breathing."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaburzona temperatura to taka, która jest sztucznie podwyższona lub obniżona przez czynnik niehormonalny. Częste przyczyny to choroba lub gorączka, alkohol poprzedniego wieczoru, mniej niż 3 godziny snu, pomiar ponad godzinę później lub wcześniej niż zwykle, stres, podróż przez strefy czasowe lub oddychanie przez usta."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.disturbances.body2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When you notice a potential disturbance, record the temperature as usual but mark it as disturbed in the app. Disturbed temperatures are excluded from the coverline calculation and do not count toward the thermal shift confirmation."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gdy zauważysz potencjalne zaburzenie, zapisz temperaturę jak zwykle, ale oznacz ją jako zaburzoną w aplikacji. Zaburzone temperatury są wykluczane z obliczania linii pokrycia i nie liczą się do potwierdzenia skoku termicznego."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.disturbances.do1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mark the day as disturbed in the app when any cause is present"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oznacz dzień jako zaburzony w aplikacji gdy wystąpi jakakolwiek przyczyna"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.disturbances.do2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Still record the temperature — even disturbed data is useful for context"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nadal zapisuj temperaturę — nawet zaburzone dane są przydatne kontekstowo"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.disturbances.subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Some readings are unreliable — mark them and exclude from analysis."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niektóre odczyty są niewiarygodne — oznacz je i wyklucz z analizy."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.disturbances.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recognising disturbances"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozpoznawanie zaburzeń"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.disturbances.warning" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you have systematic disturbances (shift work, breastfeeding, frequent illness), consider consulting an STM instructor for adapted rules."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeśli masz systematyczne zaburzenia (praca zmianowa, karmienie piersią, częste choroby), rozważ konsultację z instruktorem STM w sprawie dostosowanych zasad."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.measurement-technique.body1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The oral (sublingual) method is the most commonly used for BBT charting. Place the thermometer under the tongue, close your mouth, and keep it there for the full measurement duration (usually 60–90 seconds for digital models). Vaginal measurement is also valid and may be more consistent for some women — but once you choose a method, stick to it for the entire cycle."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metoda doustna (podjęzykowa) jest najczęściej stosowana w mierzeniu PTC. Umieść termometr pod językiem, zamknij usta i trzymaj przez cały czas pomiaru (zazwyczaj 60–90 sekund dla modeli cyfrowych). Pomiar dopochwowy jest również wiarygodny i może być bardziej spójny dla niektórych kobiet — ale gdy wybierzesz metodę, stosuj ją przez cały cykl."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.measurement-technique.do1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Place under the tongue, close to the frenulum"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Umieść pod językiem, blisko wędzidełka"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.measurement-technique.do2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep mouth closed during the full measurement"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trzymaj zamknięte usta przez cały pomiar"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.measurement-technique.do3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use the same method (oral or vaginal) throughout the cycle"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stosuj tę samą metodę (doustna lub dopochwowa) przez cały cykl"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.measurement-technique.dont1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't breathe through your mouth the night before — it can lower the reading"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie oddychaj przez usta poprzedniej nocy — może obniżyć odczyt"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.measurement-technique.dont2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't switch between oral and vaginal mid-cycle"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie zmieniaj metody z doustnej na dopochwową w środku cyklu"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.measurement-technique.subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oral measurement under the tongue gives the most consistent results."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pomiar doustny pod językiem daje najbardziej spójne wyniki."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.measurement-technique.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Measurement technique"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Technika pomiaru"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.measurement-time.body1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Basal body temperature is the lowest temperature the body reaches during rest. It is only valid when measured after at least 3–4 hours of uninterrupted sleep, before getting up, talking, eating, or drinking."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podstawowa temperatura ciała to najniższa temperatura, jaką ciało osiąga podczas odpoczynku. Jest wiarygodna tylko gdy mierzona jest po co najmniej 3–4 godzinach nieprzerwanego snu, przed wstaniem, mówieniem, jedzeniem lub piciem."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.measurement-time.body2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consistency in timing matters more than the exact clock time. Set an alarm for the same time every day — even on weekends. A shift of more than 30 minutes should be noted as a potential disturbance."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konsekwencja w porze pomiaru jest ważniejsza niż dokładna godzina. Ustaw alarm na tę samą godzinę każdego dnia — nawet w weekendy. Przesunięcie o ponad 30 minut powinno być odnotowane jako potencjalne zaburzenie."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.measurement-time.do1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Measure at the same time every day (±30 min)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mierz codziennie o tej samej porze (±30 min)"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.measurement-time.do2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Measure before getting up, speaking, or drinking"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mierz przed wstaniem, mówieniem lub piciem"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.measurement-time.dont1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't measure after getting up to use the bathroom first"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie mierz po wstaniu do toalety"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.measurement-time.dont2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't skip the alarm on weekends — consistency is key"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie wyłączaj alarmu w weekendy — konsekwencja to podstawa"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.measurement-time.subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Same time every morning, immediately after waking, before any activity."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Codziennie rano o tej samej porze, tuż po przebudzeniu, przed jakąkolwiek aktywnością."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.measurement-time.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When to measure"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kiedy mierzyć"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.measurement-time.warning" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you measure more than 30–60 minutes later than usual, mark the reading as disturbed. A later wake time often causes a falsely higher temperature."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeśli mierzysz ponad 30–60 minut później niż zwykle, oznacz odczyt jako zaburzony. Późniejsza godzina wstania często powoduje fałszywie wyższą temperaturę."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-basics.body1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cervical mucus is produced by glands in the cervix. Its properties — amount, consistency, colour, and the sensation it creates — change in response to estrogen and progesterone throughout the cycle. These changes are the basis of mucus-based fertility awareness methods."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Śluz szyjkowy jest produkowany przez gruczoły w szyjce macicy. Jego właściwości — ilość, konsystencja, kolor i tworzone odczucie — zmieniają się pod wpływem estrogenu i progesteronu przez cały cykl. Te zmiany stanowią podstawę metod świadomości płodności opartych na obserwacji śluzu."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-basics.body2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The most important thing to observe is the sensation at the vaginal opening — wetness, dryness, slipperiness — throughout the day. The physical appearance of mucus on toilet paper or underwear adds additional information."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Najważniejszą rzeczą do obserwacji jest odczucie przy wejściu do pochwy — wilgotność, suchość, śliskość — przez cały dzień. Fizyczny wygląd śluzu na papierze toaletowym lub bieliźnie dostarcza dodatkowych informacji."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-basics.do1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Observe the sensation at the vaginal opening throughout the day"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obserwuj odczucie przy wejściu do pochwy przez cały dzień"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-basics.do2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Check the appearance when wiping — before urinating"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sprawdzaj wygląd przy wycieraniu — przed oddaniem moczu"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-basics.do3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Record the most fertile observation of the day"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapisuj najbardziej płodną obserwację dnia"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-basics.dont1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't observe only in the morning — mucus changes throughout the day"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie obserwuj tylko rano — śluz zmienia się przez cały dzień"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-basics.dont2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't check internally (vaginally) unless using the Creighton or cervix method"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie sprawdzaj wewnętrznie (dopochwowo) chyba że stosujesz metodę Creightona lub szyjkową"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-basics.subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A natural secretion from the cervix that changes throughout the cycle."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naturalna wydzielina szyjki macicy, zmieniająca się przez cały cykl."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-basics.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is cervical mucus?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czym jest śluz szyjkowy?"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-observation.body1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mucus types progress from least to most fertile as ovulation approaches. The key is learning your own pattern — the exact appearance varies between women, but the progression from dry/sticky → creamy → egg-white → dry/sticky is consistent."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Typy śluzu przechodzą od najmniej do najbardziej płodnych w miarę zbliżania się owulacji. Kluczem jest nauka własnego wzorca — dokładny wygląd różni się między kobietami, ale progresja od suchy/kleisty → kremowy → białko jajka → suchy/kleisty jest spójna."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-observation.body2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Always record the most fertile type observed during the day — even if it only appeared once. The peak day is the last day of the most fertile type, identified retrospectively the following day."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zawsze zapisuj najbardziej płodny typ zaobserwowany w ciągu dnia — nawet jeśli pojawił się tylko raz. Dzień szczytowy to ostatni dzień najbardziej płodnego typu, identyfikowany retrospektywnie następnego dnia."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-observation.do1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Record the most fertile observation of the day (not the average)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapisuj najbardziej płodną obserwację dnia (nie średnią)"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-observation.do2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Note both the sensation and the appearance"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notuj zarówno odczucie, jak i wygląd"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-observation.do3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Identify the peak day retrospectively the following morning"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Identyfikuj dzień szczytowy retrospektywnie następnego ranka"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-observation.dont1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't record only the average or most common observation of the day"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie zapisuj tylko średniej lub najczęstszej obserwacji dnia"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-observation.dont2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't confuse arousal fluid with fertile mucus — arousal fluid disappears quickly"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie myl płynu podniecenia z płodnym śluzem — płyn podniecenia znika szybko"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-observation.subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Learn to distinguish dry, sticky, creamy, and egg-white mucus."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naucz się rozróżniać suchy, kleisty, kremowy i podobny do białka jajka śluz."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-observation.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Classifying mucus types"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klasyfikacja typów śluzu"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-observation.warning" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lubricants, spermicides, vaginal infections, and some medications can alter mucus appearance. Note any factors that may affect observation."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Środki nawilżające, środki plemnikobójcze, infekcje pochwy i niektóre leki mogą zmieniać wygląd śluzu. Notuj wszelkie czynniki mogące wpływać na obserwację."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-recording.body1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Record your observation each evening before bed, summarising the day. Use the most fertile type seen at any point. Consistent daily recording — even on dry days — builds the pattern that makes the chart interpretable."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapisuj obserwację każdego wieczoru przed snem, podsumowując dzień. Używaj najbardziej płodnego typu zaobserwowanego w ciągu dnia. Konsekwentne codzienne zapisywanie — nawet w suche dni — buduje wzorzec, który czyni wykres interpretowalnym."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-recording.do1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Record every day — including dry days"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapisuj każdego dnia — włącznie z suchymi dniami"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-recording.do2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Record in the evening, summarising the whole day"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapisuj wieczorem, podsumowując cały dzień"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-recording.do3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use the peak day marker the day after your last fertile-type mucus"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Używaj znacznika dnia szczytowego dzień po ostatnim śluzowym dniu płodnym"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-recording.dont1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't skip days — even \"nothing to note\" is a valid and important observation"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie pomijaj dni — nawet \"nic do odnotowania\" jest ważną obserwacją"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-recording.subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How to log mucus consistently in the app."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jak konsekwentnie rejestrować śluz w aplikacji."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.mucus-recording.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recording observations"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapisywanie obserwacji"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.thermometer-choice.body1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not all thermometers are suitable for BBT charting. A standard fever thermometer typically shows only one decimal place (e.g. 36.7°C), which is not precise enough to detect the small shift caused by ovulation. You need a basal thermometer with two decimal places (e.g. 36.72°C)."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie każdy termometr nadaje się do mierzenia PTC. Zwykły termometr do gorączki zazwyczaj pokazuje tylko jedną cyfrę po przecinku (np. 36,7°C), co jest niewystarczające do wykrycia małego skoku owulacyjnego. Potrzebujesz termometru owulacyjnego z dwiema cyframi po przecinku (np. 36,72°C)."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.thermometer-choice.body2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A digital oral thermometer with 0.01°C resolution and a memory function (stores last reading) is the most practical choice. Keep it on your nightstand so you can measure before getting up."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Najwygodniejszy jest cyfrowy termometr doustny z dokładnością 0,01°C i funkcją pamięci (zapamiętuje ostatni odczyt). Trzymaj go na nocnym stoliku, żeby mierzyć przed wstaniem."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.thermometer-choice.do1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use a basal (ovulation) thermometer — resolution 0.01°C"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Używaj termometru owulacyjnego (bazalnego) — dokładność 0,01°C"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.thermometer-choice.do2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep the thermometer on your nightstand within arm's reach"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trzymaj termometr na nocnym stoliku w zasięgu ręki"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.thermometer-choice.do3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use the same thermometer throughout the cycle"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Używaj tego samego termometru przez cały cykl"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.thermometer-choice.dont1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't use a standard fever thermometer (one decimal place)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie używaj zwykłego termometru do gorączki (jedna cyfra po przecinku)"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.thermometer-choice.dont2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't switch thermometers mid-cycle — values may not be comparable"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie zmieniaj termometru w trakcie cyklu — wartości mogą być nieporównywalne"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.thermometer-choice.subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A basal thermometer with 0.01°C resolution is essential."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termometr owulacyjny z dokładnością 0,01°C to podstawa."
+          }
+        }
+      }
+    },
+    "education.measurement-tips.tip.thermometer-choice.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choosing a thermometer"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybór termometru"
+          }
+        }
+      }
+    },
+    "education.measurement-tips.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How to Measure"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jak mierzyć"
+          }
+        }
+      }
+    },
+    "education.npr-methods.detail.badge.evidence-based" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Evidence-based"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naukowo potwierdzona"
+          }
+        }
+      }
+    },
+    "education.npr-methods.detail.rules-title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Key rules"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kluczowe reguły"
+          }
+        }
+      }
+    },
+    "education.npr-methods.detail.signs-title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signs observed"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obserwowane znaki"
+          }
+        }
+      }
+    },
+    "education.npr-methods.detail.suitable-for" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suitable for"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dla kogo"
+          }
+        }
+      }
+    },
+    "education.npr-methods.difficulty.easy" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Easy"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Łatwa"
+          }
+        }
+      }
+    },
+    "education.npr-methods.difficulty.hard" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Advanced"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaawansowana"
+          }
+        }
+      }
+    },
+    "education.npr-methods.difficulty.medium" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intermediate"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Średnia"
+          }
+        }
+      }
+    },
+    "education.npr-methods.intro" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Natural family planning methods use observable signs of fertility to identify fertile and infertile days. Each method has its own rules, signs, and learning curve."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metody naturalnego planowania rodziny wykorzystują obserwowalne znaki płodności do identyfikacji dni płodnych i niepłodnych. Każda metoda ma swoje reguły, znaki i krzywe uczenia się."
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.billings.body1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Developed by Drs John and Evelyn Billings in Australia, the Billings Ovulation Method (BOM) is based solely on the observation of cervical mucus — specifically, the sensation it creates at the vulvar opening (external observation only, no internal checking)."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opracowana przez dr Jana i Evelyn Billings w Australii, Metoda Owulacji Billingsów (MOB) opiera się wyłącznie na obserwacji śluzu szyjkowego — konkretnie na odczuciu jakie tworzy przy wejściu do pochwy (tylko obserwacja zewnętrzna, bez wewnętrznej)."
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.billings.body2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The key concept is the \"Basic Infertile Pattern\" (BIP) — the normal, unchanging mucus pattern a woman sees during her infertile phases. Any change from the BIP signals the beginning of the potentially fertile phase. The method requires no thermometer and can be used in various circumstances including breastfeeding and perimenopause."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kluczowym pojęciem jest \"Podstawowy Wzorzec Niepłodności\" (PWN) — normalny, niezmieniający się wzorzec śluzu, który kobieta widzi w fazach niepłodnych. Każda zmiana od PWN sygnalizuje początek potencjalnie płodnej fazy. Metoda nie wymaga termometru i może być stosowana w różnych okolicznościach, w tym podczas karmienia piersią i perimenopauzy."
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.billings.certification" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taught by certified Billings instructors through the World Organisation of Ovulation Method Billings (WOOMB)."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nauczana przez certyfikowanych instruktorów Billingsów przez Światową Organizację Metody Owulacji Billingsów (WOOMB)."
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.billings.name" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Billings Ovulation Method"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metoda Owulacji Billingsów"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.billings.rule1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Any day of dryness (Basic Infertile Pattern) before ovulation is potentially infertile"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Każdy suchy dzień (Podstawowy Wzorzec Niepłodności) przed owulacją jest potencjalnie niepłodny"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.billings.rule2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Any change from the BIP — wetter, slippery, or different — signals potential fertility"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Każda zmiana od PWN — bardziej mokro, ślisko lub inaczej — sygnalizuje potencjalną płodność"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.billings.rule3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The Peak Day is the last day of the most fertile type of mucus, identified retrospectively"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dzień Szczytowy to ostatni dzień najbardziej płodnego typu śluzu, identyfikowany retrospektywnie"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.billings.rule4" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The post-ovulatory infertile phase begins the evening of the 4th day after Peak Day"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pofertylna faza niepłodna zaczyna się wieczorem 4. dnia po Dniu Szczytowym"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.billings.sign1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cervical mucus — sensation at the vulvar opening, observed throughout the day (external observation only)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Śluz szyjkowy — odczucie przy wardze sromowej, obserwowane przez cały dzień (tylko obserwacja zewnętrzna)"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.billings.signs-badge" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mucus only"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tylko śluz"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.billings.suitable-for" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Women who cannot measure temperature (shift workers, frequent travellers), breastfeeding women, perimenopause. Requires good ability to notice external sensation throughout the day."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kobiety, które nie mogą mierzyć temperatury (pracownicy zmianowi, częste podróże), karmiące piersią, perimenopauza. Wymaga dobrej umiejętności zauważania zewnętrznego odczucia przez cały dzień."
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.billings.tagline" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mucus-only method based on vulvar sensation throughout the day."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metoda oparta wyłącznie na śluzie — odczucie przy wardze sromowej przez cały dzień."
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.calendar.body1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The calendar (rhythm) method estimates the fertile window by applying a formula to the lengths of the previous 6–12 menstrual cycles. The most common version (Ogino-Knaus formula) subtracts 18 from the shortest cycle to find the first fertile day, and 11 from the longest to find the last."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metoda kalendarzowa (rytmu) szacuje okno płodności stosując formułę do długości poprzednich 6–12 cykli miesiączkowych. Najczęstsza wersja (formuła Ogino-Knausa) odejmuje 18 od najkrótszego cyklu by znaleźć pierwszy płodny dzień, i 11 od najdłuższego by znaleźć ostatni."
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.calendar.body2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The calendar method is not considered a reliable modern NFP method. It relies entirely on the assumption that future cycles will repeat past patterns — which is often false, especially after illness, stress, or life changes. P-Meter includes it for educational comparison only, not as a recommended approach."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metoda kalendarzowa nie jest uważana za wiarygodną nowoczesną metodę NPR. Opiera się wyłącznie na założeniu, że przyszłe cykle będą powtarzać przeszłe wzorce — co często jest błędne, szczególnie po chorobie, stresie lub zmianach życiowych. P-Meter zawiera ją wyłącznie do celów edukacyjnego porównania, nie jako zalecane podejście."
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.calendar.name" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calendar / Rhythm Method"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metoda kalendarzowa / rytmu"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.calendar.rule1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "First fertile day = shortest past cycle − 18"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pierwszy płodny dzień = najkrótszy przeszły cykl − 18"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.calendar.rule2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Last fertile day = longest past cycle − 11"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ostatni płodny dzień = najdłuższy przeszły cykl − 11"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.calendar.sign1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cycle length history — no daily observations required"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Historia długości cykli — nie są wymagane codzienne obserwacje"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.calendar.signs-badge" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calendar only"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tylko kalendarz"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.calendar.suitable-for" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not recommended as a standalone method. Useful as a general orientation alongside a biomarker-based method. Highly unreliable for women with irregular cycles."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niezalecana jako samodzielna metoda. Przydatna jako ogólna orientacja obok metody opartej na biomarkerach. Wysoce zawodna dla kobiet z nieregularnymi cyklami."
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.calendar.tagline" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estimates fertile days based on past cycle lengths only."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szacuje dni płodne wyłącznie na podstawie długości poprzednich cykli."
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.creighton.body1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The Creighton Model FertilityCare System (CrMS) was developed at the Pope Paul VI Institute by Dr Thomas Hilgers as a standardised, teachable system based on cervical mucus observation. It uses a precise visual classification of mucus with a standardised charting stamp system (categories: dry, VE, G, L, K, 10C, 10CK, 10KL, 10KP, 10W, etc.)."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Creighton Model FertilityCare System (CrMS) został opracowany w Instytucie Papieża Pawła VI przez dr Thomasa Hilgersa jako ustandaryzowany, nauczalny system oparty na obserwacji śluzu szyjkowego. Stosuje precyzyjną wizualną klasyfikację śluzu ze ustandaryzowanym systemem stemplowania kart (kategorie: sucho, VE, G, L, K, 10C, 10CK, 10KL, 10KP, 10W, itp.)."
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.creighton.body2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unlike Billings, Creighton also records the physical appearance and characteristics of mucus collected on toilet paper (internal sensation is not the primary focus — the collected sample is). The standardised notation makes charting comparable across practitioners and supports medical diagnosis."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W przeciwieństwie do Billingsów, Creighton zapisuje również fizyczny wygląd i charakterystyki śluzu zebranego na papierze toaletowym (wewnętrzne odczucie nie jest głównym przedmiotem — jest nim zebrany próbka). Ustandaryzowana notacja sprawia, że prowadzenie karty jest porównywalne u różnych praktyków i wspiera diagnozę medyczną."
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.creighton.body3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CrMS is also the foundation of NaProTechnology (Natural Procreative Technology), a medical approach used to diagnose and treat reproductive disorders using cycle chart data."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CrMS jest również podstawą NaProTechnology (Naturalnej Technologii Prokreacyjnej), podejścia medycznego stosowanego do diagnozowania i leczenia zaburzeń reprodukcyjnych przy użyciu danych z kart cyklu."
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.creighton.certification" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taught exclusively by certified FertilityCare Practitioners. More info: creightonmodel.com"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nauczana wyłącznie przez certyfikowanych Praktyków FertilityCare. Więcej: creightonmodel.com"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.creighton.name" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Creighton Model FertilityCare™"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Creighton Model FertilityCare™"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.creighton.rule1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Any observation other than dry/nothing is potentially fertile and must be treated as such"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Każda obserwacja inna niż sucha/nic jest potencjalnie płodna i musi być traktowana jako taka"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.creighton.rule2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The Peak Day rules follow Billings-based Post-Peak calculations (4-day rule)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reguły Dnia Szczytowego stosują obliczenia Post-Szczytowe oparte na Billingsach (zasada 4 dni)"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.creighton.rule3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Requires learning the full standardised stamp/classification system — self-teaching is not recommended"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wymaga nauki pełnego ustandaryzowanego systemu stemplowania/klasyfikacji — samodzielna nauka nie jest zalecana"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.creighton.sign1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cervical mucus — physical appearance of collected sample + vulvar sensation (external observation, standardised classification)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Śluz szyjkowy — fizyczny wygląd zebranej próbki + odczucie na wardze sromowej (obserwacja zewnętrzna, ustandaryzowana klasyfikacja)"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.creighton.signs-badge" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mucus only"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tylko śluz"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.creighton.suitable-for" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Women who want detailed charting that can interface with medical diagnosis (NaPro). Requires working with a certified FertilityCare Practitioner (FCP)."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kobiety które chcą szczegółowego prowadzenia kart mogącego współpracować z diagnozą medyczną (NaPro). Wymaga pracy z certyfikowanym Praktykiem FertilityCare (FCP)."
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.creighton.tagline" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standardised mucus-only method with precise classification system."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ustandaryzowana metoda śluzowa z precyzyjnym systemem klasyfikacji."
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.roetzer.body1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Developed by gynaecologist Josef Rötzer in Austria, the Rötzer method is a rigorous variant of STM that requires all three signs — temperature, mucus, and cervix — for fertility evaluation. It places particular emphasis on the cervix as a primary sign, not merely a supplement."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opracowana przez ginekologa Josefa Rötzer w Austrii, metoda Rötzer jest rygorystycznym wariantem STM wymagającym wszystkich trzech znaków — temperatury, śluzu i szyjki — do oceny płodności. Szczególny nacisk kładzie na szyjkę jako znak podstawowy, nie tylko uzupełniający."
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.roetzer.body2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The method uses a specific set of rules for identifying the fertile window that differs slightly from the Sensiplan variant. It is taught exclusively by certified NFP-Rötzer instructors and is particularly widespread in Austria, Germany, and among Catholic family planning organisations."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metoda stosuje specyficzny zestaw reguł do identyfikacji okna płodności, który różni się nieco od wariantu Sensiplan. Jest nauczana wyłącznie przez certyfikowanych instruktorów NFP-Rötzer i jest szczególnie rozpowszechniona w Austrii, Niemczech i wśród katolickich organizacji planowania rodziny."
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.roetzer.certification" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taught exclusively by NFP-Rötzer certified instructors. More info: nfp-online.com"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nauczana wyłącznie przez certyfikowanych instruktorów NFP-Rötzer. Więcej: nfp-online.com"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.roetzer.name" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rötzer Method (NFP-Rötzer)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metoda Rötzer (NFP-Rötzer)"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.roetzer.rule1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All three signs must agree before the post-ovulatory infertile phase is declared"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wszystkie trzy znaki muszą być zgodne zanim zostanie ogłoszona pofertylna faza niepłodna"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.roetzer.rule2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Post-ovulatory phase confirmed on the evening of the 3rd consecutive elevated temperature with concurrent mucus drying and cervix closure"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faza pofertylna potwierdzona wieczorem 3. kolejnego dnia podwyższonej temperatury z równoczesnym wysychaniem śluzu i zamknięciem szyjki"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.roetzer.rule3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Specific pre-ovulatory rules apply — consult a certified instructor"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obowiązują szczegółowe zasady przedowulacyjne — skonsultuj się z certyfikowanym instruktorem"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.roetzer.sign1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Basal body temperature (BBT)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podstawowa temperatura ciała (PTC)"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.roetzer.sign2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cervical mucus"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Śluz szyjkowy"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.roetzer.sign3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cervix — required, not optional"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szyjka macicy — wymagana, nie opcjonalna"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.roetzer.signs-badge" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temp + Mucus + Cervix"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temp + Śluz + Szyjka"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.roetzer.suitable-for" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Women comfortable with internal cervix observation and committed to learning all three signs. Particularly recommended for couples seeking maximum confidence in their observations."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kobiety komfortowo czujące się z wewnętrzną obserwacją szyjki i zaangażowane w naukę wszystkich trzech znaków. Szczególnie zalecana parom szukającym maksymalnej pewności w obserwacjach."
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.roetzer.tagline" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An advanced STM variant with strict triple-sign confirmation."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaawansowany wariant STM ze ścisłym potwierdzeniem trzech znaków."
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.stm.body1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The Sympto-Thermal Method (STM) is the most widely used form of fertility awareness in Europe. It combines at least two biological signs: basal body temperature (BBT) and cervical mucus observations, with optional cervix checking as a third corroborating sign."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metoda Symptotermiczna (STM) jest najpowszechniej stosowaną formą świadomości płodności w Europie. Łączy co najmniej dwa znaki biologiczne: podstawową temperaturę ciała (PTC) i obserwację śluzu szyjkowego, z opcjonalną obserwacją szyjki jako trzecim znakiem potwierdzającym."
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.stm.body2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The fertile window is identified by the mucus observations; its end is confirmed by the temperature shift (thermal shift) sustained for at least three consecutive days above the coverline. This double-check principle — mucus plus temperature — gives STM a high effectiveness rate of 99.6% with perfect use according to peer-reviewed studies."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Okno płodne jest identyfikowane przez obserwacje śluzu; jego koniec potwierdzany jest przez skok termiczny utrzymujący się przez co najmniej trzy kolejne dni powyżej linii pokrycia. Ta zasada podwójnej kontroli — śluz plus temperatura — daje STM wysoką skuteczność 99,6% przy doskonałym stosowaniu według recenzowanych badań."
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.stm.body3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "STM can be used to avoid or achieve pregnancy, and is also valuable for monitoring reproductive health. Many variants exist (Sensiplan, Rötzer, FEMM) — P-Meter is designed around the core principles common to most European STM curricula."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "STM może być używana do unikania lub osiągnięcia ciąży, a także jest cenna do monitorowania zdrowia reprodukcyjnego. Istnieje wiele wariantów (Sensiplan, Rötzer, FEMM) — P-Meter jest zaprojektowana wokół podstawowych zasad wspólnych dla większości europejskich programów STM."
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.stm.certification" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taught by certified STM instructors (e.g. Liga Małżeństwo Małżeństwu, Instytut Naturalnego Planowania Rodziny, Sensiplan in Germany)."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nauczana przez certyfikowanych instruktorów STM (np. Liga Małżeństwo Małżeństwu, Instytut Naturalnego Planowania Rodziny, Sensiplan w Niemczech)."
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.stm.name" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sympto-Thermal Method"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metoda Symptotermiczna"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.stm.rule1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The post-ovulatory infertile phase begins on the evening of the 3rd consecutive day of elevated temperature, when all three temperatures are above the coverline and the mucus has dried up"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pofertylna faza niepłodna zaczyna się wieczorem 3. kolejnego dnia podwyższonej temperatury, gdy wszystkie trzy temperatury są powyżej linii pokrycia i śluz wyschnął"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.stm.rule2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The coverline is drawn 0.05°C above the highest of the last 6 pre-shift temperatures"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linia pokrycia jest rysowana 0,05°C powyżej najwyższej z ostatnich 6 temperatur przed skokiem"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.stm.rule3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Any disturbed temperature is not counted toward the thermal shift confirmation"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Żadna zaburzona temperatura nie liczy się do potwierdzenia skoku termicznego"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.stm.rule4" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The pre-ovulatory phase requires caution — mucus onset marks the beginning of the potentially fertile period"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faza przedowulacyjna wymaga ostrożności — pojawienie się śluzu oznacza początek potencjalnie płodnego okresu"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.stm.sign1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Basal body temperature (BBT) — measured each morning before rising"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podstawowa temperatura ciała (PTC) — mierzona każdego ranka przed wstaniem"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.stm.sign2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cervical mucus — sensation and appearance observed throughout the day"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Śluz szyjkowy — odczucie i wygląd obserwowane przez cały dzień"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.stm.sign3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cervix position, firmness, and opening (optional but recommended)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pozycja, twardość i ujście szyjki (opcjonalne, ale zalecane)"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.stm.signs-badge" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temp + Mucus + Cervix"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temp + Śluz + Szyjka"
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.stm.suitable-for" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Women with regular or irregular cycles, women after stopping hormonal contraception, breastfeeding (with adaptations), perimenopause. Best for couples who can measure daily and are willing to learn the rules."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kobiety z regularnymi lub nieregularnymi cyklami, po odstawieniu antykoncepcji hormonalnej, karmiące (z adaptacjami), w perimenopauzie. Najlepsza dla par, które mogą mierzyć codziennie i chcą nauczyć się reguł."
+          }
+        }
+      }
+    },
+    "education.npr-methods.method.stm.tagline" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Combines temperature, mucus, and optional cervix signs."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Łączy temperaturę, śluz i opcjonalnie obserwację szyjki."
+          }
+        }
+      }
+    },
+    "education.npr-methods.section.mucus-based" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mucus-only methods"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metody śluzowe"
+          }
+        }
+      }
+    },
+    "education.npr-methods.section.other" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calendar-based"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kalendarzowe"
+          }
+        }
+      }
+    },
+    "education.npr-methods.section.sympto" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sympto-thermal methods"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metody symptotermiczne"
+          }
+        }
+      }
+    },
+    "education.npr-methods.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NPR Methods"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metody NPR"
           }
         }
       }

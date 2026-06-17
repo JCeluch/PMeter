@@ -31,6 +31,42 @@ struct EducationHomeView: View {
                     .padding(.vertical, 4)
                     
                     NavigationLink {
+                        MeasurementTipsView()
+                    } label: {
+                        Label {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(L10n.Education.MeasurementTips.title)
+                                    .font(.headline)
+                                Text(L10n.Education.Home.measurementTipsSubtitle)
+                                    .font(.subheadline)
+                                    .foregroundStyle(.secondary)
+                            }
+                        } icon: {
+                            Image(systemName: "ruler")
+                                .foregroundStyle(.accent)
+                        }
+                    }
+                    .padding(.vertical, 4)
+                    
+                    NavigationLink {
+                        NPRMethodsView()
+                    } label: {
+                        Label {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(L10n.Education.NPRMethods.title)
+                                    .font(.headline)
+                                Text(L10n.Education.Home.nprMethodsSubtitle)
+                                    .font(.subheadline)
+                                    .foregroundStyle(.secondary)
+                            }
+                        } icon: {
+                            Image(systemName: "leaf")
+                                .foregroundStyle(.accent)
+                        }
+                    }
+                    .padding(.vertical, 4)
+                    
+                    NavigationLink {
                         GlossaryListView()
                     } label: {
                         Label {

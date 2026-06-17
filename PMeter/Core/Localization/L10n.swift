@@ -188,6 +188,8 @@ extension L10n {
         enum Home {
             static let title: LocalizedStringKey = "education.home.title"
             static let chartGuideSubtitle: LocalizedStringKey = "education.home.chart-guide.subtitle"
+            static let measurementTipsSubtitle: LocalizedStringKey = "education.home.measurement-tips.subtitle"
+            static let nprMethodsSubtitle: LocalizedStringKey = "education.home.npr-methods.subtitle"
             static let glossarySubtitle: LocalizedStringKey = "education.home.glossary.subtitle"
         }
         
@@ -509,6 +511,216 @@ extension L10n {
                     static let point1: LocalizedStringKey = "education.chart-guide.lesson.irregular.point1"
                     static let point2: LocalizedStringKey = "education.chart-guide.lesson.irregular.point2"
                     static let point3: LocalizedStringKey = "education.chart-guide.lesson.irregular.point3"
+                }
+            }
+        }
+        
+        enum MeasurementTips {
+            static let title: LocalizedStringKey = "education.measurement-tips.title"
+            static let intro: LocalizedStringKey = "education.measurement-tips.intro"
+            static let dos: LocalizedStringKey = "education.measurement-tips.dos"
+            static let donts: LocalizedStringKey = "education.measurement-tips.donts"
+
+            enum Section {
+                static let temperature: LocalizedStringKey = "education.measurement-tips.section.temperature"
+                static let mucus: LocalizedStringKey = "education.measurement-tips.section.mucus"
+                static let cervix: LocalizedStringKey = "education.measurement-tips.section.cervix"
+            }
+
+            enum Tip {
+                enum ThermometerChoice {
+                    static let title: LocalizedStringKey = "education.measurement-tips.tip.thermometer-choice.title"
+                    static let subtitle: LocalizedStringKey = "education.measurement-tips.tip.thermometer-choice.subtitle"
+                    static let body1: LocalizedStringKey = "education.measurement-tips.tip.thermometer-choice.body1"
+                    static let body2: LocalizedStringKey = "education.measurement-tips.tip.thermometer-choice.body2"
+                    static let do1: LocalizedStringKey = "education.measurement-tips.tip.thermometer-choice.do1"
+                    static let do2: LocalizedStringKey = "education.measurement-tips.tip.thermometer-choice.do2"
+                    static let do3: LocalizedStringKey = "education.measurement-tips.tip.thermometer-choice.do3"
+                    static let dont1: LocalizedStringKey = "education.measurement-tips.tip.thermometer-choice.dont1"
+                    static let dont2: LocalizedStringKey = "education.measurement-tips.tip.thermometer-choice.dont2"
+                }
+                enum MeasurementTime {
+                    static let title: LocalizedStringKey = "education.measurement-tips.tip.measurement-time.title"
+                    static let subtitle: LocalizedStringKey = "education.measurement-tips.tip.measurement-time.subtitle"
+                    static let body1: LocalizedStringKey = "education.measurement-tips.tip.measurement-time.body1"
+                    static let body2: LocalizedStringKey = "education.measurement-tips.tip.measurement-time.body2"
+                    static let do1: LocalizedStringKey = "education.measurement-tips.tip.measurement-time.do1"
+                    static let do2: LocalizedStringKey = "education.measurement-tips.tip.measurement-time.do2"
+                    static let dont1: LocalizedStringKey = "education.measurement-tips.tip.measurement-time.dont1"
+                    static let dont2: LocalizedStringKey = "education.measurement-tips.tip.measurement-time.dont2"
+                    static let warning: LocalizedStringKey = "education.measurement-tips.tip.measurement-time.warning"
+                }
+                enum MeasurementTechnique {
+                    static let title: LocalizedStringKey = "education.measurement-tips.tip.measurement-technique.title"
+                    static let subtitle: LocalizedStringKey = "education.measurement-tips.tip.measurement-technique.subtitle"
+                    static let body1: LocalizedStringKey = "education.measurement-tips.tip.measurement-technique.body1"
+                    static let do1: LocalizedStringKey = "education.measurement-tips.tip.measurement-technique.do1"
+                    static let do2: LocalizedStringKey = "education.measurement-tips.tip.measurement-technique.do2"
+                    static let do3: LocalizedStringKey = "education.measurement-tips.tip.measurement-technique.do3"
+                    static let dont1: LocalizedStringKey = "education.measurement-tips.tip.measurement-technique.dont1"
+                    static let dont2: LocalizedStringKey = "education.measurement-tips.tip.measurement-technique.dont2"
+                }
+                enum Disturbances {
+                    static let title: LocalizedStringKey = "education.measurement-tips.tip.disturbances.title"
+                    static let subtitle: LocalizedStringKey = "education.measurement-tips.tip.disturbances.subtitle"
+                    static let body1: LocalizedStringKey = "education.measurement-tips.tip.disturbances.body1"
+                    static let body2: LocalizedStringKey = "education.measurement-tips.tip.disturbances.body2"
+                    static let do1: LocalizedStringKey = "education.measurement-tips.tip.disturbances.do1"
+                    static let do2: LocalizedStringKey = "education.measurement-tips.tip.disturbances.do2"
+                    static let warning: LocalizedStringKey = "education.measurement-tips.tip.disturbances.warning"
+                }
+                enum MucusBasics {
+                    static let title: LocalizedStringKey = "education.measurement-tips.tip.mucus-basics.title"
+                    static let subtitle: LocalizedStringKey = "education.measurement-tips.tip.mucus-basics.subtitle"
+                    static let body1: LocalizedStringKey = "education.measurement-tips.tip.mucus-basics.body1"
+                    static let body2: LocalizedStringKey = "education.measurement-tips.tip.mucus-basics.body2"
+                    static let do1: LocalizedStringKey = "education.measurement-tips.tip.mucus-basics.do1"
+                    static let do2: LocalizedStringKey = "education.measurement-tips.tip.mucus-basics.do2"
+                    static let do3: LocalizedStringKey = "education.measurement-tips.tip.mucus-basics.do3"
+                    static let dont1: LocalizedStringKey = "education.measurement-tips.tip.mucus-basics.dont1"
+                    static let dont2: LocalizedStringKey = "education.measurement-tips.tip.mucus-basics.dont2"
+                }
+                enum MucusObservation {
+                    static let title: LocalizedStringKey = "education.measurement-tips.tip.mucus-observation.title"
+                    static let subtitle: LocalizedStringKey = "education.measurement-tips.tip.mucus-observation.subtitle"
+                    static let body1: LocalizedStringKey = "education.measurement-tips.tip.mucus-observation.body1"
+                    static let body2: LocalizedStringKey = "education.measurement-tips.tip.mucus-observation.body2"
+                    static let do1: LocalizedStringKey = "education.measurement-tips.tip.mucus-observation.do1"
+                    static let do2: LocalizedStringKey = "education.measurement-tips.tip.mucus-observation.do2"
+                    static let do3: LocalizedStringKey = "education.measurement-tips.tip.mucus-observation.do3"
+                    static let dont1: LocalizedStringKey = "education.measurement-tips.tip.mucus-observation.dont1"
+                    static let dont2: LocalizedStringKey = "education.measurement-tips.tip.mucus-observation.dont2"
+                    static let warning: LocalizedStringKey = "education.measurement-tips.tip.mucus-observation.warning"
+                }
+                enum MucusRecording {
+                    static let title: LocalizedStringKey = "education.measurement-tips.tip.mucus-recording.title"
+                    static let subtitle: LocalizedStringKey = "education.measurement-tips.tip.mucus-recording.subtitle"
+                    static let body1: LocalizedStringKey = "education.measurement-tips.tip.mucus-recording.body1"
+                    static let do1: LocalizedStringKey = "education.measurement-tips.tip.mucus-recording.do1"
+                    static let do2: LocalizedStringKey = "education.measurement-tips.tip.mucus-recording.do2"
+                    static let do3: LocalizedStringKey = "education.measurement-tips.tip.mucus-recording.do3"
+                    static let dont1: LocalizedStringKey = "education.measurement-tips.tip.mucus-recording.dont1"
+                }
+                enum CervixBasics {
+                    static let title: LocalizedStringKey = "education.measurement-tips.tip.cervix-basics.title"
+                    static let subtitle: LocalizedStringKey = "education.measurement-tips.tip.cervix-basics.subtitle"
+                    static let body1: LocalizedStringKey = "education.measurement-tips.tip.cervix-basics.body1"
+                    static let body2: LocalizedStringKey = "education.measurement-tips.tip.cervix-basics.body2"
+                    static let do1: LocalizedStringKey = "education.measurement-tips.tip.cervix-basics.do1"
+                    static let do2: LocalizedStringKey = "education.measurement-tips.tip.cervix-basics.do2"
+                    static let do3: LocalizedStringKey = "education.measurement-tips.tip.cervix-basics.do3"
+                    static let dont1: LocalizedStringKey = "education.measurement-tips.tip.cervix-basics.dont1"
+                    static let warning: LocalizedStringKey = "education.measurement-tips.tip.cervix-basics.warning"
+                }
+                enum CervixTechnique {
+                    static let title: LocalizedStringKey = "education.measurement-tips.tip.cervix-technique.title"
+                    static let subtitle: LocalizedStringKey = "education.measurement-tips.tip.cervix-technique.subtitle"
+                    static let body1: LocalizedStringKey = "education.measurement-tips.tip.cervix-technique.body1"
+                    static let body2: LocalizedStringKey = "education.measurement-tips.tip.cervix-technique.body2"
+                    static let do1: LocalizedStringKey = "education.measurement-tips.tip.cervix-technique.do1"
+                    static let do2: LocalizedStringKey = "education.measurement-tips.tip.cervix-technique.do2"
+                    static let dont1: LocalizedStringKey = "education.measurement-tips.tip.cervix-technique.dont1"
+                    static let dont2: LocalizedStringKey = "education.measurement-tips.tip.cervix-technique.dont2"
+                }
+            }
+        }
+        
+        enum NPRMethods {
+            static let title: LocalizedStringKey = "education.npr-methods.title"
+            static let intro: LocalizedStringKey = "education.npr-methods.intro"
+
+            enum Section {
+                static let sympto: LocalizedStringKey = "education.npr-methods.section.sympto"
+                static let mucusBased: LocalizedStringKey = "education.npr-methods.section.mucus-based"
+                static let other: LocalizedStringKey = "education.npr-methods.section.other"
+            }
+
+            enum Difficulty {
+                static let easy: LocalizedStringKey = "education.npr-methods.difficulty.easy"
+                static let medium: LocalizedStringKey = "education.npr-methods.difficulty.medium"
+                static let hard: LocalizedStringKey = "education.npr-methods.difficulty.hard"
+            }
+
+            enum Detail {
+                static let signsTitle: LocalizedStringKey = "education.npr-methods.detail.signs-title"
+                static let rulesTitle: LocalizedStringKey = "education.npr-methods.detail.rules-title"
+                static let suitableFor: LocalizedStringKey = "education.npr-methods.detail.suitable-for"
+                enum Badge {
+                    static let evidenceBased: LocalizedStringKey = "education.npr-methods.detail.badge.evidence-based"
+                }
+            }
+
+            enum Method {
+                enum STM {
+                    static let name: LocalizedStringKey = "education.npr-methods.method.stm.name"
+                    static let tagline: LocalizedStringKey = "education.npr-methods.method.stm.tagline"
+                    static let signsBadge: LocalizedStringKey = "education.npr-methods.method.stm.signs-badge"
+                    static let body1: LocalizedStringKey = "education.npr-methods.method.stm.body1"
+                    static let body2: LocalizedStringKey = "education.npr-methods.method.stm.body2"
+                    static let body3: LocalizedStringKey = "education.npr-methods.method.stm.body3"
+                    static let sign1: LocalizedStringKey = "education.npr-methods.method.stm.sign1"
+                    static let sign2: LocalizedStringKey = "education.npr-methods.method.stm.sign2"
+                    static let sign3: LocalizedStringKey = "education.npr-methods.method.stm.sign3"
+                    static let rule1: LocalizedStringKey = "education.npr-methods.method.stm.rule1"
+                    static let rule2: LocalizedStringKey = "education.npr-methods.method.stm.rule2"
+                    static let rule3: LocalizedStringKey = "education.npr-methods.method.stm.rule3"
+                    static let rule4: LocalizedStringKey = "education.npr-methods.method.stm.rule4"
+                    static let suitableFor: LocalizedStringKey = "education.npr-methods.method.stm.suitable-for"
+                    static let certification: LocalizedStringKey = "education.npr-methods.method.stm.certification"
+                }
+                enum Roetzer {
+                    static let name: LocalizedStringKey = "education.npr-methods.method.roetzer.name"
+                    static let tagline: LocalizedStringKey = "education.npr-methods.method.roetzer.tagline"
+                    static let signsBadge: LocalizedStringKey = "education.npr-methods.method.roetzer.signs-badge"
+                    static let body1: LocalizedStringKey = "education.npr-methods.method.roetzer.body1"
+                    static let body2: LocalizedStringKey = "education.npr-methods.method.roetzer.body2"
+                    static let sign1: LocalizedStringKey = "education.npr-methods.method.roetzer.sign1"
+                    static let sign2: LocalizedStringKey = "education.npr-methods.method.roetzer.sign2"
+                    static let sign3: LocalizedStringKey = "education.npr-methods.method.roetzer.sign3"
+                    static let rule1: LocalizedStringKey = "education.npr-methods.method.roetzer.rule1"
+                    static let rule2: LocalizedStringKey = "education.npr-methods.method.roetzer.rule2"
+                    static let rule3: LocalizedStringKey = "education.npr-methods.method.roetzer.rule3"
+                    static let suitableFor: LocalizedStringKey = "education.npr-methods.method.roetzer.suitable-for"
+                    static let certification: LocalizedStringKey = "education.npr-methods.method.roetzer.certification"
+                }
+                enum Billings {
+                    static let name: LocalizedStringKey = "education.npr-methods.method.billings.name"
+                    static let tagline: LocalizedStringKey = "education.npr-methods.method.billings.tagline"
+                    static let signsBadge: LocalizedStringKey = "education.npr-methods.method.billings.signs-badge"
+                    static let body1: LocalizedStringKey = "education.npr-methods.method.billings.body1"
+                    static let body2: LocalizedStringKey = "education.npr-methods.method.billings.body2"
+                    static let sign1: LocalizedStringKey = "education.npr-methods.method.billings.sign1"
+                    static let rule1: LocalizedStringKey = "education.npr-methods.method.billings.rule1"
+                    static let rule2: LocalizedStringKey = "education.npr-methods.method.billings.rule2"
+                    static let rule3: LocalizedStringKey = "education.npr-methods.method.billings.rule3"
+                    static let rule4: LocalizedStringKey = "education.npr-methods.method.billings.rule4"
+                    static let suitableFor: LocalizedStringKey = "education.npr-methods.method.billings.suitable-for"
+                    static let certification: LocalizedStringKey = "education.npr-methods.method.billings.certification"
+                }
+                enum Creighton {
+                    static let name: LocalizedStringKey = "education.npr-methods.method.creighton.name"
+                    static let tagline: LocalizedStringKey = "education.npr-methods.method.creighton.tagline"
+                    static let signsBadge: LocalizedStringKey = "education.npr-methods.method.creighton.signs-badge"
+                    static let body1: LocalizedStringKey = "education.npr-methods.method.creighton.body1"
+                    static let body2: LocalizedStringKey = "education.npr-methods.method.creighton.body2"
+                    static let body3: LocalizedStringKey = "education.npr-methods.method.creighton.body3"
+                    static let sign1: LocalizedStringKey = "education.npr-methods.method.creighton.sign1"
+                    static let rule1: LocalizedStringKey = "education.npr-methods.method.creighton.rule1"
+                    static let rule2: LocalizedStringKey = "education.npr-methods.method.creighton.rule2"
+                    static let rule3: LocalizedStringKey = "education.npr-methods.method.creighton.rule3"
+                    static let suitableFor: LocalizedStringKey = "education.npr-methods.method.creighton.suitable-for"
+                    static let certification: LocalizedStringKey = "education.npr-methods.method.creighton.certification"
+                }
+                enum Calendar {
+                    static let name: LocalizedStringKey = "education.npr-methods.method.calendar.name"
+                    static let tagline: LocalizedStringKey = "education.npr-methods.method.calendar.tagline"
+                    static let signsBadge: LocalizedStringKey = "education.npr-methods.method.calendar.signs-badge"
+                    static let body1: LocalizedStringKey = "education.npr-methods.method.calendar.body1"
+                    static let body2: LocalizedStringKey = "education.npr-methods.method.calendar.body2"
+                    static let sign1: LocalizedStringKey = "education.npr-methods.method.calendar.sign1"
+                    static let rule1: LocalizedStringKey = "education.npr-methods.method.calendar.rule1"
+                    static let rule2: LocalizedStringKey = "education.npr-methods.method.calendar.rule2"
+                    static let suitableFor: LocalizedStringKey = "education.npr-methods.method.calendar.suitable-for"
                 }
             }
         }
