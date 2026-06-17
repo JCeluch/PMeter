@@ -31,6 +31,9 @@
         }
       }
     },
+    "—" : {
+
+    },
     "," : {
       "localizations" : {
         "en" : {
@@ -160,7 +163,20 @@
       }
     },
     "%lld dni" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld days"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld dni"
+          }
+        }
+      }
     },
     "%lld,%@°C" : {
       "localizations" : {
@@ -203,6 +219,12 @@
           }
         }
       }
+    },
+    "%lld%%" : {
+
+    },
+    "%lldd" : {
+
     },
     "°C" : {
       "extractionState" : "stale",
@@ -258,6 +280,16 @@
       }
     },
     "BBT" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PTC"
+          }
+        }
+      }
+    },
+    "BBT i fazy" : {
 
     },
     "Błąd ładowania danych" : {
@@ -3323,7 +3355,11 @@
         }
       }
     },
+    "Długość cykli" : {
+
+    },
     "Długości cykli" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3338,6 +3374,9 @@
           }
         }
       }
+    },
+    "Dni" : {
+
     },
     "Dodaj przynajmniej dwa cykle, aby zobaczyć statystyki i przewidywania." : {
       "localizations" : {
@@ -4108,13 +4147,52 @@
       }
     },
     "education.glossary.entry.menstrual-cycle.definition" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The menstrual cycle is a monthly hormonal process divided into four phases: menstrual (bleeding), follicular (egg maturation), ovulatory (egg release), and luteal (post-ovulation). Its length is counted from the first day of one period to the day before the next. Average length is 28 days, but 21–35 days is considered normal. Cycle length and symptoms vary between individuals and can change with age, stress, or health."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cykl miesiączkowy to comiesięczny proces hormonalny podzielony na cztery fazy: menstruacyjną (krwawienie), folikularną (dojrzewanie pęcherzyka), owulacyjną (uwolnienie komórki jajowej) i lutealną (po owulacji). Jego długość liczona jest od pierwszego dnia krwawienia do dnia poprzedzającego kolejne. Średnia długość wynosi 28 dni, ale norma to 21–35 dni. Długość cyklu i objawy mogą się różnić między osobami i zmieniać z wiekiem, stresem lub stanem zdrowia."
+          }
+        }
+      }
     },
     "education.glossary.entry.menstrual-cycle.short" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A recurring hormonal cycle that prepares the body for potential pregnancy, typically lasting 21–35 days."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Powtarzający się cykl hormonalny przygotowujący organizm do ewentualnej ciąży, trwający zazwyczaj 21–35 dni."
+          }
+        }
+      }
     },
     "education.glossary.entry.menstrual-cycle.title" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menstrual Cycle"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cykl miesiączkowy"
+          }
+        }
+      }
     },
     "education.glossary.entry.peak-day.definition" : {
       "localizations" : {
@@ -4440,6 +4518,22 @@
       }
     },
     "Fazy cyklu" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cycle phases"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fazy cyklu"
+          }
+        }
+      }
+    },
+    "Historia cykli" : {
 
     },
     "Int." : {
@@ -4629,6 +4723,9 @@
         }
       }
     },
+    "Nastrój wg fazy" : {
+
+    },
     "Negatywny" : {
       "localizations" : {
         "en" : {
@@ -4704,7 +4801,20 @@
       }
     },
     "Owulacja" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ovulation"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Owulacja"
+          }
+        }
+      }
     },
     "PdG" : {
       "extractionState" : "stale",
@@ -4790,6 +4900,9 @@
           }
         }
       }
+    },
+    "Regularność pomiarów" : {
+
     },
     "Rozciągliwość" : {
       "localizations" : {
@@ -5090,6 +5203,9 @@
         }
       }
     },
+    "Średnia" : {
+
+    },
     "Statystyki" : {
       "localizations" : {
         "en" : {
@@ -5123,7 +5239,20 @@
       }
     },
     "Stosunek" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intercourse"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stosunek"
+          }
+        }
+      }
     },
     "Szyjka" : {
       "extractionState" : "stale",

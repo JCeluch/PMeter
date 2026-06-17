@@ -40,6 +40,19 @@ extension GlossaryService {
             keywords: ["cykl", "menstruacja", "okres", "miesiączka", "cycle", "menstrual"]
         ),
         GlossaryEntry(
+            id: "luteal-phase",
+            title: L10n.Education.Glossary.Entry.LutealPhase.title,
+            shortDefinition: L10n.Education.Glossary.Entry.LutealPhase.short,
+            definition: L10n.Education.Glossary.Entry.LutealPhase.definition,
+            searchableTitle: L10n.string("education.glossary.entry.luteal-phase.title"),
+            searchableShortDefinition: L10n.string("education.glossary.entry.luteal-phase.short"),
+            category: .cycle,
+            tags: [.basics, .fertility, .interpretation],
+            relatedEntryIDs: ["fertile-window", "menstrual-cycle", "bbt", "cervical-mucus"],
+            measurementTips: [],
+            keywords: ["cykl", "hormony", "faza lutealna"]
+        ),
+        GlossaryEntry(
             id: "bbt",
             title: L10n.Education.Glossary.Entry.BBT.title,
             shortDefinition: L10n.Education.Glossary.Entry.BBT.short,

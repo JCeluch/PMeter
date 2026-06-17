@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import Charts
 
 struct StatsView: View {
     @Query(sort: \CycleEntry.date, order: .forward) private var entries: [CycleEntry]
@@ -84,7 +85,7 @@ struct StatsView: View {
                                 .glossaryInfo("luteal-phase")
                         }
                     }
-
+                    
                     Section("Owulacja") {
                         let total = stats.cyclesWithOvulation + stats.cyclesWithoutOvulation
                         if total > 0 {
@@ -130,6 +131,51 @@ struct StatsView: View {
                                 .glossaryInfo("cervical-mucus")
                         }
                     }
+                    
+                    // Konsekwencja pomiaru
+                    if stats.temperatureEntryCount > 0 {
+                        Section {
+                            let pct = Int(round(stats.bbtConsistency * 100))
+                            HStack {
+                                Text("Regularność pomiarów")
+                                Spacer()
+                                Text("\(pct)%")
+                                    .foregroundStyle(bbtConsistencyColor(stats.bbtConsistency))
+                                    .fontWeight(.medium)
+                            }
+                            if stats.averageFollicularLength > 0 {
+                                statRow(
+                                    "Średnia faza folikularna",
+                                    value: rangeRow(avg: stats.averageFollicularLength,
+                                                    min: stats.minFollicularLength,
+                                                    max: stats.maxFollicularLength)
+                                )
+                            }
+                        } header: {
+                            Text("BBT i fazy")
+                                .glossaryInfo("bbt")
+                        }
+                    }
+
+                    // Ból menstruacyjny
+                    if stats.averageMenstrualPain > 0 {
+                        Section("Ból menstruacyjny") {
+                            statRow("Średnia intensywność", value: painLabel(stats.averageMenstrualPain))
+                            if let max = stats.maxMenstrualPain {
+                                statRow("Maksimum", value: painLabel(Double(max)))
+                            }
+                        }
+                    }
+
+                    // Nastrój per faza
+                    if stats.averageMoodFollicular != nil || stats.averageMoodLuteal != nil {
+                        Section("Nastrój wg fazy") {
+                            moodPhaseRow("Menstruacyjna", value: stats.averageMoodMenstrual)
+                            moodPhaseRow("Folikularna", value: stats.averageMoodFollicular)
+                            moodPhaseRow("Owulacyjna", value: stats.averageMoodOvulatory)
+                            moodPhaseRow("Lutealna", value: stats.averageMoodLuteal)
+                        }
+                    }
 
                     if stats.intercourseCount > 0 {
                         Section("Stosunek") {
@@ -139,9 +185,18 @@ struct StatsView: View {
                         }
                     }
 
+                    if !stats.cycleInfos.isEmpty {
+                        Section {
+                            CycleBarChartView(
+                                cycleInfos: stats.cycleInfos,
+                                average: stats.averageCycleLength
+                            )
+                            .listRowInsets(EdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 12))
+                        } header: {
+                            Text("Długość cykli")
+                        }
 
-                    if !stats.cycleLengths.isEmpty {
-                        Section("Długości cykli") {
+                        Section {
                             ForEach(stats.cycleInfos.reversed(), id: \.startDate) { info in
                                 HStack {
                                     VStack(alignment: .leading, spacing: 2) {
@@ -153,9 +208,11 @@ struct StatsView: View {
                                     }
                                     Spacer()
                                     Text("\(info.length) dni")
-                                        .foregroundStyle(.secondary)
+                                        .foregroundStyle(lengthColor(info.length, average: stats.averageCycleLength))
                                 }
                             }
+                        } header: {
+                            Text("Historia cykli")
                         }
                     }
                 }
@@ -295,5 +352,54 @@ struct StatsView: View {
         case .wet: return "Mokro"
         case .slippery: return "Ślisko"
         }
+    }
+    
+    private func bbtConsistencyColor(_ value: Double) -> Color {
+        switch value {
+        case 0.8...: return .green
+        case 0.5..<0.8: return .orange
+        default: return .red
+        }
+    }
+
+    private func painLabel(_ value: Double) -> String {
+        guard value > 0 else { return "—" }
+        let stars = String(repeating: "●", count: Int(round(value))) +
+                    String(repeating: "○", count: 5 - Int(round(value)))
+        return "\(stars) (\(String(format: "%.1f", value))/5)"
+    }
+
+    private func moodPhaseRow(_ phase: String, value: Double?) -> some View {
+        HStack {
+            Text(phase)
+            Spacer()
+            if let v = value {
+                HStack(spacing: 2) {
+                    Text(moodEmoji(v))
+                    Text(String(format: "%.1f", v))
+                        .foregroundStyle(.secondary)
+                        .font(.subheadline)
+                }
+            } else {
+                Text("—").foregroundStyle(.secondary)
+            }
+        }
+    }
+
+    private func moodEmoji(_ value: Double) -> String {
+        switch value {
+        case 4.5...: return "😄"
+        case 3.5..<4.5: return "🙂"
+        case 2.5..<3.5: return "😐"
+        case 1.5..<2.5: return "😕"
+        default: return "😔"
+        }
+    }
+    
+    private func lengthColor(_ length: Int, average: Double) -> Color {
+        let diff = abs(Double(length) - average)
+        if diff <= 2 { return .secondary }
+        if diff <= 5 { return .orange }
+        return .red
     }
 }

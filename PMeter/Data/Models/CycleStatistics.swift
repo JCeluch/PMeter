@@ -46,6 +46,26 @@ struct CycleStatistics {
     let averageTemperature: Double?
     let temperatureEntryCount: Int
     let lhPeakCount: Int
+    
+    // MARK: - Zaawansowane
+
+    // Faza folikularna
+    let averageFollicularLength: Double
+    let minFollicularLength: Int?
+    let maxFollicularLength: Int?
+
+    // Konsekwencja pomiaru
+    let bbtConsistency: Double          // 0.0–1.0, % dni z temperaturą
+
+    // Ból menstruacyjny
+    let averageMenstrualPain: Double    // 0–5, 0 = brak danych
+    let maxMenstrualPain: Int?
+
+    // Nastrój per faza
+    let averageMoodFollicular: Double?  // nil = za mało danych
+    let averageMoodOvulatory: Double?
+    let averageMoodLuteal: Double?
+    let averageMoodMenstrual: Double?
 }
 
 struct CycleInfo {

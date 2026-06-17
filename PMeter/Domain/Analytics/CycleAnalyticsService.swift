@@ -83,6 +83,31 @@ enum CycleAnalyticsService {
         let unprotectedCount = allIntercourse.filter { $0.intercourse == .unprotected }.count
         let protectedCount = allIntercourse.filter { $0.intercourse == .protected }.count
         
+        // MARK: Faza folikularna
+        let follicularLengths = calculatedFollicularLengths(
+            from: sortedEntries, cycleStarts: cycleStarts
+        )
+        let avgFollicular = follicularLengths.isEmpty ? 0.0
+            : Double(follicularLengths.reduce(0, +)) / Double(follicularLengths.count)
+        let minFollicular = follicularLengths.min()
+        let maxFollicular = follicularLengths.max()
+
+        // MARK: Konsekwencja BBT
+        let bbtConsistency = calculateBBTConsistency(
+            from: sortedEntries, cycleStarts: cycleStarts
+        )
+
+        // MARK: Ból menstruacyjny
+        let painValues = sortedEntries.map(\.menstrualPainIntensity).filter { $0 > 0 }
+        let avgPain = painValues.isEmpty ? 0.0
+            : Double(painValues.reduce(0, +)) / Double(painValues.count)
+        let maxPain = painValues.max()
+
+        // MARK: Nastrój per faza
+        let moodByPhase = calculateMoodByPhase(
+            from: sortedEntries, cycleStarts: cycleStarts
+        )
+        
         return CycleStatistics(
             cycleCount: cycleLengths.count,
             cycleLengths: cycleLengths,
@@ -113,7 +138,17 @@ enum CycleAnalyticsService {
             predictedFertileWindowEnd: fertileWindowEnd,
             averageTemperature: averageTemperature,
             temperatureEntryCount: temperatureValues.count,
-            lhPeakCount: lhPeakCount
+            lhPeakCount: lhPeakCount,
+            averageFollicularLength: avgFollicular,
+            minFollicularLength: minFollicular,
+            maxFollicularLength: maxFollicular,
+            bbtConsistency: bbtConsistency,
+            averageMenstrualPain: avgPain,
+            maxMenstrualPain: maxPain,
+            averageMoodFollicular: moodByPhase.follicular,
+            averageMoodOvulatory: moodByPhase.ovulatory,
+            averageMoodLuteal: moodByPhase.luteal,
+            averageMoodMenstrual: moodByPhase.menstrual,
         )
     }
 
@@ -275,4 +310,124 @@ enum CycleAnalyticsService {
         })
     }
 
+    // MARK: - Faza folikularna
+
+    private static func calculatedFollicularLengths(
+        from entries: [CycleEntry],
+        cycleStarts: [Date]
+    ) -> [Int] {
+        guard cycleStarts.count >= 2 else { return [] }
+        let ovulations = detectOvulationDates(from: entries, cycleStarts: cycleStarts)
+        return zip(cycleStarts, ovulations).compactMap { start, ovulation in
+            let days = Calendar.current.dateComponents([.day], from: start, to: ovulation).day
+            guard let d = days, d >= 5, d <= 25 else { return nil }
+            return d
+        }
+    }
+
+    // MARK: - Konsekwencja pomiaru BBT
+
+    private static func calculateBBTConsistency(
+        from entries: [CycleEntry],
+        cycleStarts: [Date]
+    ) -> Double {
+        guard cycleStarts.count >= 2,
+              let firstStart = cycleStarts.first,
+              let lastStart = cycleStarts.last else { return 0 }
+
+        let totalDays = Calendar.current.dateComponents(
+            [.day], from: firstStart, to: lastStart
+        ).day ?? 0
+
+        guard totalDays > 0 else { return 0 }
+
+        let daysWithTemp = entries.filter {
+            $0.date >= firstStart && $0.date <= lastStart &&
+            $0.temperature != nil && !$0.temperatureExcluded
+        }.count
+
+        return min(Double(daysWithTemp) / Double(totalDays), 1.0)
+    }
+
+    // MARK: - Nastrój per faza
+
+    private struct MoodByPhase {
+        let follicular: Double?
+        let ovulatory: Double?
+        let luteal: Double?
+        let menstrual: Double?
+    }
+
+    private static func calculateMoodByPhase(
+        from entries: [CycleEntry],
+        cycleStarts: [Date]
+    ) -> MoodByPhase {
+        guard cycleStarts.count >= 2 else {
+            return MoodByPhase(follicular: nil, ovulatory: nil, luteal: nil, menstrual: nil)
+        }
+
+        var follicularMoods: [Int] = []
+        var ovulatoryMoods: [Int] = []
+        var lutealMoods: [Int] = []
+        var menstrualMoods: [Int] = []
+
+        let ovulations = detectOvulationDates(from: entries, cycleStarts: cycleStarts)
+
+        for (i, cycleStart) in cycleStarts.dropLast().enumerated() {
+            let nextStart = cycleStarts[i + 1]
+            let cycleEntries = entries
+                .filter { $0.date >= cycleStart && $0.date < nextStart && $0.mood > 0 }
+                .sorted { $0.date < $1.date }
+
+            let ovulationDate: Date? = i < ovulations.count ? ovulations[i] : nil
+
+            for entry in cycleEntries {
+                let dayOfCycle = Calendar.current.dateComponents(
+                    [.day], from: cycleStart, to: entry.date
+                ).day ?? 0
+
+                // Faza menstruacyjna: dni 1–5 (lub do końca krwawienia)
+                if entry.bleeding != .none && entry.bleeding != .spotting {
+                    menstrualMoods.append(entry.mood)
+                } else if let ov = ovulationDate {
+                    let daysToOv = Calendar.current.dateComponents(
+                        [.day], from: entry.date, to: ov
+                    ).day ?? 99
+                    let daysFromOv = Calendar.current.dateComponents(
+                        [.day], from: ov, to: entry.date
+                    ).day ?? -1
+
+                    if daysFromOv >= 0 && daysFromOv <= 2 {
+                        ovulatoryMoods.append(entry.mood)
+                    } else if daysFromOv > 2 {
+                        lutealMoods.append(entry.mood)
+                    } else if daysToOv >= 0 {
+                        follicularMoods.append(entry.mood)
+                    }
+                } else {
+                    // Brak owulacji — szacuj przez połowę cyklu
+                    let cycleLen = Calendar.current.dateComponents(
+                        [.day], from: cycleStart, to: nextStart
+                    ).day ?? 28
+                    if dayOfCycle < cycleLen / 2 {
+                        follicularMoods.append(entry.mood)
+                    } else {
+                        lutealMoods.append(entry.mood)
+                    }
+                }
+            }
+        }
+
+        func avg(_ arr: [Int]) -> Double? {
+            guard !arr.isEmpty else { return nil }
+            return Double(arr.reduce(0, +)) / Double(arr.count)
+        }
+
+        return MoodByPhase(
+            follicular: avg(follicularMoods),
+            ovulatory: avg(ovulatoryMoods),
+            luteal: avg(lutealMoods),
+            menstrual: avg(menstrualMoods)
+        )
+    }
 }
