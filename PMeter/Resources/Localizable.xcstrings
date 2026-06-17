@@ -159,6 +159,9 @@
         }
       }
     },
+    "%lld dni" : {
+
+    },
     "%lld,%@°C" : {
       "localizations" : {
         "en" : {

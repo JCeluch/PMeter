@@ -10,7 +10,7 @@ import Foundation
 struct CycleStatistics {
     let cycleCount: Int
     let cycleLengths: [Int]
-//    let cycleInfos: [CycleInfo]
+    let cycleInfos: [CycleInfo]
     let averageCycleLength: Double
     let medianCycleLength: Double
     let shortestCycle: Int?

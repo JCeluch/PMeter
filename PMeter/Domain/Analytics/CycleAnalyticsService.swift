@@ -46,9 +46,16 @@ enum CycleAnalyticsService {
 
         let lhPeakCount = sortedEntries.filter { $0.lhTest == .peak }.count
 
+        let cycleInfos: [CycleInfo] = zip(cycleStarts, cycleStarts.dropFirst()).map { start, next in
+            let length = Calendar.current.dateComponents([.day], from: start, to: next).day ?? 0
+            let end = Calendar.current.date(byAdding: .day, value: -1, to: next)
+            return CycleInfo(length: length, startDate: start, endDate: end)
+        }
+        
         return CycleStatistics(
             cycleCount: cycleLengths.count,
             cycleLengths: cycleLengths,
+            cycleInfos: cycleInfos,
             averageCycleLength: average,
             medianCycleLength: median,
             shortestCycle: shortest,
