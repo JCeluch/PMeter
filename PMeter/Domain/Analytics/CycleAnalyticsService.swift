@@ -139,6 +139,35 @@ enum CycleAnalyticsService {
         // MARK: Karmienie
         let breastfeedingDays = sortedEntries.filter { $0.isBreastfeeding }.count
         
+        // MARK: Trend cykli
+        let trendResult = calculateCycleLengthTrend(from: cycleLengths)
+
+        // MARK: Przedział ufności
+        let stdDev = variability  // już obliczone
+        let nextPeriodEarliest = predictedNextPeriodStart.flatMap {
+            Calendar.current.date(byAdding: .day, value: -Int(ceil(stdDev)), to: $0)
+        }
+        let nextPeriodLatest = predictedNextPeriodStart.flatMap {
+            Calendar.current.date(byAdding: .day, value: Int(ceil(stdDev)), to: $0)
+        }
+
+        // MARK: LH peak średni dzień cyklu
+        let avgLHPeakDay = averageLHPeakDayOfCycle(from: sortedEntries, cycleStarts: cycleStarts)
+
+        // MARK: Pierwszy dzień śluzu płodnego
+        let avgFirstFertileMucusDay = averageFirstFertileMucusDayOfCycle(from: sortedEntries, cycleStarts: cycleStarts)
+
+        // MARK: Dominujący kolor krwawienia
+        let dominantColor = dominantBleedingColor(from: sortedEntries)
+
+        // MARK: Aktywny cykl
+        let activeCycleInfo = calculateActiveCycleInfo(
+            from: sortedEntries,
+            cycleStarts: cycleStarts,
+            average: average,
+            stdDev: stdDev
+        )
+        
         return CycleStatistics(
             cycleCount: cycleLengths.count,
             cycleLengths: cycleLengths,
@@ -194,6 +223,15 @@ enum CycleAnalyticsService {
             showPercentage: showStats.percentage,
             longestBBTStreak: bbtStreak,
             breastfeedingDaysCount: breastfeedingDays,
+            cycleLengthTrend: trendResult.trend,
+            cycleLengthTrendSlope: trendResult.slope,
+            predictedNextPeriodEarliest: nextPeriodEarliest,
+            predictedNextPeriodLatest: nextPeriodLatest,
+            averageLHPeakDayOfCycle: avgLHPeakDay,
+            averageFirstFertileMucusDayOfCycle: avgFirstFertileMucusDay,
+            dominantBleedingColor: dominantColor,
+            currentCycleDayCount: activeCycleInfo.dayCount,
+            currentCycleIsLate: activeCycleInfo.isLate,
         )
     }
 
@@ -639,5 +677,108 @@ enum CycleAnalyticsService {
             }
         }
         return longest
+    }
+    
+    // MARK: - Trend długości cykli (regresja liniowa)
+
+    private struct TrendResult {
+        let trend: CycleLengthTrend
+        let slope: Double
+    }
+
+    private static func calculateCycleLengthTrend(from lengths: [Int]) -> TrendResult {
+        guard lengths.count >= 4 else {
+            return TrendResult(trend: .insufficient, slope: 0)
+        }
+        let n = Double(lengths.count)
+        let xMean = (n - 1) / 2
+        let yMean = lengths.map { Double($0) }.reduce(0, +) / n
+
+        var num = 0.0
+        var den = 0.0
+        for (i, len) in lengths.enumerated() {
+            let x = Double(i) - xMean
+            num += x * (Double(len) - yMean)
+            den += x * x
+        }
+        let slope = den == 0 ? 0 : num / den
+
+        let trend: CycleLengthTrend
+        if slope > 0.3 {
+            trend = .increasing
+        } else if slope < -0.3 {
+            trend = .decreasing
+        } else {
+            trend = .stable
+        }
+        return TrendResult(trend: trend, slope: slope)
+    }
+
+    // MARK: - LH peak dzień cyklu
+
+    private static func averageLHPeakDayOfCycle(
+        from entries: [CycleEntry],
+        cycleStarts: [Date]
+    ) -> Double? {
+        guard cycleStarts.count >= 2 else { return nil }
+        let days: [Int] = zip(cycleStarts, cycleStarts.dropFirst()).compactMap { start, next in
+            guard let peak = entries.first(where: {
+                $0.date >= start && $0.date < next && $0.lhTest == .peak
+            }) else { return nil }
+            return (Calendar.current.dateComponents([.day], from: start, to: peak.date).day ?? 0) + 1
+        }
+        guard !days.isEmpty else { return nil }
+        return Double(days.reduce(0, +)) / Double(days.count)
+    }
+
+    // MARK: - Pierwszy dzień śluzu płodnego
+
+    private static func averageFirstFertileMucusDayOfCycle(
+        from entries: [CycleEntry],
+        cycleStarts: [Date]
+    ) -> Double? {
+        guard cycleStarts.count >= 2 else { return nil }
+        let days: [Int] = zip(cycleStarts, cycleStarts.dropFirst()).compactMap { start, next in
+            guard let first = entries
+                .filter({ $0.date >= start && $0.date < next &&
+                         ($0.mucusAppearance == .eggWhite || $0.mucusAppearance == .clear) })
+                .min(by: { $0.date < $1.date })
+            else { return nil }
+            return (Calendar.current.dateComponents([.day], from: start, to: first.date).day ?? 0) + 1
+        }
+        guard !days.isEmpty else { return nil }
+        return Double(days.reduce(0, +)) / Double(days.count)
+    }
+
+    // MARK: - Dominujący kolor krwawienia
+
+    private static func dominantBleedingColor(from entries: [CycleEntry]) -> BleedingColor? {
+        let colors = entries.compactMap(\.bleedingColor).filter { $0 != .none }
+        guard !colors.isEmpty else { return nil }
+        return colors.max(by: { a, b in
+            colors.filter { $0 == a }.count < colors.filter { $0 == b }.count
+        })
+    }
+
+    // MARK: - Aktywny cykl
+
+    private struct ActiveCycleInfo {
+        let dayCount: Int?
+        let isLate: Bool
+    }
+
+    private static func calculateActiveCycleInfo(
+        from entries: [CycleEntry],
+        cycleStarts: [Date],
+        average: Double,
+        stdDev: Double
+    ) -> ActiveCycleInfo {
+        guard let lastStart = cycleStarts.last else {
+            return ActiveCycleInfo(dayCount: nil, isLate: false)
+        }
+        let today = Calendar.current.startOfDay(for: Date())
+        let dayCount = (Calendar.current.dateComponents([.day], from: lastStart, to: today).day ?? 0) + 1
+        let threshold = average + max(stdDev, 2)
+        return ActiveCycleInfo(dayCount: dayCount, isLate: Double(dayCount) > threshold)
     }
 }

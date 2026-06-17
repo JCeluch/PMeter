@@ -96,6 +96,27 @@ struct CycleStatistics {
 
     // MARK: - Karmienie piersią
     let breastfeedingDaysCount: Int
+    
+    // MARK: - Trend cykli
+    let cycleLengthTrend: CycleLengthTrend   // rosnące / malejące / stabilne / za mało danych
+    let cycleLengthTrendSlope: Double         // dni/cykl, np. +0.5 = cykl dłuższy o 0.5 dnia co miesiąc
+
+    // MARK: - Przedział ufności następnej miesiączki
+    let predictedNextPeriodEarliest: Date?    // -1 std
+    let predictedNextPeriodLatest: Date?      // +1 std
+
+    // MARK: - LH peak dzień cyklu
+    let averageLHPeakDayOfCycle: Double?      // np. 14.2
+
+    // MARK: - Śluz płodny
+    let averageFirstFertileMucusDayOfCycle: Double?   // dzień pojawienia się eggWhite/clear
+
+    // MARK: - Kolor krwawienia
+    let dominantBleedingColor: BleedingColor?
+
+    // MARK: - Aktywny cykl
+    let currentCycleDayCount: Int?            // ile dni trwa aktualny cykl
+    let currentCycleIsLate: Bool              // trwa dłużej niż średnia + 1 std
 }
 
 struct CycleInfo {
@@ -108,5 +129,12 @@ enum BBTTrend {
     case rising
     case stable
     case falling
+    case insufficient
+}
+
+enum CycleLengthTrend {
+    case increasing     // wydłużające się
+    case decreasing     // skracające się
+    case stable
     case insufficient
 }

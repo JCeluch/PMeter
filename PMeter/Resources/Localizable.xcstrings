@@ -263,6 +263,9 @@
         }
       }
     },
+    "Aktualny cykl" : {
+
+    },
     "Anuluj" : {
       "localizations" : {
         "en" : {
@@ -3397,6 +3400,9 @@
         }
       }
     },
+    "dzień %lld" : {
+
+    },
     "Dzień szczytowy" : {
       "localizations" : {
         "en" : {
@@ -5541,6 +5547,9 @@
           }
         }
       }
+    },
+    "Zakres (±%lld dni)" : {
+
     },
     "Załadowanie danych usunie wszystkie istniejące wpisy." : {
       "localizations" : {

@@ -34,6 +34,24 @@ struct StatsView: View {
                         statRow("Najdłuższy cykl", value: intDays(stats.longestCycle))
                         statRow("Zmienność", value: formatted(stats.cycleVariability))
                         statRow("Regularność cykli", value: regularityLabel(stats.regularityScore))
+                        if stats.cycleLengthTrend != .insufficient {
+                            statRow("Trend długości", value: cycleTrendLabel(stats.cycleLengthTrend, slope: stats.cycleLengthTrendSlope))
+                        }
+                        if let current = stats.currentCycleDayCount {
+                            HStack {
+                                Text("Aktualny cykl")
+                                Spacer()
+                                HStack(spacing: 4) {
+                                    Text("dzień \(current)")
+                                        .foregroundStyle(stats.currentCycleIsLate ? .orange : .secondary)
+                                    if stats.currentCycleIsLate {
+                                        Image(systemName: "clock.badge.exclamationmark")
+                                            .foregroundStyle(.orange)
+                                            .font(.caption)
+                                    }
+                                }
+                            }
+                        }
                     }
 
                     Section {
@@ -42,12 +60,29 @@ struct StatsView: View {
                             date: stats.predictedNextPeriodStart,
                             glossaryID: "menstruation"
                         )
+                        // Przedział ufności
+                        if let earliest = stats.predictedNextPeriodEarliest,
+                           let latest = stats.predictedNextPeriodLatest,
+                           stats.cycleVariability > 1 {
+                            HStack {
+                                Text("Zakres (±\(Int(round(stats.cycleVariability))) dni)")
+                                    .foregroundStyle(.secondary)
+                                    .font(.subheadline)
+                                Spacer()
+                                Text("\(earliest.formatted(.dateTime.day().month())) – \(latest.formatted(.dateTime.day().month(.wide).year()))")
+                                    .foregroundStyle(.secondary)
+                                    .font(.subheadline)
+                            }
+                        }
                         predictionRow(
                             "Szacowana owulacja",
                             date: stats.predictedOvulationDate,
                             glossaryID: "menstruation"
                         )
-                        statRow("Okno płodne", value: formattedRange(stats.predictedFertileWindowStart, stats.predictedFertileWindowEnd))
+                        statRow("Okno płodne", value: formattedRange(
+                            stats.predictedFertileWindowStart,
+                            stats.predictedFertileWindowEnd
+                        ))
                     } header: {
                         Text("Przewidywania")
                             .glossaryInfo("fertile-window")
@@ -57,6 +92,15 @@ struct StatsView: View {
 //                        statRow("Pomiarów temperatury", value: "\(stats.temperatureEntryCount)")
 //                        statRow("Średnia temperatura", value: temperature(stats.averageTemperature))
                         statRow("LH peak", value: "\(stats.lhPeakCount)")
+                        if let lhDay = stats.averageLHPeakDayOfCycle {
+                            statRow("Średni dzień LH peak", value: "dzień \(Int(round(lhDay)))")
+                        }
+                        if let mucusDay = stats.averageFirstFertileMucusDayOfCycle {
+                            statRow("Śluz płodny od dnia", value: "dzień \(Int(round(mucusDay)))")
+                        }
+                        if let color = stats.dominantBleedingColor {
+                            statRow("Najczęstszy kolor krwawienia", value: bleedingColorLabel(color))
+                        }
                     } header: {
                         Text("Obserwacje")
                             .glossaryInfo("lh")
@@ -494,6 +538,26 @@ struct StatsView: View {
         case .left: return "Lewa"
         case .right: return "Prawa"
         case .both: return "Obie strony"
+        }
+    }
+    
+    private func cycleTrendLabel(_ trend: CycleLengthTrend, slope: Double) -> String {
+        let slopeStr = String(format: "%.1f", abs(slope))
+        switch trend {
+        case .increasing: return "↗ Wydłużają się (+\(slopeStr) dni/cykl)"
+        case .decreasing: return "↘ Skracają się (-\(slopeStr) dni/cykl)"
+        case .stable:     return "→ Stabilne"
+        case .insufficient: return "—"
+        }
+    }
+
+    private func bleedingColorLabel(_ color: BleedingColor) -> String {
+        switch color {
+        case .none:        return "—"
+        case .red:   return "Czerwony"
+        case .brown:       return "Brązowy"
+        case .pink:        return "Różowy"
+        case .black:       return "Czarny"
         }
     }
 }
