@@ -20,6 +20,8 @@ final class CalendarViewModel {
 
     private var cachedMonth: Date = .distantPast
     private var cachedEntryIDs: [PersistentIdentifier] = []
+    
+    private(set) var prediction: CyclePredictionService.Prediction? = nil
 
     func refresh(entries: [CycleEntry], month: Date) {
         let ids = entries.map(\.id)
@@ -32,6 +34,7 @@ final class CalendarViewModel {
         Task.detached(priority: .userInitiated) { [entries, month] in
             // Zbuduj słownik raz – O(n) zamiast O(n×35)
             var byDay: [DateComponents: [CycleEntry]] = [:]
+            
             let cal = Calendar.current
             for entry in entries {
                 let key = cal.dateComponents([.year, .month, .day], from: entry.date)
@@ -39,9 +42,11 @@ final class CalendarViewModel {
             }
             let days = CalendarHelper.visibleDays(for: month)
 
+            let pred = CyclePredictionService.predict(from: entries)
             await MainActor.run {
                 self.entriesByDay = byDay
                 self.visibleDays = days
+                self.prediction = pred
             }
         }
     }
@@ -54,5 +59,13 @@ final class CalendarViewModel {
 
     func hasEntry(for date: Date) -> Bool {
         !entries(for: date).isEmpty
+    }
+    
+    func isFertileDay(_ date: Date) -> Bool {
+        guard let start = prediction?.fertileWindowStart,
+              let end   = prediction?.fertileWindowEnd else { return false }
+        let d = Calendar.current.startOfDay(for: date)
+        return d >= Calendar.current.startOfDay(for: start)
+            && d <= Calendar.current.startOfDay(for: end)
     }
 }

@@ -953,6 +953,7 @@
       }
     },
     "calendar.preview.todayCycleDay: %lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

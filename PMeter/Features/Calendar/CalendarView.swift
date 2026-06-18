@@ -138,7 +138,8 @@ struct CalendarView: View {
                     day: day,
                     dayEntries: vm.entries(for: day.date),
                     onTap: { selectedDate = day },
-                    onAddEntry: { entryFormTarget = EntryFormTarget(date: day.date) }
+                    onAddEntry: { entryFormTarget = EntryFormTarget(date: day.date) },
+                    isFertile: vm.isFertileDay(day.date)
                 )
             }
         }
@@ -204,22 +205,53 @@ struct CalendarView: View {
     }
 
     private var cycleInfoCard: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        let pred = vm.prediction
+        return VStack(alignment: .leading, spacing: 8) {
             Text(L10n.Calendar.previewTitle)
                 .font(.headline)
                 .foregroundStyle(Color.pmTextPrimary)
+            
+            // Dzień cyklu
+            if let cd = CalendarHelper.cycleDay(for: .now, entries: entries) {
+                infoRow(icon: "calendar", label: "Dzień cyklu", value: "\(cd)")
+            }
+            
+            // Następna miesiączka
+            if let next = pred?.nextPeriodStart {
+                let days = Calendar.current.dateComponents([.day], from: .now, to: next).day ?? 0
+                infoRow(icon: "drop.fill", label: "Następna miesiączka", value: next.formatted(.dateTime.day().month()) + " (za \(max(days,0)) dni)")
+            }
 
-            if let todayCycleDay = CalendarHelper.cycleDay(for: .now, entries: entries) {
-                Text("calendar.preview.todayCycleDay: \(todayCycleDay)")
-                    .foregroundStyle(Color.pmTextPrimary)
-            } else {
+            // Owulacja
+            if let ov = pred?.ovulationDate {
+                let days = Calendar.current.dateComponents([.day], from: .now, to: ov).day ?? 0
+                infoRow(icon: "circle.dotted", label: "Szacowana owulacja",
+                        value: ov.formatted(.dateTime.day().month()) + (days >= 0 ? " (za \(days) dni)" : " (minęła)"))
+            }
+
+            // Okno płodne
+            if let fs = pred?.fertileWindowStart, let fe = pred?.fertileWindowEnd {
+                infoRow(icon: "leaf.fill", label: "Okno płodne",
+                        value: "\(fs.formatted(.dateTime.day().month())) – \(fe.formatted(.dateTime.day().month()))")
+            }
+
+            if pred == nil || pred?.dataQuality == .insufficient {
                 Text(L10n.Calendar.previewNoData)
+                    .font(.footnote)
                     .foregroundStyle(Color.pmTextSecondary)
             }
 
-            Text(L10n.Calendar.previewDescription)
-                .font(.footnote)
-                .foregroundStyle(Color.pmTextSecondary)
+//            if let todayCycleDay = CalendarHelper.cycleDay(for: .now, entries: entries) {
+//                Text("calendar.preview.todayCycleDay: \(todayCycleDay)")
+//                    .foregroundStyle(Color.pmTextPrimary)
+//            } else {
+//                Text(L10n.Calendar.previewNoData)
+//                    .foregroundStyle(Color.pmTextSecondary)
+//            }
+
+//            Text(L10n.Calendar.previewDescription)
+//                .font(.footnote)
+//                .foregroundStyle(Color.pmTextSecondary)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding()
@@ -253,6 +285,18 @@ struct CalendarView: View {
     enum CalendarMode: String, CaseIterable {
         case chart
         case month
+    }
+    
+    private func infoRow(icon: String, label: String, value: String) -> some View {
+        HStack(spacing: 8) {
+            Image(systemName: icon)
+                .foregroundStyle(Color.pmPrimary)
+                .frame(width: 20)
+            VStack(alignment: .leading, spacing: 1) {
+                Text(label).font(.caption).foregroundStyle(Color.pmTextSecondary)
+                Text(value).font(.subheadline.weight(.medium))
+            }
+        }
     }
 }
 

@@ -12,6 +12,7 @@ struct CalendarDayCell: View {
     let dayEntries: [CycleEntry]
     let onTap: () -> Void
     let onAddEntry: () -> Void
+    let isFertile: Bool
 
     private var entriesForDay: [CycleEntry] {
         dayEntries.filter { CalendarHelper.isSameDay($0.date, day.date) }
@@ -125,7 +126,11 @@ struct CalendarDayCell: View {
             return .pmPrimary.opacity(0.14)
         }
 
-        if let cycleDay, (10...17).contains(cycleDay) {
+//        if let cycleDay, (10...17).contains(cycleDay) {
+//            return .pmFertile.opacity(0.15)
+//        }
+        
+        if isFertile {
             return .pmFertile.opacity(0.15)
         }
 
