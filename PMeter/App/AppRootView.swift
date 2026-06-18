@@ -6,8 +6,8 @@
 //
 
 import SwiftUI
+import Observation
 
-@Environment
 struct AppRootView: View {
     var body: some View {
         TabView {

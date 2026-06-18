@@ -7,17 +7,21 @@
 
 import SwiftUI
 import SwiftData
+import Observation
 
 @main
 struct PMeterApp: App {
     @AppStorage("appLanguage") private var appLanguage = AppLanguage.system.rawValue
 
     private let sharedModelContainer: ModelContainer = ModelContainerFactory.makeShared()
+    
+    @State private var cycleStore = CycleStore()
 
     var body: some Scene {
         WindowGroup {
             AppRootView()
                 .environment(\.locale, resolvedLocale)
+                .environment(cycleStore)
         }
         .modelContainer(sharedModelContainer)
     }

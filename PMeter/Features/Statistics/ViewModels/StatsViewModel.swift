@@ -12,12 +12,17 @@ import Observation
 @Observable
 final class StatsViewModel {
     private(set) var stats: CycleStatistics?
+    private(set) var isLoading: Bool = false
 
     func update(entries: [CycleEntry]) {
+        isLoading = true
         // Task.detached – przeliczenie na tle, nie blokuje main thread
         Task.detached(priority: .userInitiated) { [entries] in
             let computed = CycleAnalyticsService.statistics(from: entries)
-            await MainActor.run { self.stats = computed }
+            await MainActor.run {
+                self.stats = computed
+                self.isLoading = false
+            }
         }
     }
 }
