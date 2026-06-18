@@ -13,6 +13,7 @@ struct CycleChartView: View {
     let entries: [CycleEntry]
     @Binding var selectedDate: Date?
     @State private var anchorDate: Date = .now
+    @State private var vm = CycleChartViewModel()
     
     @State private var chartPlotOriginX: CGFloat = 0
     @State private var chartPlotWidth: CGFloat = 0
@@ -20,32 +21,7 @@ struct CycleChartView: View {
     private let cellWidth: CGFloat = 32
     private let rowSpacing: CGFloat = 8
     
-    // MARK: - Nowe: wykrywamy czy to bieżący cykl
-    private var isCurrentCycle: Bool {
-        guard let lastStart = CalendarHelper.cycleStartDate(for: .now, entries: entries) else { return false }
-        guard let anchorStart = CalendarHelper.cycleStartDate(for: anchorDate, entries: entries) else { return false }
-        return CalendarHelper.isSameDay(lastStart, anchorStart)
-    }
-    
-    // MARK: - Prognozowana długość cyklu ze średniej historycznej
-    private var predictedCycleLength: Int {
-        let stats = CycleAnalyticsService.statistics(from: entries)
-        let avg = stats.averageCycleLength
-        let rawCount = CalendarHelper.cycleDays(containing: anchorDate, entries: entries).count
-        // Fallback 28 jeżeli brak historii
-        return avg > 0 ? max(Int(round(avg)), rawCount) : max(28, rawCount)
-    }
-    
-    // MARK: - Dni z paddingiem dla bieżącego cyklu
-    private var days: [CycleChartDay] {
-        let rawDays = CalendarHelper.cycleDays(containing: anchorDate, entries: entries)
-        guard isCurrentCycle else { return rawDays }
-        return CalendarHelper.cycleDaysWithPredictedPadding(
-            containing: anchorDate,
-            entries: entries,
-            predictedLength: predictedCycleLength
-        )
-    }
+    private var days: [CycleChartDay] { vm.days }
 
     // MARK: - Minimalna szerokość = max(obliczona, szerokość ekranu)
     private var gridWidth: CGFloat {
@@ -93,6 +69,9 @@ struct CycleChartView: View {
                     systemImage: "waveform.path.ecg",
                     description: Text(L10n.Calendar.emptyDescription)
                 )
+            } else if vm.isLoading {
+                ProgressView()
+                    .frame(maxWidth: .infinity, minHeight: 200)
             } else {
                 ScrollView(.horizontal, showsIndicators: true) {
                     VStack(alignment: .leading, spacing: 12) {
@@ -116,6 +95,12 @@ struct CycleChartView: View {
         }
         .padding()
         .background(Color.pmBackground)
+        .task(id: anchorDate) {
+            vm.refresh(entries: entries, anchorDate: anchorDate)
+        }
+        .task(id: entries.map(\.persistentModelID).hashValue) {
+            vm.refresh(entries: entries, anchorDate: anchorDate)
+        }
     }
 
     private var header: some View {
