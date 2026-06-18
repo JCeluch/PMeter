@@ -19,13 +19,15 @@ enum CycleAnalyticsService {
         let longest = cycleLengths.max()
         let variability = standardDeviation(of: cycleLengths)
         let regularity = regularityScore(for: cycleLengths)
+        
+        let ovulationDates = detectOvulationDates(from: sortedEntries, cycleStarts: cycleStarts)
 
         let predictedNextPeriodStart: Date? = {
             guard !cycleLengths.isEmpty, let lastStart = cycleStarts.last else { return nil }
             return Calendar.current.date(byAdding: .day, value: Int(round(average)), to: lastStart)
         }()
 
-        let estimatedLutealLength = estimatedLutealPhaseLength(from: sortedEntries, cycleStarts: cycleStarts)
+        let estimatedLutealLength = estimatedLutealPhaseLength(from: sortedEntries, cycleStarts: cycleStarts, ovulationDates: ovulationDates)
 
         let predictedOvulationDate = predictedNextPeriodStart.flatMap {
             Calendar.current.date(byAdding: .day, value: -estimatedLutealLength, to: $0)
@@ -59,13 +61,12 @@ enum CycleAnalyticsService {
         let maxBleeding = bleedingDaysPerCycle.max()
         
         // MARK: Faza lutealna
-        let lutealLengths = calculatedLutealLengths(from: sortedEntries, cycleStarts: cycleStarts)
+        let lutealLengths = calculatedLutealLengths(from: sortedEntries, cycleStarts: cycleStarts, ovulationDates: ovulationDates)
         let avgLuteal = lutealLengths.isEmpty ? 0.0 : Double(lutealLengths.reduce(0, +)) / Double(lutealLengths.count)
         let minLuteal = lutealLengths.min()
         let maxLuteal = lutealLengths.max()
 
         // MARK: Owulacja
-        let ovulationDates = detectOvulationDates(from: sortedEntries, cycleStarts: cycleStarts)
         let cyclesWithOvulation = ovulationDates.count
         let completeCyclesCount = max(cycleStarts.count - 1, 0)
         let cyclesWithoutOvulation = max(completeCyclesCount - cyclesWithOvulation, 0)
@@ -85,7 +86,7 @@ enum CycleAnalyticsService {
         
         // MARK: Faza folikularna
         let follicularLengths = calculatedFollicularLengths(
-            from: sortedEntries, cycleStarts: cycleStarts
+            from: sortedEntries, cycleStarts: cycleStarts, ovulationDates: ovulationDates
         )
         let avgFollicular = follicularLengths.isEmpty ? 0.0
             : Double(follicularLengths.reduce(0, +)) / Double(follicularLengths.count)
@@ -105,7 +106,7 @@ enum CycleAnalyticsService {
 
         // MARK: Nastrój per faza
         let moodByPhase = calculateMoodByPhase(
-            from: sortedEntries, cycleStarts: cycleStarts
+            from: sortedEntries, cycleStarts: cycleStarts, ovulationDates: ovulationDates
         )
         
         // MARK: Ból owulacyjny
@@ -117,7 +118,7 @@ enum CycleAnalyticsService {
 
         // MARK: Czułość piersi per faza
         let breastTenderness = calculateBreastTendernessPerPhase(
-            from: sortedEntries, cycleStarts: cycleStarts
+            from: sortedEntries, cycleStarts: cycleStarts, ovulationDates: ovulationDates
         )
 
         // MARK: Plamienie
@@ -169,7 +170,7 @@ enum CycleAnalyticsService {
         )
         
         // MARK: Samopoczucie per faza
-        let wellbeing = calculateWellbeingByPhase(from: sortedEntries, cycleStarts: cycleStarts)
+        let wellbeing = calculateWellbeingByPhase(from: sortedEntries, cycleStarts: cycleStarts, ovulationDates: ovulationDates)
 
         // MARK: Ból głowy
         let headacheEntries = sortedEntries.filter { $0.headacheIntensity > 0 }
@@ -177,7 +178,7 @@ enum CycleAnalyticsService {
             : Double(headacheEntries.map(\.headacheIntensity).reduce(0, +)) / Double(headacheEntries.count)
 
         // MARK: Skóra
-        let dominantSkin = dominantSkinConditionInLuteal(from: sortedEntries, cycleStarts: cycleStarts)
+        let dominantSkin = dominantSkinConditionInLuteal(from: sortedEntries, cycleStarts: cycleStarts, ovulationDates: ovulationDates)
 
         // MARK: Waga
         let weightValues = sortedEntries.compactMap(\.weight)
@@ -309,10 +310,8 @@ enum CycleAnalyticsService {
         return min(score, 100)
     }
 
-    private static func estimatedLutealPhaseLength(from entries: [CycleEntry], cycleStarts: [Date]) -> Int {
-        let estimatedOvulationDates = detectOvulationDates(from: entries, cycleStarts: cycleStarts)
-
-        let lutealLengths: [Int] = zip(estimatedOvulationDates, cycleStarts.dropFirst()).compactMap { ovulation, nextCycleStart in
+    private static func estimatedLutealPhaseLength(from entries: [CycleEntry], cycleStarts: [Date], ovulationDates: [Date]) -> Int {
+        let lutealLengths: [Int] = zip(ovulationDates, cycleStarts.dropFirst()).compactMap { ovulation, nextCycleStart in
             Calendar.current.dateComponents([.day], from: ovulation, to: nextCycleStart).day
         }
         .filter { $0 >= 9 && $0 <= 17 }
@@ -371,9 +370,8 @@ enum CycleAnalyticsService {
     
     // MARK: - Faza lutealna
     
-    private static func calculatedLutealLengths(from entries: [CycleEntry], cycleStarts: [Date]) -> [Int] {
+    private static func calculatedLutealLengths(from entries: [CycleEntry], cycleStarts: [Date], ovulationDates: [Date]) -> [Int] {
         guard cycleStarts.count >= 2 else { return [] }
-        let ovulationDates = detectOvulationDates(from: entries, cycleStarts: cycleStarts)
         return zip(ovulationDates, cycleStarts.dropFirst()).compactMap { ovulation, nextStart in
             let days = Calendar.current.dateComponents([.day], from: ovulation, to: nextStart).day
             guard let d = days, d >= 8, d <= 18 else { return nil }
@@ -425,11 +423,11 @@ enum CycleAnalyticsService {
 
     private static func calculatedFollicularLengths(
         from entries: [CycleEntry],
-        cycleStarts: [Date]
+        cycleStarts: [Date],
+        ovulationDates: [Date]
     ) -> [Int] {
         guard cycleStarts.count >= 2 else { return [] }
-        let ovulations = detectOvulationDates(from: entries, cycleStarts: cycleStarts)
-        return zip(cycleStarts, ovulations).compactMap { start, ovulation in
+        return zip(cycleStarts, ovulationDates).compactMap { start, ovulation in
             let days = Calendar.current.dateComponents([.day], from: start, to: ovulation).day
             guard let d = days, d >= 5, d <= 25 else { return nil }
             return d
@@ -471,7 +469,8 @@ enum CycleAnalyticsService {
 
     private static func calculateMoodByPhase(
         from entries: [CycleEntry],
-        cycleStarts: [Date]
+        cycleStarts: [Date],
+        ovulationDates: [Date]
     ) -> MoodByPhase {
         guard cycleStarts.count >= 2 else {
             return MoodByPhase(follicular: nil, ovulatory: nil, luteal: nil, menstrual: nil)
@@ -482,15 +481,13 @@ enum CycleAnalyticsService {
         var lutealMoods: [Int] = []
         var menstrualMoods: [Int] = []
 
-        let ovulations = detectOvulationDates(from: entries, cycleStarts: cycleStarts)
-
         for (i, cycleStart) in cycleStarts.dropLast().enumerated() {
             let nextStart = cycleStarts[i + 1]
             let cycleEntries = entries
                 .filter { $0.date >= cycleStart && $0.date < nextStart && $0.mood > 0 }
                 .sorted { $0.date < $1.date }
 
-            let ovulationDate: Date? = i < ovulations.count ? ovulations[i] : nil
+            let ovulationDate: Date? = i < ovulationDates.count ? ovulationDates[i] : nil
 
             for entry in cycleEntries {
                 let dayOfCycle = Calendar.current.dateComponents(
@@ -563,12 +560,12 @@ enum CycleAnalyticsService {
 
     private static func calculateBreastTendernessPerPhase(
         from entries: [CycleEntry],
-        cycleStarts: [Date]
+        cycleStarts: [Date],
+        ovulationDates: [Date]
     ) -> BreastTendernessPerPhase {
         guard cycleStarts.count >= 2 else {
             return BreastTendernessPerPhase(follicular: nil, luteal: nil)
         }
-        let ovulations = detectOvulationDates(from: entries, cycleStarts: cycleStarts)
         var follicular: [Int] = []
         var luteal: [Int] = []
 
@@ -576,7 +573,7 @@ enum CycleAnalyticsService {
             let nextStart = cycleStarts[i + 1]
             let cycleEntries = entries
                 .filter { $0.date >= cycleStart && $0.date < nextStart && $0.breastTenderness > 0 }
-            let ovDate: Date? = i < ovulations.count ? ovulations[i] : nil
+            let ovDate: Date? = i < ovulationDates.count ? ovulationDates[i] : nil
 
             for entry in cycleEntries {
                 if let ov = ovDate {
@@ -822,13 +819,13 @@ enum CycleAnalyticsService {
 
     private static func calculateWellbeingByPhase(
         from entries: [CycleEntry],
-        cycleStarts: [Date]
+        cycleStarts: [Date],
+        ovulationDates: [Date]
     ) -> WellbeingByPhase {
         guard cycleStarts.count >= 2 else {
             return WellbeingByPhase(energyFollicular: nil, energyLuteal: nil,
                                     energyMenstrual: nil, sleepFollicular: nil, sleepLuteal: nil)
         }
-        let ovulations = detectOvulationDates(from: entries, cycleStarts: cycleStarts)
 
         var eFollicular: [Int] = [], eLuteal: [Int] = [], eMenstrual: [Int] = []
         var sFollicular: [Int] = [], sLuteal: [Int] = []
@@ -836,7 +833,7 @@ enum CycleAnalyticsService {
         for (i, cycleStart) in cycleStarts.dropLast().enumerated() {
             let nextStart = cycleStarts[i + 1]
             let cycleEntries = entries.filter { $0.date >= cycleStart && $0.date < nextStart }
-            let ovDate: Date? = i < ovulations.count ? ovulations[i] : nil
+            let ovDate: Date? = i < ovulationDates.count ? ovulationDates[i] : nil
             let cycleLen = Calendar.current.dateComponents([.day], from: cycleStart, to: nextStart).day ?? 28
 
             for entry in cycleEntries {
@@ -881,15 +878,15 @@ enum CycleAnalyticsService {
 
     private static func dominantSkinConditionInLuteal(
         from entries: [CycleEntry],
-        cycleStarts: [Date]
+        cycleStarts: [Date],
+        ovulationDates: [Date]
     ) -> Int? {
         guard cycleStarts.count >= 2 else { return nil }
-        let ovulations = detectOvulationDates(from: entries, cycleStarts: cycleStarts)
 
         var lutealSkin: [Int] = []
         for (i, cycleStart) in cycleStarts.dropLast().enumerated() {
             let nextStart = cycleStarts[i + 1]
-            let ovDate: Date? = i < ovulations.count ? ovulations[i] : nil
+            let ovDate: Date? = i < ovulationDates.count ? ovulationDates[i] : nil
             let cycleLen = Calendar.current.dateComponents([.day], from: cycleStart, to: nextStart).day ?? 28
 
             let lutealEntries = entries.filter { entry in

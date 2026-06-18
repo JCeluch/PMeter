@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@Environment
 struct AppRootView: View {
     var body: some View {
         TabView {

@@ -11,389 +11,390 @@ import Charts
 
 struct StatsView: View {
     @Query(sort: \CycleEntry.date, order: .forward) private var entries: [CycleEntry]
-
-    private var stats: CycleStatistics {
-        CycleAnalyticsService.statistics(from: entries)
-    }
+    @State private var vm = StatsViewModel()
 
     var body: some View {
         NavigationStack {
-            List {
-                if stats.cycleCount == 0 {
-                    ContentUnavailableView(
-                        "Brak danych do analizy",
-                        systemImage: "chart.line.uptrend.xyaxis",
-                        description: Text("Dodaj przynajmniej dwa cykle, aby zobaczyć statystyki i przewidywania.")
-                    )
-                } else {
-                    Section("Cykl") {
-                        statRow("Liczba pełnych cykli", value: "\(stats.cycleCount)")
-                        statRow("Średnia długość cyklu", value: days(stats.averageCycleLength))
-                        statRow("Mediana", value: days(stats.medianCycleLength))
-                        statRow("Najkrótszy cykl", value: intDays(stats.shortestCycle))
-                        statRow("Najdłuższy cykl", value: intDays(stats.longestCycle))
-                        statRow("Zmienność", value: formatted(stats.cycleVariability))
-                        statRow("Regularność cykli", value: regularityLabel(stats.regularityScore))
-                        if stats.cycleLengthTrend != .insufficient {
-                            statRow("Trend długości", value: cycleTrendLabel(stats.cycleLengthTrend, slope: stats.cycleLengthTrendSlope))
-                        }
-                        if let current = stats.currentCycleDayCount {
-                            HStack {
-                                Text("Aktualny cykl")
-                                Spacer()
-                                HStack(spacing: 4) {
-                                    Text("dzień \(current)")
-                                        .foregroundStyle(stats.currentCycleIsLate ? .orange : .secondary)
-                                    if stats.currentCycleIsLate {
-                                        Image(systemName: "clock.badge.exclamationmark")
-                                            .foregroundStyle(.orange)
-                                            .font(.caption)
+            ScrollView {
+                LazyVStack(spacing: 0, pinnedViews: .sectionHeaders) {
+                    if stats.cycleCount == 0 {
+                        ContentUnavailableView(
+                            "Brak danych do analizy",
+                            systemImage: "chart.line.uptrend.xyaxis",
+                            description: Text("Dodaj przynajmniej dwa cykle, aby zobaczyć statystyki i przewidywania.")
+                        )
+                    } else {
+                        Section("Cykl") {
+                            statRow("Liczba pełnych cykli", value: "\(stats.cycleCount)")
+                            statRow("Średnia długość cyklu", value: days(stats.averageCycleLength))
+                            statRow("Mediana", value: days(stats.medianCycleLength))
+                            statRow("Najkrótszy cykl", value: intDays(stats.shortestCycle))
+                            statRow("Najdłuższy cykl", value: intDays(stats.longestCycle))
+                            statRow("Zmienność", value: formatted(stats.cycleVariability))
+                            statRow("Regularność cykli", value: regularityLabel(stats.regularityScore))
+                            if stats.cycleLengthTrend != .insufficient {
+                                statRow("Trend długości", value: cycleTrendLabel(stats.cycleLengthTrend, slope: stats.cycleLengthTrendSlope))
+                            }
+                            if let current = stats.currentCycleDayCount {
+                                HStack {
+                                    Text("Aktualny cykl")
+                                    Spacer()
+                                    HStack(spacing: 4) {
+                                        Text("dzień \(current)")
+                                            .foregroundStyle(stats.currentCycleIsLate ? .orange : .secondary)
+                                        if stats.currentCycleIsLate {
+                                            Image(systemName: "clock.badge.exclamationmark")
+                                                .foregroundStyle(.orange)
+                                                .font(.caption)
+                                        }
                                     }
                                 }
                             }
                         }
-                    }
 
-                    Section {
-                        predictionRow(
-                            "Następna miesiączka",
-                            date: stats.predictedNextPeriodStart,
-                            glossaryID: "menstruation"
-                        )
-                        // Przedział ufności
-                        if let earliest = stats.predictedNextPeriodEarliest,
-                           let latest = stats.predictedNextPeriodLatest,
-                           stats.cycleVariability > 1 {
-                            HStack {
-                                Text("Zakres (±\(Int(round(stats.cycleVariability))) dni)")
-                                    .foregroundStyle(.secondary)
-                                    .font(.subheadline)
-                                Spacer()
-                                Text("\(earliest.formatted(.dateTime.day().month())) – \(latest.formatted(.dateTime.day().month(.wide).year()))")
-                                    .foregroundStyle(.secondary)
-                                    .font(.subheadline)
-                            }
-                        }
-                        predictionRow(
-                            "Szacowana owulacja",
-                            date: stats.predictedOvulationDate,
-                            glossaryID: "menstruation"
-                        )
-                        statRow("Okno płodne", value: formattedRange(
-                            stats.predictedFertileWindowStart,
-                            stats.predictedFertileWindowEnd
-                        ))
-                    } header: {
-                        Text("Przewidywania")
-                            .glossaryInfo("fertile-window")
-                    }
-
-                    Section {
-//                        statRow("Pomiarów temperatury", value: "\(stats.temperatureEntryCount)")
-//                        statRow("Średnia temperatura", value: temperature(stats.averageTemperature))
-                        statRow("LH peak", value: "\(stats.lhPeakCount)")
-                        if let lhDay = stats.averageLHPeakDayOfCycle {
-                            statRow("Średni dzień LH peak", value: "dzień \(Int(round(lhDay)))")
-                        }
-                        if let mucusDay = stats.averageFirstFertileMucusDayOfCycle {
-                            statRow("Śluz płodny od dnia", value: "dzień \(Int(round(mucusDay)))")
-                        }
-                        if let color = stats.dominantBleedingColor {
-                            statRow("Najczęstszy kolor krwawienia", value: bleedingColorLabel(color))
-                        }
-                    } header: {
-                        Text("Obserwacje")
-                            .glossaryInfo("lh")
-                    }
-                    
-                    if stats.averageBleedingDays > 0 || stats.averageLutealLength > 0 {
                         Section {
-                            if stats.averageBleedingDays > 0 {
-                                statRow(
-                                    "Średnia długość krwawienia",
-                                    value: rangeRow(avg: stats.averageBleedingDays,
-                                                    min: stats.minBleedingDays,
-                                                    max: stats.maxBleedingDays)
-                                )
+                            predictionRow(
+                                "Następna miesiączka",
+                                date: stats.predictedNextPeriodStart,
+                                glossaryID: "menstruation"
+                            )
+                            // Przedział ufności
+                            if let earliest = stats.predictedNextPeriodEarliest,
+                               let latest = stats.predictedNextPeriodLatest,
+                               stats.cycleVariability > 1 {
+                                HStack {
+                                    Text("Zakres (±\(Int(round(stats.cycleVariability))) dni)")
+                                        .foregroundStyle(.secondary)
+                                        .font(.subheadline)
+                                    Spacer()
+                                    Text("\(earliest.formatted(.dateTime.day().month())) – \(latest.formatted(.dateTime.day().month(.wide).year()))")
+                                        .foregroundStyle(.secondary)
+                                        .font(.subheadline)
+                                }
                             }
-                            if stats.averageLutealLength > 0 {
-                                statRow(
-                                    "Średnia faza lutealna",
-                                    value: rangeRow(avg: stats.averageLutealLength,
-                                                    min: stats.minLutealLength,
-                                                    max: stats.maxLutealLength)
-                                )
-                            }
+                            predictionRow(
+                                "Szacowana owulacja",
+                                date: stats.predictedOvulationDate,
+                                glossaryID: "menstruation"
+                            )
+                            statRow("Okno płodne", value: formattedRange(
+                                stats.predictedFertileWindowStart,
+                                stats.predictedFertileWindowEnd
+                            ))
                         } header: {
-                            Text("Fazy cyklu")
-                                .glossaryInfo("luteal-phase")
-                        }
-                    }
-                    
-                    Section("Owulacja") {
-                        let total = stats.cyclesWithOvulation + stats.cyclesWithoutOvulation
-                        if total > 0 {
-                            statRow("Z wykrytą owulacją", value: "\(stats.cyclesWithOvulation) / \(total)")
-                            if stats.cyclesWithOvulation > 0 {
-                                let pct = Int(round(Double(stats.cyclesWithOvulation) / Double(total) * 100))
-                                statRow("Skuteczność detekcji", value: "\(pct)%")
-                            }
-                        } else {
-                            statRow("Z wykrytą owulacją", value: "—")
-                        }
-                    }
-
-                    if stats.bbtTrend != .insufficient {
-                        Section {
-                            statRow("Trend temperatury bazowej", value: bbtTrendLabel(stats.bbtTrend))
-                            statRow("Pomiarów temperatury", value: "\(stats.temperatureEntryCount)")
-                            statRow("Średnia temperatura", value: temperature(stats.averageTemperature))
-                        } header: {
-                            Text("BBT")
-                                .glossaryInfo("bbt")
-                        }
-                    } else {
-                        Section {
-                            statRow("Pomiarów temperatury", value: "\(stats.temperatureEntryCount)")
-                            statRow("Średnia temperatura", value: temperature(stats.averageTemperature))
-                        } header: {
-                            Text("BBT")
-                                .glossaryInfo("bbt")
-                        }
-                    }
-
-                    if stats.dominantMucusAppearance != nil || stats.dominantMucusSensation != nil {
-                        Section {
-                            if let appearance = stats.dominantMucusAppearance {
-                                statRow("Najczęstszy wygląd śluzu", value: mucusAppearanceLabel(appearance))
-                            }
-                            if let sensation = stats.dominantMucusSensation {
-                                statRow("Najczęstsza konsystencja", value: mucusSensationLabel(sensation))
-                            }
-                        } header: {
-                            Text("Śluz")
-                                .glossaryInfo("cervical-mucus")
-                        }
-                    }
-                    
-                    // Konsekwencja pomiaru
-                    if stats.temperatureEntryCount > 0 {
-                        Section {
-                            let pct = Int(round(stats.bbtConsistency * 100))
-                            HStack {
-                                Text("Regularność pomiarów")
-                                Spacer()
-                                Text("\(pct)%")
-                                    .foregroundStyle(bbtConsistencyColor(stats.bbtConsistency))
-                                    .fontWeight(.medium)
-                            }
-                            if stats.averageFollicularLength > 0 {
-                                statRow(
-                                    "Średnia faza folikularna",
-                                    value: rangeRow(avg: stats.averageFollicularLength,
-                                                    min: stats.minFollicularLength,
-                                                    max: stats.maxFollicularLength)
-                                )
-                            }
-                        } header: {
-                            Text("BBT i fazy")
-                                .glossaryInfo("bbt")
-                        }
-                    }
-                    
-                    // Energia per faza
-                    if stats.averageEnergyFollicular != nil || stats.averageEnergyLuteal != nil {
-                        Section("Energia wg fazy") {
-                            moodPhaseRow("Menstruacyjna", value: stats.averageEnergyMenstrual)
-                            moodPhaseRow("Folikularna", value: stats.averageEnergyFollicular)
-                            moodPhaseRow("Lutealna", value: stats.averageEnergyLuteal)
-                        }
-                    }
-
-                    // Sen per faza
-                    if stats.averageSleepQualityFollicular != nil || stats.averageSleepQualityLuteal != nil {
-                        Section("Jakość snu wg fazy") {
-                            moodPhaseRow("Folikularna", value: stats.averageSleepQualityFollicular)
-                            moodPhaseRow("Lutealna", value: stats.averageSleepQualityLuteal)
-                        }
-                    }
-
-                    // Ból głowy
-                    if stats.headacheDaysCount > 0 {
-                        Section("Ból głowy") {
-                            statRow("Dni z bólem głowy", value: "\(stats.headacheDaysCount)")
-                            if stats.averageHeadacheIntensity > 0 {
-                                statRow("Średnia intensywność", value: painLabel(stats.averageHeadacheIntensity))
-                            }
-                        }
-                    }
-
-                    // Skóra
-                    if let skin = stats.dominantSkinConditionLuteal {
-                        Section("Skóra (faza lutealna)") {
-                            statRow("Najczęstszy stan", value: skinConditionLabel(skin))
-                        }
-                    }
-
-                    // Waga
-                    if stats.weightEntryCount > 0 {
-                        Section("Waga") {
-                            if let avg = stats.averageWeight {
-                                statRow("Średnia", value: String(format: "%.1f kg", avg))
-                            }
-                            if let min = stats.minWeight, let max = stats.maxWeight, min != max {
-                                statRow("Zakres", value: String(format: "%.1f – %.1f kg", min, max))
-                            }
-                            statRow("Liczba pomiarów", value: "\(stats.weightEntryCount)")
-                        }
-                    }
-
-                    // Ból menstruacyjny
-                    if stats.averageMenstrualPain > 0 {
-                        Section("Ból menstruacyjny") {
-                            statRow("Średnia intensywność", value: painLabel(stats.averageMenstrualPain))
-                            if let max = stats.maxMenstrualPain {
-                                statRow("Maksimum", value: painLabel(Double(max)))
-                            }
-                        }
-                    }
-
-                    // Nastrój per faza
-                    if stats.averageMoodFollicular != nil || stats.averageMoodLuteal != nil {
-                        Section("Nastrój wg fazy") {
-                            moodPhaseRow("Menstruacyjna", value: stats.averageMoodMenstrual)
-                            moodPhaseRow("Folikularna", value: stats.averageMoodFollicular)
-                            moodPhaseRow("Owulacyjna", value: stats.averageMoodOvulatory)
-                            moodPhaseRow("Lutealna", value: stats.averageMoodLuteal)
-                        }
-                    }
-                    
-                    // Ból owulacyjny
-                    if stats.averageOvulationPain > 0 {
-                        Section("Ból owulacyjny") {
-                            statRow("Średnia intensywność", value: painLabel(stats.averageOvulationPain))
-                            if let max = stats.maxOvulationPain {
-                                statRow("Maksimum", value: painLabel(Double(max)))
-                            }
-                            if let side = stats.dominantOvulationPainSide {
-                                statRow("Najczęstsza strona", value: painSideLabel(side))
-                            }
-                        }
-                    }
-
-                    // Czułość piersi
-                    if stats.averageBreastTendernessFollicular != nil || stats.averageBreastTendernessLuteal != nil {
-                        Section("Czułość piersi") {
-                            if let f = stats.averageBreastTendernessFollicular {
-                                statRow("Faza folikularna", value: painLabel(f))
-                            }
-                            if let l = stats.averageBreastTendernessLuteal {
-                                statRow("Faza lutealna", value: painLabel(l))
-                            }
-                        }
-                    }
-
-                    // Plamienie
-                    if stats.cyclesWithSpotting > 0 {
-                        Section("Plamienie międzymiesiączkowe") {
-                            statRow("Cykle z plamieniem", value: "\(stats.cyclesWithSpotting) / \(stats.cycleCount)")
-                            statRow("Łącznie dni", value: "\(stats.spotting)")
-                        }
-                    }
-
-                    // Test progesteron
-                    if stats.cyclesWithProgesteroneTest > 0 {
-                        Section {
-                            statRow("Cykle z testem", value: "\(stats.cyclesWithProgesteroneTest)")
-                            statRow("Potwierdzony wyrzut", value: "\(stats.cyclesWithConfirmedProgesterone) / \(stats.cyclesWithProgesteroneTest)")
-                            let pct = Int(round(Double(stats.cyclesWithConfirmedProgesterone) / Double(stats.cyclesWithProgesteroneTest) * 100))
-                            statRow("Skuteczność", value: "\(pct)%")
-                        } header: {
-                            Text("Progesteron (Proov/PdG)")
-                                .glossaryInfo("luteal-phase")
-                        }
-                    }
-
-                    // Peak Day
-                    if let peakDay = stats.averagePeakDayOfCycle {
-                        Section {
-                            statRow("Średni dzień szczytowy", value: "dzień \(Int(round(peakDay)))")
-                        } header: {
-                            Text("Peak Day")
+                            Text("Przewidywania")
                                 .glossaryInfo("fertile-window")
                         }
-                    }
-
-                    // Szyjka SHOW
-                    if stats.showDaysCount > 0 {
-                        Section {
-                            statRow("Dni z pełnym SHOW", value: "\(stats.showDaysCount)")
-                            let pct = Int(round(stats.showPercentage * 100))
-                            statRow("% dni z obserwacją", value: "\(pct)%")
-                        } header: {
-                            Text("Szyjka macicy")
-                                .glossaryInfo("cervix")
-                        }
-                    }
-
-                    // Streak BBT
-                    if stats.longestBBTStreak > 0 {
-                        Section {
-                            statRow("Najdłuższa seria pomiarów", value: "\(stats.longestBBTStreak) dni")
-                        } header: {
-                            Text("Konsekwencja BBT")
-                                .glossaryInfo("bbt")
-                        }
-                    }
-
-                    // Karmienie piersią
-                    if stats.breastfeedingDaysCount > 0 {
-                        Section("Karmienie piersią") {
-                            statRow("Dni z karmieniem", value: "\(stats.breastfeedingDaysCount)")
-                        }
-                    }
-
-                    if stats.intercourseCount > 0 {
-                        Section("Stosunek") {
-                            statRow("Łącznie odnotowanych", value: "\(stats.intercourseCount)")
-                            statRow("Bez zabezpieczenia", value: "\(stats.intercourseUnprotectedCount)")
-                            statRow("Z zabezpieczeniem", value: "\(stats.intercourseProtectedCount)")
-                        }
-                    }
-
-                    if !stats.cycleInfos.isEmpty {
-                        Section {
-                            CycleBarChartView(
-                                cycleInfos: stats.cycleInfos,
-                                average: stats.averageCycleLength
-                            )
-                            .listRowInsets(EdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 12))
-                        } header: {
-                            Text("Długość cykli")
-                        }
 
                         Section {
-                            ForEach(stats.cycleInfos.reversed(), id: \.startDate) { info in
-                                HStack {
-                                    VStack(alignment: .leading, spacing: 2) {
-                                        Text(cycleRangeLabel(info))
-                                            .font(.subheadline)
-                                        Text(cycleShortDateRange(info))
-                                            .font(.caption)
-                                            .foregroundStyle(.secondary)
-                                    }
-                                    Spacer()
-                                    Text("\(info.length) dni")
-                                        .foregroundStyle(lengthColor(info.length, average: stats.averageCycleLength))
-                                }
+    //                        statRow("Pomiarów temperatury", value: "\(stats.temperatureEntryCount)")
+    //                        statRow("Średnia temperatura", value: temperature(stats.averageTemperature))
+                            statRow("LH peak", value: "\(stats.lhPeakCount)")
+                            if let lhDay = stats.averageLHPeakDayOfCycle {
+                                statRow("Średni dzień LH peak", value: "dzień \(Int(round(lhDay)))")
+                            }
+                            if let mucusDay = stats.averageFirstFertileMucusDayOfCycle {
+                                statRow("Śluz płodny od dnia", value: "dzień \(Int(round(mucusDay)))")
+                            }
+                            if let color = stats.dominantBleedingColor {
+                                statRow("Najczęstszy kolor krwawienia", value: bleedingColorLabel(color))
                             }
                         } header: {
-                            Text("Historia cykli")
+                            Text("Obserwacje")
+                                .glossaryInfo("lh")
                         }
-                    }
+                        
+                        if stats.averageBleedingDays > 0 || stats.averageLutealLength > 0 {
+                            Section {
+                                if stats.averageBleedingDays > 0 {
+                                    statRow(
+                                        "Średnia długość krwawienia",
+                                        value: rangeRow(avg: stats.averageBleedingDays,
+                                                        min: stats.minBleedingDays,
+                                                        max: stats.maxBleedingDays)
+                                    )
+                                }
+                                if stats.averageLutealLength > 0 {
+                                    statRow(
+                                        "Średnia faza lutealna",
+                                        value: rangeRow(avg: stats.averageLutealLength,
+                                                        min: stats.minLutealLength,
+                                                        max: stats.maxLutealLength)
+                                    )
+                                }
+                            } header: {
+                                Text("Fazy cyklu")
+                                    .glossaryInfo("luteal-phase")
+                            }
+                        }
+                        
+                        Section("Owulacja") {
+                            let total = stats.cyclesWithOvulation + stats.cyclesWithoutOvulation
+                            if total > 0 {
+                                statRow("Z wykrytą owulacją", value: "\(stats.cyclesWithOvulation) / \(total)")
+                                if stats.cyclesWithOvulation > 0 {
+                                    let pct = Int(round(Double(stats.cyclesWithOvulation) / Double(total) * 100))
+                                    statRow("Skuteczność detekcji", value: "\(pct)%")
+                                }
+                            } else {
+                                statRow("Z wykrytą owulacją", value: "—")
+                            }
+                        }
+
+                        if stats.bbtTrend != .insufficient {
+                            Section {
+                                statRow("Trend temperatury bazowej", value: bbtTrendLabel(stats.bbtTrend))
+                                statRow("Pomiarów temperatury", value: "\(stats.temperatureEntryCount)")
+                                statRow("Średnia temperatura", value: temperature(stats.averageTemperature))
+                            } header: {
+                                Text("BBT")
+                                    .glossaryInfo("bbt")
+                            }
+                        } else {
+                            Section {
+                                statRow("Pomiarów temperatury", value: "\(stats.temperatureEntryCount)")
+                                statRow("Średnia temperatura", value: temperature(stats.averageTemperature))
+                            } header: {
+                                Text("BBT")
+                                    .glossaryInfo("bbt")
+                            }
+                        }
+
+                        if stats.dominantMucusAppearance != nil || stats.dominantMucusSensation != nil {
+                            Section {
+                                if let appearance = stats.dominantMucusAppearance {
+                                    statRow("Najczęstszy wygląd śluzu", value: mucusAppearanceLabel(appearance))
+                                }
+                                if let sensation = stats.dominantMucusSensation {
+                                    statRow("Najczęstsza konsystencja", value: mucusSensationLabel(sensation))
+                                }
+                            } header: {
+                                Text("Śluz")
+                                    .glossaryInfo("cervical-mucus")
+                            }
+                        }
+                        
+                        // Konsekwencja pomiaru
+                        if stats.temperatureEntryCount > 0 {
+                            Section {
+                                let pct = Int(round(stats.bbtConsistency * 100))
+                                HStack {
+                                    Text("Regularność pomiarów")
+                                    Spacer()
+                                    Text("\(pct)%")
+                                        .foregroundStyle(bbtConsistencyColor(stats.bbtConsistency))
+                                        .fontWeight(.medium)
+                                }
+                                if stats.averageFollicularLength > 0 {
+                                    statRow(
+                                        "Średnia faza folikularna",
+                                        value: rangeRow(avg: stats.averageFollicularLength,
+                                                        min: stats.minFollicularLength,
+                                                        max: stats.maxFollicularLength)
+                                    )
+                                }
+                            } header: {
+                                Text("BBT i fazy")
+                                    .glossaryInfo("bbt")
+                            }
+                        }
+                        
+                        // Energia per faza
+                        if stats.averageEnergyFollicular != nil || stats.averageEnergyLuteal != nil {
+                            Section("Energia wg fazy") {
+                                moodPhaseRow("Menstruacyjna", value: stats.averageEnergyMenstrual)
+                                moodPhaseRow("Folikularna", value: stats.averageEnergyFollicular)
+                                moodPhaseRow("Lutealna", value: stats.averageEnergyLuteal)
+                            }
+                        }
+
+                        // Sen per faza
+                        if stats.averageSleepQualityFollicular != nil || stats.averageSleepQualityLuteal != nil {
+                            Section("Jakość snu wg fazy") {
+                                moodPhaseRow("Folikularna", value: stats.averageSleepQualityFollicular)
+                                moodPhaseRow("Lutealna", value: stats.averageSleepQualityLuteal)
+                            }
+                        }
+
+                        // Ból głowy
+                        if stats.headacheDaysCount > 0 {
+                            Section("Ból głowy") {
+                                statRow("Dni z bólem głowy", value: "\(stats.headacheDaysCount)")
+                                if stats.averageHeadacheIntensity > 0 {
+                                    statRow("Średnia intensywność", value: painLabel(stats.averageHeadacheIntensity))
+                                }
+                            }
+                        }
+
+                        // Skóra
+                        if let skin = stats.dominantSkinConditionLuteal {
+                            Section("Skóra (faza lutealna)") {
+                                statRow("Najczęstszy stan", value: skinConditionLabel(skin))
+                            }
+                        }
+
+                        // Waga
+                        if stats.weightEntryCount > 0 {
+                            Section("Waga") {
+                                if let avg = stats.averageWeight {
+                                    statRow("Średnia", value: String(format: "%.1f kg", avg))
+                                }
+                                if let min = stats.minWeight, let max = stats.maxWeight, min != max {
+                                    statRow("Zakres", value: String(format: "%.1f – %.1f kg", min, max))
+                                }
+                                statRow("Liczba pomiarów", value: "\(stats.weightEntryCount)")
+                            }
+                        }
+
+                        // Ból menstruacyjny
+                        if stats.averageMenstrualPain > 0 {
+                            Section("Ból menstruacyjny") {
+                                statRow("Średnia intensywność", value: painLabel(stats.averageMenstrualPain))
+                                if let max = stats.maxMenstrualPain {
+                                    statRow("Maksimum", value: painLabel(Double(max)))
+                                }
+                            }
+                        }
+
+                        // Nastrój per faza
+                        if stats.averageMoodFollicular != nil || stats.averageMoodLuteal != nil {
+                            Section("Nastrój wg fazy") {
+                                moodPhaseRow("Menstruacyjna", value: stats.averageMoodMenstrual)
+                                moodPhaseRow("Folikularna", value: stats.averageMoodFollicular)
+                                moodPhaseRow("Owulacyjna", value: stats.averageMoodOvulatory)
+                                moodPhaseRow("Lutealna", value: stats.averageMoodLuteal)
+                            }
+                        }
+                        
+                        // Ból owulacyjny
+                        if stats.averageOvulationPain > 0 {
+                            Section("Ból owulacyjny") {
+                                statRow("Średnia intensywność", value: painLabel(stats.averageOvulationPain))
+                                if let max = stats.maxOvulationPain {
+                                    statRow("Maksimum", value: painLabel(Double(max)))
+                                }
+                                if let side = stats.dominantOvulationPainSide {
+                                    statRow("Najczęstsza strona", value: painSideLabel(side))
+                                }
+                            }
+                        }
+
+                        // Czułość piersi
+                        if stats.averageBreastTendernessFollicular != nil || stats.averageBreastTendernessLuteal != nil {
+                            Section("Czułość piersi") {
+                                if let f = stats.averageBreastTendernessFollicular {
+                                    statRow("Faza folikularna", value: painLabel(f))
+                                }
+                                if let l = stats.averageBreastTendernessLuteal {
+                                    statRow("Faza lutealna", value: painLabel(l))
+                                }
+                            }
+                        }
+
+                        // Plamienie
+                        if stats.cyclesWithSpotting > 0 {
+                            Section("Plamienie międzymiesiączkowe") {
+                                statRow("Cykle z plamieniem", value: "\(stats.cyclesWithSpotting) / \(stats.cycleCount)")
+                                statRow("Łącznie dni", value: "\(stats.spotting)")
+                            }
+                        }
+
+                        // Test progesteron
+                        if stats.cyclesWithProgesteroneTest > 0 {
+                            Section {
+                                statRow("Cykle z testem", value: "\(stats.cyclesWithProgesteroneTest)")
+                                statRow("Potwierdzony wyrzut", value: "\(stats.cyclesWithConfirmedProgesterone) / \(stats.cyclesWithProgesteroneTest)")
+                                let pct = Int(round(Double(stats.cyclesWithConfirmedProgesterone) / Double(stats.cyclesWithProgesteroneTest) * 100))
+                                statRow("Skuteczność", value: "\(pct)%")
+                            } header: {
+                                Text("Progesteron (Proov/PdG)")
+                                    .glossaryInfo("luteal-phase")
+                            }
+                        }
+
+                        // Peak Day
+                        if let peakDay = stats.averagePeakDayOfCycle {
+                            Section {
+                                statRow("Średni dzień szczytowy", value: "dzień \(Int(round(peakDay)))")
+                            } header: {
+                                Text("Peak Day")
+                                    .glossaryInfo("fertile-window")
+                            }
+                        }
+
+                        // Szyjka SHOW
+                        if stats.showDaysCount > 0 {
+                            Section {
+                                statRow("Dni z pełnym SHOW", value: "\(stats.showDaysCount)")
+                                let pct = Int(round(stats.showPercentage * 100))
+                                statRow("% dni z obserwacją", value: "\(pct)%")
+                            } header: {
+                                Text("Szyjka macicy")
+                                    .glossaryInfo("cervix")
+                            }
+                        }
+
+                        // Streak BBT
+                        if stats.longestBBTStreak > 0 {
+                            Section {
+                                statRow("Najdłuższa seria pomiarów", value: "\(stats.longestBBTStreak) dni")
+                            } header: {
+                                Text("Konsekwencja BBT")
+                                    .glossaryInfo("bbt")
+                            }
+                        }
+
+                        // Karmienie piersią
+                        if stats.breastfeedingDaysCount > 0 {
+                            Section("Karmienie piersią") {
+                                statRow("Dni z karmieniem", value: "\(stats.breastfeedingDaysCount)")
+                            }
+                        }
+
+                        if stats.intercourseCount > 0 {
+                            Section("Stosunek") {
+                                statRow("Łącznie odnotowanych", value: "\(stats.intercourseCount)")
+                                statRow("Bez zabezpieczenia", value: "\(stats.intercourseUnprotectedCount)")
+                                statRow("Z zabezpieczeniem", value: "\(stats.intercourseProtectedCount)")
+                            }
+                        }
+
+                        if !stats.cycleInfos.isEmpty {
+                            Section {
+                                CycleBarChartView(
+                                    cycleInfos: stats.cycleInfos,
+                                    average: stats.averageCycleLength
+                                )
+                                .listRowInsets(EdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 12))
+                            } header: {
+                                Text("Długość cykli")
+                            }
+
+                            Section {
+                                ForEach(stats.cycleInfos.reversed(), id: \.startDate) { info in
+                                    HStack {
+                                        VStack(alignment: .leading, spacing: 2) {
+                                            Text(cycleRangeLabel(info))
+                                                .font(.subheadline)
+                                            Text(cycleShortDateRange(info))
+                                                .font(.caption)
+                                                .foregroundStyle(.secondary)
+                                        }
+                                        Spacer()
+                                        Text("\(info.length) dni")
+                                            .foregroundStyle(lengthColor(info.length, average: stats.averageCycleLength))
+                                    }
+                                }
+                            } header: {
+                                Text("Historia cykli")
+                            }
+                        }
                 }
             }
             .navigationTitle("Statystyki")
+        }
+        .task(id: entries.count) {
+            await vm.update(entries: entries)
         }
     }
 

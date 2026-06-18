@@ -48,6 +48,12 @@ struct SettingsView: View {
                 // MARK: - Dane startowe
                 Section {
                     seedButton(
+                        icon: "waveform.path.ecg",
+                        title: "Załaduj dane NPR",
+                        subtitle: "Podręcznikowy wzorzec NPR/FAM (10 cykli, ~12 mies.)",
+                        preset: .classicNPR
+                    )
+                    seedButton(
                         icon: "wand.and.sparkles",
                         title: "Załaduj seed testowy",
                         subtitle: "Losowe dane demonstracyjne (8 cykli)",

@@ -8,6 +8,8 @@
 import Foundation
 
 enum SeedPreset {
+    /// Klasyczny przykład NPR
+    case classicNPR
     /// Losowe dane testowe (obecny PreviewSeed)
     case random
     /// Dane historyczne z eksportu aplikacji partnerki
@@ -27,6 +29,8 @@ final class SeedService {
         try repository.deleteAll()
         let entries: [CycleEntry]
         switch preset {
+        case .classicNPR:
+            entries = ClassicNPRSeed.makeCycleEntries()
         case .random:
             entries = PreviewSeed.makeCycleEntries()
         case .historicalPartner:
