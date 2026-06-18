@@ -137,9 +137,12 @@ struct CalendarView: View {
                 CalendarDayCell(
                     day: day,
                     dayEntries: vm.entries(for: day.date),
+                    cycleDay: vm.cycleDay(for: day.date),
+                    isFertile: vm.isFertileDay(day.date),
+                    isPredictedFertile: vm.isPredictedFertileDay(day.date),
+                    isPredictedPeriod: vm.isPredictedPeriodDay(day.date),
                     onTap: { selectedDate = day },
                     onAddEntry: { entryFormTarget = EntryFormTarget(date: day.date) },
-                    isFertile: vm.isFertileDay(day.date)
                 )
             }
         }

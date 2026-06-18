@@ -10,16 +10,15 @@ import SwiftUI
 struct CalendarDayCell: View {
     let day: CalendarDay
     let dayEntries: [CycleEntry]
+    let cycleDay: Int?
+    let isFertile: Bool
+    let isPredictedFertile: Bool
+    let isPredictedPeriod: Bool
     let onTap: () -> Void
     let onAddEntry: () -> Void
-    let isFertile: Bool
 
     private var entriesForDay: [CycleEntry] {
-        dayEntries.filter { CalendarHelper.isSameDay($0.date, day.date) }
-    }
-
-    private var cycleDay: Int? {
-        CalendarHelper.cycleDay(for: day.date, entries: dayEntries)
+        dayEntries
     }
 
     private var isToday: Bool {
@@ -93,6 +92,14 @@ struct CalendarDayCell: View {
             .padding(.vertical, 6)
             .background(cellBackground)
             .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .stroke(
+                        isPredictedPeriod ? Color.pmPeriod.opacity(0.5) :
+                            isPredictedFertile ? Color.pmFertile.opacity(0.5) : Color.clear,
+                        style: StrokeStyle(lineWidth: 1, dash: [4, 3])
+                    )
+            )
         }
         .buttonStyle(.plain)
         .contextMenu {
@@ -131,7 +138,15 @@ struct CalendarDayCell: View {
 //        }
         
         if isFertile {
-            return .pmFertile.opacity(0.15)
+            return .pmFertile.opacity(0.18)
+        }
+        
+        if isPredictedFertile {
+            return .pmFertile.opacity(0.07)
+        }
+        
+        if isPredictedPeriod {
+            return .pmPeriod.opacity(0.07)
         }
 
         return day.isCurrentMonth ? .pmSurface : .pmSurface.opacity(0.55)
