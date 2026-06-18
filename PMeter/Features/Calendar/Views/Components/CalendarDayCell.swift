@@ -11,8 +11,7 @@ struct CalendarDayCell: View {
     let day: CalendarDay
     let dayEntries: [CycleEntry]
     let cycleDay: Int?
-    let isFertile: Bool
-    let isPredictedFertile: Bool
+    let fertileKind: CalendarViewModel.FertileDayKind
     let isPredictedPeriod: Bool
     let onTap: () -> Void
     let onAddEntry: () -> Void
@@ -93,12 +92,15 @@ struct CalendarDayCell: View {
             .background(cellBackground)
             .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
             .overlay(
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .stroke(
-                        isPredictedPeriod ? Color.pmPeriod.opacity(0.5) :
-                            isPredictedFertile ? Color.pmFertile.opacity(0.5) : Color.clear,
-                        style: StrokeStyle(lineWidth: 1, dash: [4, 3])
-                    )
+                Group {
+                    if showDashedBorder {
+                        RoundedRectangle(cornerRadius: 14, style: .continuous)
+                            .stroke(
+                                overlayStroke,
+                                style: StrokeStyle(lineWidth: 1, dash: [4, 3])
+                            )
+                    }
+                }
             )
         }
         .buttonStyle(.plain)
@@ -137,12 +139,11 @@ struct CalendarDayCell: View {
 //            return .pmFertile.opacity(0.15)
 //        }
         
-        if isFertile {
-            return .pmFertile.opacity(0.18)
-        }
-        
-        if isPredictedFertile {
-            return .pmFertile.opacity(0.07)
+        switch fertileKind {
+        case .confirmed:    return .pmFertile.opacity(0.18)
+        case .estimated:    return .pmFertile.opacity(0.09)
+        case .predicted:    return .pmFertile.opacity(0.07)
+        case .none:         break
         }
         
         if isPredictedPeriod {
@@ -150,5 +151,21 @@ struct CalendarDayCell: View {
         }
 
         return day.isCurrentMonth ? .pmSurface : .pmSurface.opacity(0.55)
+    }
+    
+    private var overlayStroke: Color {
+        switch fertileKind {
+        case .predicted:    return .pmFertile.opacity(0.5)
+        case .estimated:    return .pmFertile.opacity(0.3)
+        case .none where isPredictedPeriod: return .pmPeriod.opacity(0.5)
+        default:            return .clear
+        }
+    }
+    
+    private var showDashedBorder: Bool {
+        switch fertileKind {
+        case .estimated, .predicted: return true
+        default: return isPredictedPeriod
+        }
     }
 }

@@ -64,11 +64,10 @@ final class CalendarViewModel {
     }
     
     func isFertileDay(_ date: Date) -> Bool {
-        guard let start = prediction?.fertileWindowStart,
-              let end   = prediction?.fertileWindowEnd else { return false }
-        let d = Calendar.current.startOfDay(for: date)
-        return d >= Calendar.current.startOfDay(for: start)
-            && d <= Calendar.current.startOfDay(for: end)
+        switch fertileDayKind(for: date) {
+        case .confirmed, .estimated: return true
+        default: return false
+        }
     }
     
     func cycleDay(for date: Date) -> Int? {
@@ -129,14 +128,105 @@ final class CalendarViewModel {
     }
 
     func isPredictedFertileDay(_ date: Date) -> Bool {
-        // Nie podświetlaj jeśli to już potwierdzone okno płodne
-        guard !isFertileDay(date) else { return false }
-        let d = Calendar.current.startOfDay(for: date)
-        return predictedWindows().contains {
-            let s = Calendar.current.startOfDay(for: $0.fertileStart)
-            let e = Calendar.current.startOfDay(for: $0.fertileEnd)
-            return d >= s && d <= e
+        fertileDayKind(for: date) == .predicted
+    }
+    
+    // MARK: - Historyczne okna płodne
+
+    /// Dla każdego zakończonego cyklu wyznacza okno płodne na podstawie
+    /// Peak Day (priorytet) lub owulacji z BBT (fallback: cykl-13 dni).
+    private func historicalFertileWindows() -> [(start: Date, end: Date, estimated: Bool)] {
+        let cal = Calendar.current
+        let cycleStarts = CalendarHelper.cycleStartDates(in: allEntries).sorted()
+        guard cycleStarts.count >= 2 else { return [] }
+
+        return zip(cycleStarts, cycleStarts.dropFirst()).compactMap { cycleStart, nextStart in
+            let cycleEntries = allEntries.filter { $0.date >= cycleStart && $0.date < nextStart }
+
+            // 1. Peak Day – najbardziej wiarygodny
+            if let peakEntry = cycleEntries.first(where: { $0.isPeakDay }) {
+                let ov = cal.startOfDay(for: peakEntry.date)
+                guard let s = cal.date(byAdding: .day, value: -5, to: ov),
+                      let e = cal.date(byAdding: .day, value: 1, to: ov) else { return nil }
+                return (s, e, false)
+            }
+
+            // 2. Peak LH
+            if let lhPeak = cycleEntries.last(where: { $0.lhTest == .peak }) {
+                let ov = cal.startOfDay(for: lhPeak.date)
+                guard let s = cal.date(byAdding: .day, value: -5, to: ov),
+                      let e = cal.date(byAdding: .day, value: 1, to: ov) else { return nil }
+                return (s, e, false)
+            }
+
+            // 3. Skok BBT – 3 kolejne wyższe pomiary
+            let temps = cycleEntries
+                .filter { $0.temperature != nil && !$0.temperatureExcluded }
+                .sorted { $0.date < $1.date }
+
+            if temps.count >= 6 {
+                for i in 3..<(temps.count - 2) {
+                    let baseline = temps[(i-3)..<i].compactMap(\.temperature)
+                    guard baseline.count == 3 else { continue }
+                    let baseMax = baseline.max() ?? 0
+                    let t0 = temps[i].temperature ?? 0
+                    let t1 = temps[i+1].temperature ?? 0
+                    let t2 = temps[i+2].temperature ?? 0
+                    if t0 >= baseMax + 0.2, t1 >= baseMax + 0.2, t2 >= baseMax + 0.2 {
+                        let ov = cal.startOfDay(for: temps[i].date)
+                        guard let s = cal.date(byAdding: .day, value: -5, to: ov),
+                              let e = cal.date(byAdding: .day, value: 1, to: ov) else { continue }
+                        return (s, e, false)
+                    }
+                }
+            }
+
+            // 4. Fallback: owulacja = nextStart - 13 dni
+            guard let ov = cal.date(byAdding: .day, value: -13, to: nextStart),
+                  let s = cal.date(byAdding: .day, value: -5, to: ov),
+                  let e = cal.date(byAdding: .day, value: 1, to: ov) else { return nil }
+            return (s, e, true)
         }
+    }
+    
+    func fertileDayKind(for date: Date) -> FertileDayKind {
+        let d = Calendar.current.startOfDay(for: date)
+        let cal = Calendar.current
+
+        // Przewidywane przyszłe okna (predicted)
+        for window in predictedWindows() {
+            let s = cal.startOfDay(for: window.fertileStart)
+            let e = cal.startOfDay(for: window.fertileEnd)
+            if d >= s && d <= e { return .predicted }
+        }
+
+        // Bieżące okno z predykcji (confirmed jeśli bazuje na Peak/LH/BBT)
+        if let start = prediction?.fertileWindowStart,
+           let end = prediction?.fertileWindowEnd {
+            let s = cal.startOfDay(for: start)
+            let e = cal.startOfDay(for: end)
+            if d >= s && d <= e {
+                return prediction?.basedOnPeakDayHistory == true ? .confirmed : .estimated
+            }
+        }
+
+        // Historyczne okna
+        for window in historicalFertileWindows() {
+            let s = cal.startOfDay(for: window.start)
+            let e = cal.startOfDay(for: window.end)
+            if d >= s && d <= e {
+                return window.estimated ? .estimated : .confirmed
+            }
+        }
+
+        return .none
+    }
+
+    enum FertileDayKind {
+        case none
+        case confirmed // Peak Day / LH / BBT - pewne dane
+        case estimated // fallback nextStart-13 - szacunek
+        case predicted // przyszłe okno z predykcji
     }
 }
 
