@@ -9,16 +9,16 @@ import SwiftUI
 
 struct CalendarDayCell: View {
     let day: CalendarDay
-    let entries: [CycleEntry]
+    let dayEntries: [CycleEntry]
     let onTap: () -> Void
     let onAddEntry: () -> Void
 
     private var entriesForDay: [CycleEntry] {
-        entries.filter { CalendarHelper.isSameDay($0.date, day.date) }
+        dayEntries.filter { CalendarHelper.isSameDay($0.date, day.date) }
     }
 
     private var cycleDay: Int? {
-        CalendarHelper.cycleDay(for: day.date, entries: entries)
+        CalendarHelper.cycleDay(for: day.date, entries: dayEntries)
     }
 
     private var isToday: Bool {

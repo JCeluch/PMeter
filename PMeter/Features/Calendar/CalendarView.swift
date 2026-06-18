@@ -3,6 +3,7 @@ import SwiftData
 
 struct CalendarView: View {
     @Query(sort: \CycleEntry.date, order: .forward) private var entries: [CycleEntry]
+    @State private var vm = CalendarViewModel()
 
     @State private var currentMonth = Date()
     @State private var selectedDate: CalendarDay?
@@ -79,6 +80,12 @@ struct CalendarView: View {
                 Color.clear.frame(height: 12)
             }
         }
+        .task(id: currentMonth) {
+            vm.refresh(entries: entries, month: currentMonth)
+        }
+        .task(id: entries.map(\.id).hashValue) {
+            vm.refresh(entries: entries, month: currentMonth)
+        }
     }
 
     private var monthHeader: some View {
@@ -126,10 +133,10 @@ struct CalendarView: View {
 
     private var monthGrid: some View {
         LazyVGrid(columns: columns, spacing: 8) {
-            ForEach(CalendarHelper.visibleDays(for: currentMonth)) { day in
+            ForEach(vm.visibleDays) { day in
                 CalendarDayCell(
                     day: day,
-                    entries: entries,
+                    dayEntries: vm.entries(for: day.date),
                     onTap: { selectedDate = day },
                     onAddEntry: { entryFormTarget = EntryFormTarget(date: day.date) }
                 )
